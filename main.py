@@ -9,11 +9,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template('Sewanalyst.html')
+    return render_template('index.html')
 
-@app.route("/home", methods=['GET'])
-def home():
-    return render_template('Sewanalyst.html')
+#This is method for accessing uploaded reports
+
+#@app.route("/home", methods=['GET'])
+#def home():
+#    return render_template('Sewanalyst.html')
 
 if __name__ == "__main__":
   FlaskUI(app=app, server="flask").run()
