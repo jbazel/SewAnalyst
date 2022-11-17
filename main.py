@@ -8,10 +8,13 @@ from flaskwebgui import FlaskUI
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-    return render_template("home.html")
+def hello():
+    return render_template('Sewanalyst.html')
 
+@app.route("/home", methods=['GET'])
+def home():
+    return render_template('Sewanalyst.html')
 
 if __name__ == "__main__":
-    app.run()
-    FlaskUI(app=app, server="flask").run()
+  FlaskUI(app=app, server="flask").run()
+
