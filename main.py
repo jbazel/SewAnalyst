@@ -1,4 +1,4 @@
-#main.py
+# main.py
 
 import pandas as pd
 from flask import Flask
@@ -7,16 +7,17 @@ from flaskwebgui import FlaskUI
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello():
     return render_template('index.html')
 
-#This is method for accessing uploaded reports
 
-#@app.route("/home", methods=['GET'])
-#def home():
+# This is method for accessing uploaded reports
+
+# @app.route("/home", methods=['GET'])
+# def home():
 #    return render_template('Sewanalyst.html')
 
 if __name__ == "__main__":
-  FlaskUI(app=app, server="flask").run()
-
+    FlaskUI(app=app, server="flask").run()
