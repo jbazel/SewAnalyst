@@ -3,13 +3,20 @@ html{
     Font-family: Consolas, monaco, monospace;
 }
 
+svg {overflow: visible;
+    position: absolute;
+    background-color: #0D2340}
+
 body{
-
-}
-
-section{
-    background-color: #041326;
-    background-image: url("../statics/stacked-waves-haikei.svg");
     align-content: center;
     align-items: center;
+}
+
+h1{
+    position: absolute;
+}
+
+
+section{
+
 }
