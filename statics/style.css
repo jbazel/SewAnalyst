@@ -1,0 +1,15 @@
+html{
+    color: #9AC7D9;
+    Font-family: Consolas, monaco, monospace;
+}
+
+body{
+
+}
+
+section{
+    background-color: #041326;
+    background-image: url("../statics/stacked-waves-haikei.svg");
+    align-content: center;
+    align-items: center;
+}

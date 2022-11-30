@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "kute": "^1.0.0",
+    "kute.js": "^2.2.4"
+  }
+}
