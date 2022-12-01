@@ -8,6 +8,7 @@ from flask import Flask
 from flask import render_template
 from flaskwebgui import FlaskUI
 
+
 app = Flask(__name__)
 
 
@@ -57,9 +58,8 @@ def generateReport():
     """
 
 
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def hello():
-
     return render_template('index.html')
 
 
