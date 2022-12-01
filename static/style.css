@@ -1,11 +1,16 @@
 html{
     color: #9AC7D9;
+    background-color: #0D2340;
     Font-family: Consolas, monaco, monospace;
 }
 
-svg {overflow: visible;
+svg {overflow: hidden;
+    padding: 0;
     position: absolute;
-    background-color: #0D2340}
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: auto;}
 
 body{
     align-content: center;
