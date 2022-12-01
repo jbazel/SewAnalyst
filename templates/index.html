@@ -11,12 +11,11 @@
 <body>
 
 
-<div class = "container2">
-    <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
-        <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
-         <input type = "submit" value="{{request.form['button']}}"/>
-      </form>
-</div>
+ <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
+     <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
+     <input type = "submit" value="{{request.form['button']}}"/>
+ </form>
+
 
 <div class = "container1">
     <h1>Sewanalyst</h1>

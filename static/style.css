@@ -24,7 +24,6 @@ body{
 }
 
 .container2{
-
 }
 
 h1{
@@ -36,6 +35,7 @@ h1{
 }
 
 form{
+    z-index: -1;
     position: absolute;
     left: 2%;
     top: 50%;
