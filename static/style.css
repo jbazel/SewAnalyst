@@ -1,5 +1,5 @@
 html{
-    color: #9AC7D9;
+    margin: 0;
     background-color: #0D2340;
     Font-family: Consolas, monaco, monospace;
 }
@@ -13,12 +13,44 @@ svg {overflow: hidden;
     height: auto;}
 
 body{
+    border: 2px solid #041326;
+    border-radius: 5px;
     align-content: center;
     align-items: center;
 }
 
+.container1{
+
+}
+
+.container2{
+
+}
+
 h1{
+    color: whitesmoke;
+    font-size: 70px;
     position: absolute;
+    left: 2%;
+    top: 2%;
+}
+
+form{
+    position: absolute;
+    left: 2%;
+    top: 50%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
