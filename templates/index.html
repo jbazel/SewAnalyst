@@ -11,17 +11,17 @@
 <body>
 
 
+<div class = "container2">
+    <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
+        <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
+         <input type = "submit" value="{{request.form['button']}}"/>
+      </form>
+</div>
+
 <div class = "container1">
     <h1>Sewanalyst</h1>
 </div>
 
-<div class = "container2">
-    <form action = "http://localhost:5000/uploader" method = "POST"
-         enctype = "multipart/form-data">
-        <input type="file" name="csv file" accept=".csv">
-         <input type = "submit"/>
-      </form>
-</div>
 
 <!-- WAVE SVG -->
 <svg id="waves" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
