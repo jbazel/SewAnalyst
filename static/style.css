@@ -6,9 +6,11 @@ html{
 
 svg {overflow: hidden;
     padding: 0;
+    z-index: 1;
     position: absolute;
     bottom: 0;
     display: flex;
+    left: 0;
     width: 100%;
     height: auto;}
 
@@ -19,39 +21,24 @@ body{
     align-items: center;
 }
 
-.container1{
 
-}
-
-.container2{
-}
 
 h1{
+    position: absolute;
+    left: 10%;
     color: whitesmoke;
     font-size: 70px;
-    position: absolute;
-    left: 2%;
-    top: 2%;
+
 }
 
 form{
-    z-index: -1;
     position: absolute;
-    left: 2%;
+    z-index: 3;
+    left: 10%;
     top: 50%;
 }
 
-.column {
-  float: left;
-  width: 50%;
-}
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 
 section{

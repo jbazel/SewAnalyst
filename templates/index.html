@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href = "{{url_for('static', filename='bootstrap.css')}}">
     <link rel="icon" href="{{url_for('static', filename='favicon.jpg')}}">
-    <script src="../app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <title>Sewanalyst</title>
 </head>
 <body>
-
-
- <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
-     <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
-     <input type = "submit" value="{{request.form['button']}}"/>
- </form>
-
-
-<div class = "container1">
-    <h1>Sewanalyst</h1>
-</div>
-
-
+<div class = "container">
+    <div class = "sub-container">
+        <div class = "container1">
+            <h1>Sewanalyst</h1>
+        </div>
+        <div class = "container 2">
+            <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
+                <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
+                <input type = "submit" value="{{request.form['button']}}"/>
+            </form>
+        </div>
+    </div>
 <!-- WAVE SVG -->
-<svg id="waves" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-    <!-- WAVE 1-->
-    <path id = "path" d="M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 516.7 600 512.3 675 497.5C750 482.7 825 457.3 862.5 444.7L900 432L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#041326" stroke-linecap="round" stroke-linejoin="miter"></path>
-</svg>
+    <svg id="waves" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <path id = "path" d="M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 516.7 600 512.3 675 497.5C750 482.7 825 457.3 862.5 444.7L900 432L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#041326" stroke-linecap="round" stroke-linejoin="miter"></path>
+    </svg>
+</div>
 <!-- SCRIPT FOR SVG WAVE -->
 <script>
 
