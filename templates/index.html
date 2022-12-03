@@ -9,29 +9,31 @@
     <title>Sewanalyst</title>
 </head>
 <body>
-<div class = "container">
+<div class = "container-fluid">
     <div class = "sub-container">
         <div class = "container1">
-            <h1>Sewanalyst</h1>
+            <h1>SewAnalyst</h1>
+            <p class = "lead">
+                The STW Data Analysis Software
+            </p>
         </div>
-        <div class = "container 2">
+        <div class = "container2">
             <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
                 <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
-                <input type = "submit" value="{{request.form['button']}}"/>
             </form>
         </div>
     </div>
-<!-- WAVE SVG -->
-    <svg id="waves" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-        <path id = "path" d="M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 516.7 600 512.3 675 497.5C750 482.7 825 457.3 862.5 444.7L900 432L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#041326" stroke-linecap="round" stroke-linejoin="miter"></path>
-    </svg>
 </div>
+<!-- WAVE SVG -->
+    <svg id="waveBottom" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <path id = "pathBottom" d="M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 516.7 600 512.3 675 497.5C750 482.7 825 457.3 862.5 444.7L900 432L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#041326" stroke-linecap="round" stroke-linejoin="miter"></path>
+    </svg>
 <!-- SCRIPT FOR SVG WAVE -->
 <script>
 
 function morph(d){
     let m = anime({
-        targets: document.getElementById("path"),
+        targets: document.getElementById("pathBottom"),
         d: [
             {value: d}
         ],
@@ -43,7 +45,7 @@ function morph(d){
     m.start();
 }
 
-waves = ["M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 516.7 600 512.3 675 497.5C750 482.7 825 457.3 862.5 444.7L900 432L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z",
+waveTops = ["M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 516.7 600 512.3 675 497.5C750 482.7 825 457.3 862.5 444.7L900 432L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z",
 "M0 464L37.5 474.8C75 485.7 150 507.3 225 518.8C300 530.3 375 531.7 450 531.8C525 532 600 531 675 518.2C750 505.3 825 480.7 862.5 468.3L900 456L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z",
 "M0 407L37.5 412.5C75 418 150 429 225 444.2C300 459.3 375 478.7 450 477.5C525 476.3 600 454.7 675 449.3C750 444 825 455 862.5 460.5L900 466L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z",
 "M0 452L37.5 463.8C75 475.7 150 499.3 225 510.8C300 522.3 375 521.7 450 500.5C525 479.3 600 437.7 675 435.5C750 433.3 825 470.7 862.5 489.3L900 508L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z",
@@ -51,12 +53,13 @@ waves = ["M0 461L37.5 458C75 455 150 449 225 459C300 469 375 495 450 505.8C525 5
 "M0 483L37.5 492.8C75 502.7 150 522.3 225 507.8C300 493.3 375 444.7 450 432.7C525 420.7 600 445.3 675 463.3C750 481.3 825 492.7 862.5 498.3L900 504L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z"
 ]
 
+
 setInterval(function(previous){
     let x = previous;
     while(x === previous){
         x = Math.floor(Math.random() * (6))
     }
-    morph(waves[x])
+    morph(waveTops[x])
     previous = x;
 
 }, 2000);
