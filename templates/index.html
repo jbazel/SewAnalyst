@@ -22,6 +22,17 @@
                 <input type="file" name="csv file"  placeholder="csv file" value="{{ request.form['csv data'] }}">
             </form>
         </div>
+        <button id = "helpButton" class = "help">Help</button>
+            <div id = "helper">
+                <div class = "helpContent">
+                    <span class = "close">
+                        &times;
+                    </span>
+                    <div class = "helpBody">
+                        Please Input a CSV file into the submission box.
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 <!-- WAVE SVG -->
@@ -63,6 +74,33 @@ setInterval(function(previous){
     previous = x;
 
 }, 2000);
+
+
+// Get the modal
+let help = document.getElementById("helper");
+
+// Get the button that opens the modal
+let btn = document.getElementById("helpButton");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  help.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  help.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target === help) {
+    help.style.display = "none";
+  }
+}
 
 
 </script>
