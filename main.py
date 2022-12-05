@@ -16,12 +16,13 @@ app = Flask(__name__)
 
 
 def processData(rawData):
+
     """
     perform all analysis on raw data
     create dataFrames
     analyse
     """
-
+    
     data = pd.read_csv(rawData, index_col=0, parse_dates=True)
 
 
