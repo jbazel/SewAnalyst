@@ -22,7 +22,7 @@ def processData(rawData):
     create dataFrames
     analyse
     """
-    
+
     data = pd.read_csv(rawData, index_col=0, parse_dates=True)
 
 
