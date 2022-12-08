@@ -1,6 +1,8 @@
 # main.py
 
 import csv
+
+import pandas
 import pandas as pd
 import numpy as np
 import matplotlib as plt
@@ -11,12 +13,10 @@ from flaskwebgui import FlaskUI
 import os
 from os.path import join, dirname, realpath
 
-
 app = Flask(__name__)
 
 
 def processData(rawData):
-
     """
     perform all analysis on raw data
     create dataFrames
@@ -24,6 +24,8 @@ def processData(rawData):
     """
 
     data = pd.read_csv(rawData, index_col=0, parse_dates=True)
+    data = pandas.DataFrame(data)
+    data = data.dropna(axis=1)  # drop all columns with NaN
     print(data.to_string())
 
 
@@ -63,13 +65,11 @@ def generateReport():
     """
 
 
-
 @app.route("/")
 def hello():
     return render_template('index.html')
 
 
-
 if __name__ == "__main__":
     processData("sampleData.csv")
-    FlaskUI(app=app, server="flask").run()
+    # FlaskUI(app=app, server="flask").run()
