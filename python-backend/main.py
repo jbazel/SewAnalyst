@@ -72,4 +72,7 @@ def hello():
 
 if __name__ == "__main__":
     processData("sampleData.csv")
-    # FlaskUI(app=app, server="flask").run()
+
+    FlaskUI(app=app, server="flask").run()
+
+   
