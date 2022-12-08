@@ -24,6 +24,7 @@ def processData(rawData):
     """
 
     data = pd.read_csv(rawData, index_col=0, parse_dates=True)
+    print(data.to_string())
 
 
 def generateFigures(data):
@@ -70,4 +71,5 @@ def hello():
 
 
 if __name__ == "__main__":
+    processData("sampleData.csv")
     FlaskUI(app=app, server="flask").run()
