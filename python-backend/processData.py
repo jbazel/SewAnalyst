@@ -10,10 +10,11 @@ def processData(rawData):
 
     headers: list = ["Site Code","Site Name","IDWF l/s","Maximum Infiltration Rate (Imax, l/s)","Note","Site Name","Previous max infiltration rate where known","Maximum Infiltration Rate (Imax, l/s)","Annual Return Population Equivalent (2020) (Unrounded)","Previous Trade Effluent where known,Trade Effluent (l/day) (2020)","Water Resource Zone","TW Est. of per capita domestic flow in this area (l/hd/day)"]
 
-    rawData: pd.DataFrame = pd.read_csv('python-backend/sampleData.csv') #names=headers
+    rawData: pd.DataFrame = pd.read_csv('python-backend/sampleData.csv', names=headers) #names=headers
     rawData.replace(' ', np.NaN)
+    rawData.replace('  no data ', np.NaN)
     rawData.replace('', np.NaN)
-    rawData.replace('-', np.NaN)
+    rawData.replace(' -   ', np.NaN)
     #rawDataClean = rawData.drop(rawData.loc[rawData['stalk-root'] == '?'].index)
 
     data = pd.read_csv("python-backend/sampleData.csv", index_col=0, parse_dates=True)
