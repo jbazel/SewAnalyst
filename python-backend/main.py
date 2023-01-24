@@ -24,7 +24,7 @@ def hello():
 
 
 if __name__ == "__main__":
-    processData("sampleData.csv")
+    #processData("sampleData.csv")
 
     FlaskUI(app=app, server="flask").run()
 
