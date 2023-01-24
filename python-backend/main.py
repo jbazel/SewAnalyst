@@ -20,12 +20,21 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template('index.html')
+    try:
+        return render_template('index.htl')
+    except Exception:
+        print("render template error")
 
 
 if __name__ == "__main__":
     #processData("sampleData.csv")
+    try:
+        FlaskUI(app=app, server="flask").run()
+    except Exception as e:
+        print("Flask UI failed to start")
+        print(e)
 
-    FlaskUI(app=app, server="flask").run()
+
+
 
    
