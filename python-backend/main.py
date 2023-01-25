@@ -25,6 +25,20 @@ def home():
     except Exception:
         print("render template error")
 
+@app.route("/upload")
+def upload():
+    try:
+        return render_template('upload.html')
+    except Exception:
+        print("render template error")
+
+@app.route("/download")
+def download():
+    try:
+        return render_template('download.html')
+    except Exception:
+        print("render template error")
+
 
 if __name__ == "__main__":
     #processData("sampleData.csv")
