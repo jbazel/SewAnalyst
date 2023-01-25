@@ -1,5 +1,5 @@
 
-def generateReport():
+def generateReport(data, figures):
     """
     TO DO
-    """
+    """ 
