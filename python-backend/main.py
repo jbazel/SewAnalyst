@@ -19,9 +19,9 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello():
+def home():
     try:
-        return render_template('index.htl')
+        return render_template('index.html')
     except Exception:
         print("render template error")
 
