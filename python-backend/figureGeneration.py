@@ -26,3 +26,13 @@ def generateFigures(data):
 
 
     """
+
+    def genFigPE(pe_data):
+        pass
+
+    def genFigDWF(dwf_data):
+        pass
+
+    def genFigSummary(summary_data):
+        pass
+

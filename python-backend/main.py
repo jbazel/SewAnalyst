@@ -19,13 +19,36 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello():
-    return render_template('index.html')
+def home():
+    try:
+        return render_template('index.html')
+    except Exception:
+        print("render template error")
+
+@app.route("/upload")
+def upload():
+    try:
+        return render_template('upload.html')
+    except Exception:
+        print("render template error")
+
+@app.route("/download")
+def download():
+    try:
+        return render_template('download.html')
+    except Exception:
+        print("render template error")
 
 
 if __name__ == "__main__":
     #processData("sampleData.csv")
+    try:
+        FlaskUI(app=app, server="flask").run()
+    except Exception as e:
+        print("Flask UI failed to start")
+        print(e)
 
-    FlaskUI(app=app, server="flask").run()
+
+
 
    
