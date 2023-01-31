@@ -18,7 +18,6 @@ app.get('/report/report1.pdf',function(req,res) {
             console.log(err);
         }
         else{
-            app.download(reportFolderPath)
             console.log('File sent');
         }
     })
@@ -26,14 +25,10 @@ app.get('/report/report1.pdf',function(req,res) {
 
 app.get('/program_download', function(req, res){
     console.log('downloading program');
-    res.download(programFolderPath, function(err) {
+    res.download(programFolderPath,function(err) {
         if(err) {
             console.log(err);
             console.log('Error downloading file');
-        }
-        else{
-            app.download(programFolderPath)
-            console.log('File sent');
         }
     })
 })
