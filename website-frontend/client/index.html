@@ -67,7 +67,7 @@
             <div class="col">
                 <h2> Download SewAnalyst</h2>
                 <!-- Have made this a submit button; might cause an issue later-->
-                <button type="submit" class="btn" id = "onlythesebuttons" style="background-color: rgb(30,55,73); color: white" onclick="downloadFunction()"> Download</button>
+                <!--<button type="submit" class="btn-cool" id = "onlythesebuttons" style="background-color: rgb(30,55,73); color: white" onclick="downloadFunction()"> Download</button>-->
                 <!-- Once the button is clicked, we need a popup that checks if you're really sure -->
                 <div class="popup"> 
                     <h2> Are you really sure? </h2>
@@ -76,7 +76,27 @@
                 <div style="background-color: rgb(15,28,37); color: white">
                 <h4> <b>Disclaimer:</b><br> </h4>
                     <p>SewAnalyst can only generate reports to the best of our ability with the data that is provided to us. We are in no way affiliated with the EA, and aim to provdie guidance and clarity on these matters </p>
-            </div>
+                </div>
+                    <a href="#" class="btn-cool">
+                <div class="completed">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Completed</span>
+                </div>
+                <div class="download">
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </div>
+            </a>
+        
+            <script>
+                const btn = document.querySelector('.btn-cool')
+                btn.addEventListener('click',()=>{
+                    btn.classList.add('active')
+                    setTimeout(() => {
+                        btn.classList.remove('active')
+                    }, 13000);
+                })
+            </script>
         </div>
     </div>
 
