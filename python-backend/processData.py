@@ -1,27 +1,36 @@
 import pandas as pd
 import numpy as np
 
-def processData(rawData):
-    """
-    perform all analysis on raw data
-    create dataFrames
-    analyse
-    """
+def processData():
+    headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)"]
+    data = pd.DataFrame = pd.read_csv('python-backend/dummyData.csv', names=headers)
+    data = data.drop("DATE", axis=1)
+    data = data.drop(index = 0)
+    data = data.reset_index()
 
-    headers: list = ["Site Code","Site Name","IDWF l/s","Maximum Infiltration Rate (Imax, l/s)","Note","Site Name 2","Previous max infiltration rate where known","Maximum Infiltration Rate (Imax, l/s) 2","Annual Return Population Equivalent (2020) (Unrounded)","Previous Trade Effluent where known,Trade Effluent (l/day) (2020)","Water Resource Zone","TW Est. of per capita domestic flow in this area (l/hd/day)"]
+    data["PE (forecasted 2021)"] = data["PE (forecasted 2021)"].str.replace(",", "").str.strip().astype(float)
+    data["PE (unrounded 2020)"] = data["PE (unrounded 2020)"].str.replace(",", "").str.strip().astype(float)
+    print(data)
+    for i in headers:
+        if i not in data.columns:
+            print("ERROR: missing column: " + i)
 
-    rawData: pd.DataFrame = pd.read_csv('python-backend/sampleData.csv', names=headers) #names=headers
-    rawData = rawData.drop(rawData['Site Name 2'])
-    rawData = rawData.drop(rawData['Maximum Infiltration Rate (Imax, l/s) 2'])
-    rawData.replace(' ', np.NaN)
-    rawData.replace('  no data ', np.NaN)
-    rawData.replace('', np.NaN)
-    rawData.replace(' -   ', np.NaN)
-    #rawDataClean = rawData.drop(rawData.loc[rawData['stalk-root'] == '?'].index)
+    dropped_indexes = []
+    for i in data.index:
+        for j in data.iloc[i]:
+            if j is str:
+                try:
+                      j = float(j)
+                except:
+                    print("ERROR: missing data for row: " + str(i))
+                    print("dropping..."+ str(j))
+                    dropped_indexes.append(i)
+                    break 
+                
+    for i in dropped_indexes:
+        data.drop(i, inplace=True)
+        data = data.reset_index()
+        print(data)
+                        
 
-    data = pd.read_csv("python-backend/sampleData.csv", index_col=0, parse_dates=True)
-    data = pd.DataFrame(data)
-    data = data.dropna(axis=1)  # drop all columns with NaN
-    print(data.to_string())
-
-processData("python-backend/sampleData.csv")
+processData()
