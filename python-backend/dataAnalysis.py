@@ -27,7 +27,7 @@ def calculateDifference(forecastData, reportedData):
     if sigDifTest < 0.05:
         #if there is a significant difference, calculate root mean squared error and determine severity of difference
         RMSE = mean_squared_error(reportedData, forecastData, squared=False)
-        threshold = RMSE / (data["PE (unrounded 2020)"].std() if data["PE (unrounded 2020)"].std() != 0 else 1)
+        threshold = RMSE / (reportedData.std() if reportedData.std() != 0 else 1)
         if threshold < 1:
             differenceSeverity = "mild"
         else:
