@@ -104,6 +104,26 @@
         <div class="row align-items-start central">
                 <p>Idk what to do here sorry</p>
                 <button type = "button" class = "btn" id="getReport" style="padding-bottom: 10px;" style="background-color: rgb(30,55,73); color: white">Download Report</button>
+                <form>
+                    <!-- Need Report Number, Date of Submission, Reason for form submission, button to confirm that you're being truthful -->
+                    <div class="mb-3">
+                        <label for="InputReportNumber" class="form-label"> Report Number </label>
+                        <input type="number" class="form-control" id="InputReportNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputDateOfSubmission" class="form-label"> Date of Form Submission </label>
+                        <input type="date" class="form-control" id="InputDateOfSubmission">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputReason" class="form-label"> Reason for Form Submission </label>
+                        <input type="text" class="form-control" id="InputReason">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="Checkbox">
+                        <label class="form-check-label" for="Checkbox"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label>
+                    </div>
+                    <button type="submit" class="btn btn-secondary"> Submit </button>
+                </form>
         </div>
 
     </div>
