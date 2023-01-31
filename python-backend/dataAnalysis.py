@@ -40,7 +40,7 @@ FORMATTING DATA
 '''
 #importing and formatting dummy data
 headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)"]
-data = pd.DataFrame = pd.read_csv('dummyData.csv', names=headers)
+data = pd.DataFrame = pd.read_csv('python-backend/dummyData.csv', names=headers)
 data = data.drop("DATE", axis=1)
 data = data.drop(index = 0)
 data = data.reset_index()

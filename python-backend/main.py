@@ -13,6 +13,7 @@ from flaskwebgui import FlaskUI
 import os
 from os.path import join, dirname, realpath
 
+
 app = Flask(__name__)
 
 
@@ -21,6 +22,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     try:
+        print("routing to home, attempting to render template")
         return render_template('index.html')
     except Exception:
         print("render template error")
@@ -28,13 +30,16 @@ def home():
 @app.route("/upload")
 def upload():
     try:
+        print("routing to upload, attempting to render template")
         return render_template('upload.html')
+
     except Exception:
         print("render template error")
 
 @app.route("/download")
 def download():
     try:
+        print("routing to download, attempting to render template")
         return render_template('download.html')
     except Exception:
         print("render template error")
