@@ -18,6 +18,7 @@ app.get('/report/report1.pdf',function(req,res) {
             console.log(err);
         }
         else{
+            app.download(reportFolderPath)
             console.log('File sent');
         }
     })
