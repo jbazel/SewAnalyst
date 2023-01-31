@@ -2,9 +2,9 @@ const { response } = require("express");
 var bodyParser = require('body-parser');  
 var urlencodedParser = bodyParser.urlencoded({ extended: false })  
 
-function downloadFunction(){
-    alert("Are you really sure?");
-}
+// function downloadFunction(){
+//     alert("Are you really sure?");
+// }
 
 const downloadReport = document.getElementById("getReport")
 downloadReport.addEventListener("click", async(event) => {
@@ -17,18 +17,13 @@ downloadReport.addEventListener("click", async(event) => {
     }
 });
 
-const downloadSoftware = document.getElementById("getSoftware")
-downloadSoftware.addEventListener("click", async(event) => {
+let downloadSoftware = document.getElementById("downloadSoftware")
+downloadSoftware.addEventListener("click", async function(event){
     try{
-        console.log("Download button clicked")
-        const response = await fetch('http://127.0.0.1:8090/download_software')
+      let response = await fetch('http://127.0.0.1:8090/program_download');
+    } catch(e) {
+      alert(e);
     }
-    catch(err){
-        console.log(err)
-    }
-    });
-
-
-
+  });
 
 

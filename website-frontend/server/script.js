@@ -36,7 +36,7 @@ app.get('/program_download', function(req, res){
             console.log('File sent');
         }
     })
-});
+})
 
 app.post('/report_upload', function(req, res){
     console.log(req.body);
