@@ -26,6 +26,11 @@ def processData():
                     print("dropping..."+ str(j))
                     dropped_indexes.append(i)
                     break 
+                
+    for i in dropped_indexes:
+        data.drop(i, inplace=True)
+        data = data.reset_index()
+        print(data)
                         
 
 processData()
