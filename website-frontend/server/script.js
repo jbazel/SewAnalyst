@@ -7,13 +7,13 @@ app.use(express.static('client'));
 app.unsubscribe(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const folderPath = 'files/report1.pdf'
-
-app.get('/single',function(req,res) {
+const reportFolderPath = 'files/report1.pdf'
+const programFolderPath = 'files/program1.json'
+app.get('/report:reportID',function(req,res) {
     console.log('single file');
      
     // Download function provided by express
-    res.download(folderPath, function(err) {
+    res.download(reportFolderPath, function(err) {
         if(err) {
             console.log(err);
         }
@@ -23,6 +23,19 @@ app.get('/single',function(req,res) {
     })
 })
 
+app.get('/program_download', function(req, res){
+    console.log('downloading program');
+    res.download(programFolderPath, function(err) {
+        if(err) {
+            console.log(err);
+            console.log('Error downloading file');
+        }
+        else{
+            app.download(programFolderPath)
+            console.log('File sent');
+        }
+    })
+});
 
 
 app.listen(8090)
