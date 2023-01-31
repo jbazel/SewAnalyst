@@ -1,5 +1,6 @@
 const { response } = require("express");
-
+var bodyParser = require('body-parser');  
+var urlencodedParser = bodyParser.urlencoded({ extended: false })  
 
 function downloadFunction(){
     alert("Are you really sure?");
@@ -26,3 +27,8 @@ downloadSoftware.addEventListener("click", async(event) => {
         console.log(err)
     }
     });
+
+
+
+
+

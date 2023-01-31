@@ -7,7 +7,6 @@ def processData():
     data = data.drop("DATE", axis=1)
     data = data.drop(index = 0)
     data = data.reset_index()
-
     data["PE (forecasted 2021)"] = data["PE (forecasted 2021)"].str.replace(",", "").str.strip().astype(float)
     data["PE (unrounded 2020)"] = data["PE (unrounded 2020)"].str.replace(",", "").str.strip().astype(float)
     print(data)
@@ -18,9 +17,12 @@ def processData():
     dropped_indexes = []
     for i in data.index:
         for j in data.iloc[i]:
-            if j is str:
+            if j == "" or j == " ":
+                dropped_indexes.append(i)
+                break
+            elif j is str:
                 try:
-                      j = float(j)
+                    j = float(j)
                 except:
                     print("ERROR: missing data for row: " + str(i))
                     print("dropping..."+ str(j))

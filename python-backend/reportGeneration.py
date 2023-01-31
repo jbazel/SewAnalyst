@@ -1,13 +1,11 @@
 
-def generateReport(data, figures):
+def generateReport(data="", figures=""):
 
 
     #Idea to do this:
     ## Data generation (will probs come from adam)
     ## Create the struct for the pdf (Snippets of graphs and text?? etc)
     ## Create the pdf report using fpdf
-
-
 
     from fpdf import FPDF
 
@@ -57,10 +55,10 @@ def generateReport(data, figures):
             paragraph = 'There was an error with the overall company data analysis please retry it and make sure your pe data is proper'
         return paragraph
 
-    # PeSeverity = "mild"
-    # DwfSeverity = "none"
-    # FftSeverity = "severe"
-    # OverallSeverity = "mild"
+    PeSeverity = "mild"
+    DwfSeverity = "none"
+    FftSeverity = "severe"
+    OverallSeverity = "mild"
 
     PEPara = PEParagraph(PeSeverity)
     DWFPara = DWFParagraph(DwfSeverity)
@@ -112,7 +110,7 @@ def generateReport(data, figures):
     pdf = PDF()
 
     pdf.add_page()
-    pdf.print_section( 0, 'Introduction', intro)
+    pdf.print_section(0, 'Introduction', intro)
     pdf.print_section(1, 'Population Equivalence', PEPara)
     pdf.print_section(2, 'Dry Weather Flow ', DWFPara)
     pdf.print_section(3, 'Flow to Full Treatment', FFTPara)
@@ -121,4 +119,5 @@ def generateReport(data, figures):
         
     pdf.output('Data Report.pdf', 'F')
 
+generateReport()
     #It goes to which ever directory this was executed in so in this case C:\Users\margu>
