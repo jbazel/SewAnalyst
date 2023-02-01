@@ -7,6 +7,7 @@ const { response } = require('express');
 app.use(express.static('client'));
 app.unsubscribe(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.disable('etag');
 
 const reportFolderPath = 'files/reports/report1.pdf'
 const programFolderPath = 'files/program/program1.json'
@@ -28,6 +29,7 @@ app.get('/report/report1.pdf',function(req,res) {
 
 app.get('/program_download', function(req, res){
     console.log('downloading program');
+    res.setHeader('Last-Modified', (new Date()).toUTCString());
     res.download(programFolderPath,function(err) {
         if(err) {
             console.log(err);
