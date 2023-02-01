@@ -48,7 +48,7 @@ app.post('/report_upload', function(req, res){
     })
 });
 
-app.post('/flagReport', (req, res)=>{
+app.post('/flagReport', (req, res) => {
     try{
         info = req.body
         console.log("passed")

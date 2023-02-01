@@ -25,7 +25,7 @@ downloadSoftware.addEventListener("click", async function(event){
   });
 
 const flagReport = document.getElementById('flagReportForm')
-flagReport.addEventListener('submit', async function(event){
+flagReport.addEventListener('submit', async (event)=>{
     try{
         console.log("Here")
         let reportNum = flagReport.elements.namedItem('InputReportNumber').value
@@ -35,6 +35,7 @@ flagReport.addEventListener('submit', async function(event){
         let reportReason = flagReport.elements.namedItem('InputReason').value
         console.log(reportReason)
         const reportData = {reportNum: reportNum, reportDate: reportDate, reportReason: reportReason}
+        console.log(reportData)
         const response = await fetch('http://127.0.0.1:8090/flagReport',{
             method: 'POST',
             headers:{'Content-Type':'application/json'},
