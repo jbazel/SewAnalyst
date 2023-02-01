@@ -28,11 +28,11 @@ const flagReport = document.getElementById('flagReportForm')
 flagReport.addEventListener('submit', async function(event){
     try{
         console.log("Here")
-        reportNum = flagReport.elements.namedItem('InputReportNumber').value
+        let reportNum = flagReport.elements.namedItem('InputReportNumber').value
         console.log(reportNum)
-        reportDate = flagReport.elements.namedItem('InputDateOfSubmission').value
+        let reportDate = flagReport.elements.namedItem('InputDateOfSubmission').value
         console.log(reportDate)
-        reportReason = flagReport.elements.namedItem('InputReason').value
+        let reportReason = flagReport.elements.namedItem('InputReason').value
         console.log(reportReason)
         const reportData = {reportNum: reportNum, reportDate: reportDate, reportReason: reportReason}
         const response = await fetch('http://127.0.0.1:8090/flagReport',{

@@ -51,14 +51,11 @@ app.post('/report_upload', function(req, res){
 app.post('/flagReport', (req, res)=>{
     try{
         info = req.body
-        print(info)
+        console.log("passed")
+        console.log(info)
         let reportNum = info.reportNum
         let reportDate = info.reportDate
         let reportReason = info.reportReason
-
-        print(reportNum)
-        print(reportDate)
-        print(reportReason)
 
         if (!fs.existsSync(flagReportFolderPath)){
             fs.closeSync(fs.openSync(flagReportFolderPath, 'w'));
