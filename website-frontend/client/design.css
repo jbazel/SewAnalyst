@@ -39,6 +39,22 @@ body {
     justify-content: center;
 }
 
+#reportsPage {
+  background: url(Green\ grass\ near\ body\ of\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  margin: 0;
+  display:block;
+  /*This deals with what's inside the image on the page*/
+  display:flex;
+  align-items: center;
+  justify-content: center; 
+}
+
 .blocking {
   background-color:rgb(15,28,37);
   padding: 20px;
@@ -49,6 +65,10 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.blocking div:last-of-type{
+  background-color: transparent;
 }
 /* Maybe don't need this one? */
 #background-downloads {
@@ -73,6 +93,7 @@ body {
     font-size: 22px;
     font-weight: 500;
     border-radius: 30px;
+    box-shadow: 2px 2px 5px #333;
 
 }
 .btn-cool

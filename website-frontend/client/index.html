@@ -35,11 +35,11 @@
     <div class = "container" id="homepage">
         <div class="row align-items-start central" style = "margin: 10%">
             <!-- should this background colour be the same as the first button colour? No-->
-            <div class="col" style="background-color: rgb(15,28,37); color: white; margin:10px; flex: auto; margin-top: 5%">
+            <div class="col" style="background-color: rgb(15,28,37); color: white; margin:10px; flex: auto; margin-top: 5%; box-shadow: 2px 2px 5px #333;">
                 <p> Built upon data from <a href="https://www.windrushwasp.org/" style="color: rgb(127,201,202)">WASP</a>, a registered charity built upon improving river quality and safety by
                 monitoring and denouncing illegal sewage dumping, SewAnalyst can be used to generate reports on the validity of these three things: <br>
                 <b>1. Population Equivalent (PE) <br> <!-- Maybe make this a li?-->
-                2. Dry WeSather Flow (DWF) <br>
+                2. Dry Weather Flow (DWF) <br>
                 3. Flow to Full Treatment (FFT) </b><br>
                 To give you the best analysis of what Sewage Treatment Works are really doing with their waste water!
                 </p>
@@ -63,20 +63,21 @@
     overflow: hidden;">
     <div class = "blocking" style="align-items: center; justify-content: center;">    
                 <div style= "width: 50%; margin: 0 auto; text-align:center; vertical-align:center">
-                <h2 style="color: white"> Download SewAnalyst</h2>
+                <img src="Logo without a background.png" style="width:50%; padding-bottom: 7.5%">
+                <h2 style="color: white; font-weight:700;"> Download SewAnalyst</h2>
                 <!-- Have made this a submit button; might cause an issue later-->
                 <form action="/program_download" method="get">
-                <button type="submit" class="btn-cool" id = "downloadSoftware" style="background-color: rgb(30,55,73); color: white"> Download</button> <br>
+                <button type="submit" class="btn-cool" id = "downloadSoftware" style="background-color: rgb(30,55,73); color: white; margin-bottom: 20%;"> Download</button> <br>
                 </form>
                 <!-- Once the button is clicked, we need a popup that checks if you're really sure -->
                 <!-- We don't need this popup for now
                 <div class="popup"> 
                     <h2> Are you really sure? </h2>
                 </div>-->
-                <img src="Logo without a background.png" style="width:50vh;">
-        
-                <h4 style="color:white"> <b>Disclaimer:</b><br> </h4>
-                    <p style="color:white"> SewAnalyst can only generate reports to the best of our ability with the data that is provided to us. We are in no way affiliated with the EA, and aim to provide guidance and clarity on these matters </p>
+                </div>
+                <div style="color:rgb(195,204,222); width:90%; margin: 0 auto; padding: 10px">
+                <h4 style="text-align:center"> <b>Disclaimer:</b><br> </h4>
+                    <p style="text-align: center"> SewAnalyst can only generate reports to the best of our ability with the data that is provided to us. We are in no way affiliated with the EA, and aim to provide guidance and clarity on these matters </p>
                 </div>
             <!-- Have removed this button for now - she was messing with my vibe
                 <a href="#" class="btn-cool">
@@ -106,9 +107,9 @@
     <div class="container" id="reportsPage" style="display:none">
         <div class="row align-items-start central">
             <form action="/report/report1.pdf" method="get">
-                <button type = "submit" class = "btn" style="padding-bottom: 10px;" style="background-color: rgb(30,55,73); color: white">Download Report</button>
+                <button type = "submit" class = "btn" id = "onlythesebuttons" style="margin-top:15%; background-color: rgb(53,93,123); color: white">Download Report</button>
             </form>
-                <form style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px" action="/flagReport" method="post">
+                <form style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px; box-shadow: 2px 2px 5px #333;" action="/flagReport" method="post">
                     <!-- Need Report Number, Date of Submission, Reason for form submission, button to confirm that you're being truthful -->
                     <div class="mb-3">
                         <label for="InputReportNumber" class="form-label"> Report Number </label>
@@ -126,7 +127,7 @@
                         <input type="checkbox" class="form-check-input" id="Checkbox">
                         <label class="form-check-label" for="Checkbox"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label>
                     </div>
-                    <input id="flagReportBtn" type="submit" style = "margin-bottom:10px;">
+                    <input id="flagReportBtn" type="submit" style = "margin-bottom:10px; padding: 10px 60px; background:white ; color:rgb(30,55,73); border: 0; outline: none; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 12px;">
                 </form>
         </div>
 
