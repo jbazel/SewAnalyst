@@ -1,11 +1,13 @@
 *{
-    margin:0;
-    padding:0;
+    margin:0px;
+    padding:0px;
     box-sizing: border-box;
     font-family:'Poppins', sans-serif;
 }
 
-
+body {
+  margin: 0;
+}
 .central{
     display: flex;
     width: 100%;
@@ -18,14 +20,47 @@
 #title_word {
     text-align: center;
     color: rgb(15,28,37);
+    font-weight: 700;
 }
 
 #homepage {
-    background: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none);
-    background-repeat: no-repeat;
+    background: url(green\ grass\ and\ flowers\ near\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
     background-size: cover;
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0;
+    display:block;
+    /*This deals with what's inside the image on the page*/
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.blocking {
+  background-color:rgb(15,28,37);
+  padding: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  margin: 50px;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Maybe don't need this one? */
+#background-downloads {
+  background: url(sewanalyst\ logo.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+}
 
 
 #onlythesebuttons {

@@ -18,28 +18,24 @@
 
 <body>
 
-    <!-- Navbar (will stay in all of the )-->
-    <nav class="navbar sticky-top navbar-light" style="background-color: rgb(195,204,222);">
+    <!-- Navbar (will stay in all of the "pages" )-->
+    <nav class="navbar sticky-top navbar-light" style="background-color: rgb(195,204,222); box-shadow: 2px 2px 5px #333">
         <div class="container-fluid">
-            <!-- this should be our logo but for now I'll just put the WASP one here-->
-            <img src="https://static.wixstatic.com/media/cda311_f2f55607eaa04530ba68783d80db13aa~mv2.png/v1/fill/w_246,h_255,al_c,lg_1,q_85,enc_auto/cda311_f2f55607eaa04530ba68783d80db13aa~mv2.png" alt="WASP logo" widht="50" height="44">
+            <!-- this should be our logo but for now I'll just put the WASP one here (maybe we have both??) https://static.wixstatic.com/media/cda311_f2f55607eaa04530ba68783d80db13aa~mv2.png/v1/fill/w_246,h_255,al_c,lg_1,q_85,enc_auto/cda311_f2f55607eaa04530ba68783d80db13aa~mv2.png -->
+            <img src="Logo without a background.png" alt="SewAnalyst logo" widht="60" height="60">
             <h1 id="title_word"><b>SewAnalyst</b> </h1>
            <a class="btn" onclick= "document.getElementById('homepage').style.display='block'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='none';"> 
-              <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="" width="30" height="24">            
+              <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="SewAnalyst Logo" width="30" height="30">            
             </a> 
-            
-            
           </div>
       </nav>
-
+    
 
     <!-- Homepage-->
-    <div class = "container" id="homepage" style="display:block; display:flex; align-items: center; justify-content: center;">
-        <div class="row align-items-start central">
-            <!-- testing testing this part-->
-
-            <!-- should this background colour be the same as the first button colour?-->
-            <div class="col" style="background-color: rgb(15,28,37); color: white; margin:10px; flex: auto;">
+    <div class = "container" id="homepage">
+        <div class="row align-items-start central" style = "margin: 10%">
+            <!-- should this background colour be the same as the first button colour? No-->
+            <div class="col" style="background-color: rgb(15,28,37); color: white; margin:10px; flex: auto; margin-top: 5%">
                 <p> Built upon data from <a href="https://www.windrushwasp.org/" style="color: rgb(127,201,202)">WASP</a>, a registered charity built upon improving river quality and safety by
                 monitoring and denouncing illegal sewage dumping, SewAnalyst can be used to generate reports on the validity of these three things: <br>
                 <b>1. Population Equivalent (PE) <br> <!-- Maybe make this a li?-->
@@ -59,25 +55,29 @@
 
 
     <!-- Downloading software page-->
-    <div class ="container" id="softwarePage" style="display:none">
-        <div class= "row align-items-start central">
-            <div class="col">
-             HELLO WORLD THIS WILL BE A PICTURE
-            </div>
-            <div class="col">
-                <h2> Download SewAnalyst</h2>
+    <div class ="container" id="softwarePage" style="display:none; background: url(green\ grass\ and\ flowers\ near\ water.jpg); background-size: cover;
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;">
+    <div class = "blocking" style="align-items: center; justify-content: center;">    
+                <div style= "width: 50%; margin: 0 auto; text-align:center; vertical-align:center">
+                <h2 style="color: white"> Download SewAnalyst</h2>
                 <!-- Have made this a submit button; might cause an issue later-->
-                <button type="submit" class="btn-cool" id = "downloadSoftware" style="background-color: rgb(30,55,73); color: white"> Download</button>
+                <button type="submit" class="btn-cool" id = "downloadSoftware" style="background-color: rgb(30,55,73); color: white"> Download</button> <br>
                 <!-- Once the button is clicked, we need a popup that checks if you're really sure -->
+                <!-- We don't need this popup for now
                 <div class="popup"> 
                     <h2> Are you really sure? </h2>
+                </div>-->
+                <img src="Logo without a background.png" style="width:50vh;">
+        
+                <h4 style="color:white"> <b>Disclaimer:</b><br> </h4>
+                    <p style="color:white"> SewAnalyst can only generate reports to the best of our ability with the data that is provided to us. We are in no way affiliated with the EA, and aim to provide guidance and clarity on these matters </p>
                 </div>
-            </div>
-                <div style="background-color: rgb(15,28,37); color: white">
-                <h4> <b>Disclaimer:</b><br> </h4>
-                    <p>SewAnalyst can only generate reports to the best of our ability with the data that is provided to us. We are in no way affiliated with the EA, and aim to provdie guidance and clarity on these matters </p>
-                </div>
-            <a href="#" class="btn-cool">
+            <!-- Have removed this button for now - she was messing with my vibe
+                <a href="#" class="btn-cool">
                 <div class="completed">
                     <i class="fas fa-check-circle"></i>
                     <span>Completed</span>
@@ -86,7 +86,7 @@
                     <i class="fas fa-download"></i>
                     <span>Download</span>
                 </div>
-            </a>
+            </a>-->
         
             <script>
                 const btn = document.querySelector('.btn-cool')
@@ -99,12 +99,12 @@
             </script>
         </div>
     </div>
+    </div>
 
     <div class="container" id="reportsPage" style="display:none">
         <div class="row align-items-start central">
-                <p>Idk what to do here sorry</p>
                 <button type = "button" class = "btn" id="getReport" style="padding-bottom: 10px;" style="background-color: rgb(30,55,73); color: white">Download Report</button>
-                <form>
+                <form style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px">
                     <!-- Need Report Number, Date of Submission, Reason for form submission, button to confirm that you're being truthful -->
                     <div class="mb-3">
                         <label for="InputReportNumber" class="form-label"> Report Number </label>
@@ -117,7 +117,7 @@
                     <div class="mb-3">
                         <label for="InputReason" class="form-label"> Reason for Form Submission </label>
                         <input type="text" class="form-control" id="InputReason">
-                    </div>
+                    </div>55
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="Checkbox">
                         <label class="form-check-label" for="Checkbox"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label>
