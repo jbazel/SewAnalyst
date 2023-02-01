@@ -15,14 +15,11 @@ const flagReportFolderPath = 'files/data/flaggedReports.json'
 
 app.get('/report/report1.pdf',function(req,res) {
     console.log('single file');
-     
-    // Download function provided by express
-    res.download(reportFolderPath, function(err) {
+    res.setHeader('Last-Modified', (new Date()).toUTCString());
+    res.download(reportFolderPath,function(err) {
         if(err) {
             console.log(err);
-        }
-        else{
-            console.log('File sent');
+            console.log('Error downloading file');
         }
     })
 })

@@ -65,7 +65,9 @@
                 <div style= "width: 50%; margin: 0 auto; text-align:center; vertical-align:center">
                 <h2 style="color: white"> Download SewAnalyst</h2>
                 <!-- Have made this a submit button; might cause an issue later-->
+                <form action="/program_download" method="get">
                 <button type="submit" class="btn-cool" id = "downloadSoftware" style="background-color: rgb(30,55,73); color: white"> Download</button> <br>
+                </form>
                 <!-- Once the button is clicked, we need a popup that checks if you're really sure -->
                 <!-- We don't need this popup for now
                 <div class="popup"> 
@@ -103,8 +105,10 @@
 
     <div class="container" id="reportsPage" style="display:none">
         <div class="row align-items-start central">
-                <button type = "button" class = "btn" id="getReport" style="padding-bottom: 10px;" style="background-color: rgb(30,55,73); color: white">Download Report</button>
-                <form style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px">
+            <form action="/report/report1.pdf" method="get">
+                <button type = "submit" class = "btn" style="padding-bottom: 10px;" style="background-color: rgb(30,55,73); color: white">Download Report</button>
+            </form>
+                <form style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px" action="/flagReport" method="post">
                     <!-- Need Report Number, Date of Submission, Reason for form submission, button to confirm that you're being truthful -->
                     <div class="mb-3">
                         <label for="InputReportNumber" class="form-label"> Report Number </label>
@@ -117,7 +121,7 @@
                     <div class="mb-3">
                         <label for="InputReason" class="form-label"> Reason for Form Submission </label>
                         <input type="text" class="form-control" id="InputReason">
-                    </div>55
+                    </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="Checkbox">
                         <label class="form-check-label" for="Checkbox"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label>
