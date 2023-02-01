@@ -17,7 +17,7 @@ def calculateDifference(forecastData, reportedData):
     forecastNormal = stats.shapiro(forecastData).pvalue
     reportedNormal = stats.shapiro(reportedData).pvalue
 
-    if (forecastNormal >= 0.05) and (reportedNormal >= 0.05):
+    if (forecastNormal >= 0.05) or (reportedNormal >= 0.05):
         #if data is normally distributed, perform paired sample t-test
         sigDifTest = stats.ttest_rel(forecastData, reportedData).pvalue
     else:
@@ -25,6 +25,7 @@ def calculateDifference(forecastData, reportedData):
         sigDifTest = stats.wilcoxon(forecastData, reportedData).pvalue
 
     if sigDifTest < 0.05:
+        significantDifference = True
         #if there is a significant difference, calculate root mean squared error and determine severity of difference
         RMSE = mean_squared_error(reportedData, forecastData, squared=False)
         threshold = RMSE / (reportedData.std() if reportedData.std() != 0 else 1)
@@ -47,11 +48,13 @@ E = trade effluent flow (l/d)
 
 def calculateDWF(data):
     DWFRecalc = []
-    for row in data.iterrows:
-        DWF = data['P']*data['G'] + data['I_DWF (l/s)'] + data['E']
+    for idx in data.index:
+        DWF = (data['PE (unrounded 2020)'][idx])*(data['G (2020)'][idx])
+        #doesn't work rn, will fix later lol
+        #DWF += (data['I_DWF (l/s)'][idx])
+        #DWF += (data['E'][idx])
         DWFRecalc.append(DWF)
     return DWFRecalc
-
 
 '''
 QUESTION 3 - Summary
@@ -69,4 +72,5 @@ def questionThree(significantDifferencePE, significantDifferenceDWF, differenceS
             differenceSeveritySum = "mild"
     else:
         significantDifferenceSum = False
+        differenceSeveritySum = "none"
     return significantDifferenceSum, differenceSeveritySum
