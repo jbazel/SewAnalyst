@@ -14,7 +14,7 @@ def processData(pathToData):
     print(data)
     for i in headers:
         if i not in data.columns:
-            print("ERROR: missing column: " + i)
+            print("ERROR missing column: " + i)
 
     dropped_indexes = []
     for i in data.index:
