@@ -1,5 +1,5 @@
 
-def generateReport(data="", figures=""):
+def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, figures=""):
 
 
     #Idea to do this:
@@ -54,11 +54,6 @@ def generateReport(data="", figures=""):
         else: 
             paragraph = 'There was an error with the overall company data analysis please retry it and make sure your pe data is proper'
         return paragraph
-
-    PeSeverity = "mild"
-    DwfSeverity = "none"
-    FftSeverity = "severe"
-    OverallSeverity = "mild"
 
     PEPara = PEParagraph(PeSeverity)
     DWFPara = DWFParagraph(DwfSeverity)
@@ -119,5 +114,7 @@ def generateReport(data="", figures=""):
         
     pdf.output('Data Report.pdf', 'F')
 
-generateReport()
+
+if __name__ == "__main__":
+    generateReport("mild", "none", "severe", "mild")
     #It goes to which ever directory this was executed in so in this case C:\Users\margu>
