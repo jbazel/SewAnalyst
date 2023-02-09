@@ -1,13 +1,24 @@
 from processData import *
 from dataAnalysis import *
+from reportGeneration import *
 
-data = processData('python-backend/dummyData.csv')
 
-sigDifPE, difSevPE = calculateDifference(data["PE (forecasted 2021)"], data["PE (unrounded 2020)"])
 
-DWFCalc = calculateDWF(data)
-sigDifDWF, difSevDWF = calculateDifference(DWFCalc, data["I_DWF (l/s)"])
+def main(file_name):
+    try:
+        data = processData(file_name)
 
-q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
+        sigDifPE, difSevPE = calculateDifference(data["PE (forecasted 2021)"], data["PE (unrounded 2020)"])
 
-print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
+        DWFCalc = calculateDWF(data)
+        sigDifDWF, difSevDWF = calculateDifference(DWFCalc, data["I_DWF (l/s)"])
+
+        q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
+
+        print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
+
+        generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity)
+    except Exception as e:
+        print(e)
+
+

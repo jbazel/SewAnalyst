@@ -8,6 +8,7 @@ from sklearn.metrics import mean_squared_error
 '''
 QUESTION 1 - PE
 '''
+
 #function for determining id fifferences between data are significant and how severe they are
 def calculateDifference(forecastData, reportedData):
     #is there a significant difference between datasets and how severe is that difference
