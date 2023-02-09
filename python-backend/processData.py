@@ -4,7 +4,6 @@ import numpy as np
 def processData(pathToData):
     headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "E", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)"]
     data = pd.DataFrame = pd.read_csv(pathToData, names=headers)
-    data = data.drop("DATE", axis=1)
     data = data.drop(data.index[0])
     data = data.reset_index()
     data["I_DWF (l/s)"] = data["I_DWF (l/s)"].str.replace(",", "").str.strip().astype(float)
