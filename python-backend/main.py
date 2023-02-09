@@ -1,13 +1,6 @@
 # main.py
-
-import csv
-
-import pandas
-import pandas as pd
-import numpy as np
-import matplotlib as plt
 from flask import Blueprint, render_template, redirect, session, request, flash, Flask, send_from_directory, url_for
-from wtforms import StringField, SubmitField
+from integratedSoftware import main
 from flaskwebgui import FlaskUI
 import os
 from os.path import join, dirname, realpath
@@ -28,9 +21,11 @@ def home():
 def upload():
     try:
         if request.method == 'POST':
-            print("here")
             f = request.files['csv file']
             f.save("test.csv")
+
+            main("test.csv")
+
 
             return render_template('index.html')
 
