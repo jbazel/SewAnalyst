@@ -11,7 +11,7 @@ app.disable('etag');
 
 const reportFolderPath = 'files/reports/report1.pdf'
 const programFolderPath = 'files/program/program1.json'
-const flagReportFolderPath = 'files/data/flaggedReports.json'
+const flagReportFolderPath = 'data/flaggedReports.json'
 
 app.get('/report/report1.pdf',function(req,res) {
     console.log('single file');
@@ -56,6 +56,7 @@ app.post('/flagReport', (req, res) => {
         let reportDate = info.reportDate
         let reportReason = info.reportReason
 
+        
         if (!fs.existsSync(flagReportFolderPath)){
             fs.closeSync(fs.openSync(flagReportFolderPath, 'w'));
         }
@@ -74,12 +75,12 @@ app.post('/flagReport', (req, res) => {
             const json = JSON.parse(file.toString())
             json.push(data)
             fs.writeFileSync(flagReportFolderPath, JSON.stringify(json, null, 2))
-            response.send("success")
+            res.send("success")
         }
 
     }
     catch(e){
-        response.send(e)
+        res.send(e)
     }
 });
 
