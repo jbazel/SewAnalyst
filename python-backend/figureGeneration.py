@@ -10,90 +10,57 @@ def cleanString(data):
     data = int(data)
     return data
 
-def generateFigures(data):
+def genFigPE():
+    ## read in data
+    data = pd.read_csv("dummyData.csv")
 
-    """
-    take in processed data
-    generate figures and graphs in matplotlib
-    save figures as files to use in HTML report
+    ## convert date to correct format
+    data['DATE'] = data['DATE'].apply(pd.to_datetime)
 
-    NOTES ON USiNG PANDAS AND MATPLOTLIB TO DRAW PLOTS:
+    ##call the cleanString() function on the values
+    data['PE (forecasted 2021)']= data['PE (forecasted 2021)'].map(lambda a: cleanString(a))
+    data['PE (unrounded 2020)']= data['PE (unrounded 2020)'].map(lambda a: cleanString(a))
 
-    NOTE: this works on whole data, series, and dataFrame
+    ## plot onto one graph
+    data.plot(x = 'DATE', y = ['PE (forecasted 2021)', 'PE (unrounded 2020)'], kind = "line", color = ['black', 'red'])
 
-    plotting all data:
-        >data.plot()
-        >plt.show()
+    ##graph aesthetics
+    plt.title("Recorded Population Equivalence versus Predicted Over Time", loc = 'left')
+    plt.xlabel("Date Recorded")
+    plt.ylabel("Population Equivalent (PE)")
+    plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
 
-    plotting only one column:
-        >data["<VARIABLE NAME>"].plot()
-        >plt.show()
+    ##save as an image in the working directory
+    plt.savefig('PE_plot.png')
 
-    plotting different graphs:
-        >data.plot.<GRAPH/PLOT TYPE>(parameters)
-        >plt.shot()
+    ##close
+    plt.show()
 
-        example:
-        >data.plot.scatter(x = <VARIABLE 1>, y = <VARIABLE 2>, ...)
-        >plt.show()
+def genFigDWF(DWFCalc):
+    ## read in data
+    data = pd.read_csv("dummyData.csv")
 
+    ## convert date to correct format
+    data['DATE'] = data['DATE'].apply(pd.to_datetime)
 
-    """
-
-    def genFigPE(pe_data):
-        ## read in data
-        data = pd.read_csv("dummyData.csv")
-
-        ## convert date to correct format
-        data['DATE'] = data['DATE'].apply(pd.to_datetime)
-
-        ##call the cleanString() function on the values
-        data['PE (forecasted 2021)']= data['PE (forecasted 2021)'].map(lambda a: cleanString(a))
-        data['PE (unrounded 2020)']= data['PE (unrounded 2020)'].map(lambda a: cleanString(a))
-
-        ## plot onto one graph
-        data.plot(x = 'DATE', y = ['PE (forecasted 2021)', 'PE (unrounded 2020)'], kind = "line", color = ['black', 'red'])
-
-        ##graph aesthetics
-        plt.title("Recorded Population Equivalence versus Predicted Over Time", loc = 'left')
-        plt.xlabel("Date Recorded")
-        plt.ylabel("Population Equivalent (PE)")
-        plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
-
-        ##save as an image in the working directory
-        plt.savefig('PE_plot.png')
-
-        ##close
-        plt.show()
-
-    def genFigDWF(dwf_data):
-        ## read in data
-        data = pd.read_csv("dummyData.csv")
-
-        ## convert date to correct format
-        data['DATE'] = data['DATE'].apply(pd.to_datetime)
-
-        ##call the cleanString() function on the values
-        data['I_DWF (l/s)']= data['I_DWF (l/s)'].map(lambda a: cleanString(a))
-        
-
-        ## plot onto one graph
-        data.plot(x = 'DATE', y = [DWFCalc,'I_DWF (l/s)'], kind = "line", color = ["black", "red"])
-
-        ##graph aesthetics
-        plt.title("Recorded Dry Weather Flow versus Predicted Over Time", loc = 'left')
-        plt.xlabel("Date Recorded")
-        plt.ylabel("Dry Weather Flow (DWF)")
-        plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
-
-        ##save as an image in the working directory
-        plt.savefig('DWF_plot.png')
-
-        ##close
-        plt.close()
+    ##call the cleanString() function on the values
+    data['I_DWF (l/s)']= data['I_DWF (l/s)'].map(lambda a: cleanString(a))
 
 
-    def genFigSummary(summary_data):
-        pass
+    ## plot onto one graph
+    data.plot(x = 'DATE', y = [DWFCalc,'I_DWF (l/s)'], kind = "line", color = ["black", "red"])
+
+    ##graph aesthetics
+    plt.title("Recorded Dry Weather Flow versus Predicted Over Time", loc = 'left')
+    plt.xlabel("Date Recorded")
+    plt.ylabel("Dry Weather Flow (DWF)")
+    plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
+
+    ##save as an image in the working directory
+    plt.savefig('DWF_plot.png')
+
+    ##close
+    plt.close()
+
     
-generateFigures()
+genFigPE()
