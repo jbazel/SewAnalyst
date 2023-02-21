@@ -78,7 +78,7 @@ def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGrap
             self.set_font('Arial', 'B', 15)
             w = self.get_string_width(title) + 6
             self.set_x((210 - w) / 2)
-            self.cell(w, 9, title, 0, 1, 'C', 1)
+            self.cell(w, 9, title, 0, 1, 'C', 0)
             self.ln(10)
             
         def footer(self):
@@ -93,7 +93,7 @@ def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGrap
             #Text Format
             self.set_font('Arial', '', 12)
             self.set_fill_color(200, 220, 255)
-            self.cell(0, 6, 'Chapter %d : %s' %(num, title), 0, 1, 'L', 1)
+            self.cell(0, 6, 'Section %d : %s' %(num, title), 0, 1, 'L', 1)
             self.ln(4)
 
             #Body Format
