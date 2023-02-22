@@ -38,9 +38,11 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-table, th, td {
+/*put it in here*/
+table {
     border: 1px solid;
+    background-color: white;
+    width:auto;
   }
   table {
     width: 100%;
