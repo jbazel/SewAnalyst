@@ -19,7 +19,7 @@ app.get('/reportDownload', (req,res) => {
         const reportFolderPath = `files/reports/report${reportNum}.pdf`;
         console.log(reportFolderPath)
         res.setHeader('Last-Modified', (new Date()).toUTCString());
-        res.download(reportFolderPath, `report${reportNum}`, (err) =>{
+        res.download(reportFolderPath, `report${reportNum}.pdf`, (err) =>{
             if(err) {
                 console.log(err);
                 console.log('Error downloading file');
