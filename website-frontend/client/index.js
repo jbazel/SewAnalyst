@@ -1,11 +1,11 @@
-const downloadReport = document.getElementById('getReport');
+/*const downloadReport = document.getElementById('getReport');
 downloadReport.addEventListener("submit", async(event)=>{
     try{
         event.preventDefault()
         const reportNumber = downloadReport.elements.namedItem('InputReportNumber').value;
         console.log("Download button clicked")
         console.log({reportNum: reportNumber})
-        const response = await fetch('http://127.0.0.1:8090/reportDownload?' + new URLSearchParams({reportNum: reportNumber}))
+        const response = await fetch('/reportDownload?' + new URLSearchParams({reportNum: reportNumber}))
         
         console.log(response)
         if (response.status === 204){
@@ -19,7 +19,7 @@ downloadReport.addEventListener("submit", async(event)=>{
     catch(err){
         alert(err)
     }
-});
+});*/
 
 const downloadSoftware = document.getElementById("downloadSoftware")
 downloadSoftware.addEventListener("click", async function(event){
