@@ -39,6 +39,18 @@ body {
     justify-content: center;
 }
 
+table, th, td {
+    border: 1px solid;
+  }
+  table {
+    width: 100%;
+  }
+  tr:nth-child(even){background-color: rgb(236, 199, 245)}
+  
+  th {
+    background-color: rgb(153, 59, 174);
+    color: white;
+  }
 
 #reportsPage {
   background: url(Green\ grass\ near\ body\ of\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
