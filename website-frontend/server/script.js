@@ -9,19 +9,28 @@ app.unsubscribe(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.disable('etag');
 
-const reportFolderPath = 'files/reports/report1.pdf'
 const programFolderPath = 'files/program/program1.json'
 const flagReportFolderPath = 'data/flaggedReports.json'
 
-app.get('/report/report1.pdf',function(req,res) {
-    console.log('single file');
-    res.setHeader('Last-Modified', (new Date()).toUTCString());
-    res.download(reportFolderPath,function(err) {
-        if(err) {
-            console.log(err);
-            console.log('Error downloading file');
-        }
-    })
+app.get('/reportDownload', (req,res) => {
+    try{
+        const reportNum = req.query.reportNum;
+        console.log(reportNum)
+        const reportFolderPath = `files/reports/report${reportNum}.pdf`;
+        console.log(reportFolderPath)
+        res.setHeader('Last-Modified', (new Date()).toUTCString());
+        res.download(reportFolderPath, `report${reportNum}`, (err) =>{
+            if(err) {
+                console.log(err);
+                console.log('Error downloading file');
+                res.status(500).send('Error downloading file');
+            }
+        });
+    }
+    catch(e){
+        console.log(e)
+        res.status(500).send("error")
+    }
 })
 
 app.get('/program_download', function(req, res){

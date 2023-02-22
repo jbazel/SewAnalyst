@@ -1,17 +1,23 @@
-
-
-// function downloadFunction(){
-//     alert("Are you really sure?");
-// }
-
-const downloadReport = document.getElementById("getReport")
-downloadReport.addEventListener("click",async(event) => {
+const downloadReport = document.getElementById('getReport');
+downloadReport.addEventListener("submit", async(event)=>{
     try{
+        event.preventDefault()
+        reportNumber = downloadReport.elements.namedItem('InputReportNumber').value;
         console.log("Download button clicked")
-        const response = await fetch('/report/report1.pdf')
+        console.log({reportNum: reportNumber})
+        const response = await fetch('/reportDownload?' + new URLSearchParams({reportNum: reportNumber}))
+        
+        console.log(response)
+        if (response.status === 204){
+            alert('No report with that number')
+        }
+        else{
+            //const data = await response.headers();
+            //alert(data)
+        }
     }
     catch(err){
-        console.log(err)
+        alert(err)
     }
 });
 
@@ -25,7 +31,7 @@ downloadSoftware.addEventListener("click", async function(event){
   });
 
 const flagReport = document.getElementById('flagReportForm')
-flagReport.addEventListener('submit', async(event)=>{
+flagReport.addEventListener('submit', async function(event){
     try{
         event.preventDefault()
         let reportNum = flagReport.elements.namedItem('InputReportNumber').value
