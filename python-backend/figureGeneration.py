@@ -65,9 +65,8 @@ def genFigDWF(dates, DWFActual, DWFForecast):
     print(dates)
 
     ## plot onto one graph
-    plt.plot(dates, DWFForecast, color='red', label='Predicted')
-    plt.plot(dates, DWFActual, color='black', label='Recorded')
-
+    plt.plot(DWFForecast, color='red', label='Predicted')
+    plt.plot(DWFActual, color='black', label='Recorded')
     ##graph aesthetics
     plt.title("Recorded Dry Weather Flow versus Predicted Over Time", loc = 'left')
     plt.xlabel("Date Recorded")
