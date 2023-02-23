@@ -34,8 +34,8 @@ const flagReport = document.getElementById('flagReportForm')
 flagReport.addEventListener('submit', async function(event){
     try{
         event.preventDefault()
-        let reportNum = flagReport.elements.namedItem('InputReportNumber').value
-        let reportDate = flagReport.elements.namedItem('InputDateOfSubmission').value
+        /*let reportNum = flagReport.elements.namedItem('InputReportNumber').value
+        let reportDate = flagReport.elements.namedItem('InputDateOfSubmission').value*/
         let reportReason = flagReport.elements.namedItem('InputReason').value
         const reportData = {reportNum: reportNum, reportDate: reportDate, reportReason: reportReason}
         console.log(reportData)
