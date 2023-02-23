@@ -1,4 +1,4 @@
-/*const downloadReport = document.getElementById('getReport');
+const downloadReport = document.getElementById('getReport');
 downloadReport.addEventListener("submit", async(event)=>{
     try{
         event.preventDefault()
@@ -19,7 +19,7 @@ downloadReport.addEventListener("submit", async(event)=>{
     catch(err){
         alert(err)
     }
-});*/
+});
 
 const downloadSoftware = document.getElementById("downloadSoftware")
 downloadSoftware.addEventListener("click", async function(event){
