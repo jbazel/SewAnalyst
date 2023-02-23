@@ -38,20 +38,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 /*put it in here*/
 table {
     border: 1px solid;
-    background-color: white;
+    background-color:white;
     width:auto;
-  }
-  table {
-    width: 100%;
-  }
-  tr:nth-child(even){background-color: rgb(236, 199, 245)}
-  
-  th {
-    background-color: rgb(153, 59, 174);
-    color: white;
+    color: rgb(15,28,37)
   }
 
 #reportsPage {
@@ -111,6 +104,24 @@ table {
     box-shadow: 2px 2px 5px #333;
 
 }
+
+#reportbutton {
+  padding: 2.5px 30px;
+    background: rgb(30,55,73);
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #333;
+}
+
+
+
+
+/*this is all for the download's button I think - won't touch this when fixing the CSS*/
 .btn-cool
 {
     position: relative;

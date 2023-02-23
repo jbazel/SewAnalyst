@@ -104,18 +104,40 @@
     </div>
 
     <div class="container" id="reportsPage" style="display:none">
+        <!-- Something is going wrong here with the centering-->
         <div class="row align-items-start central">
             <!--<form id = "getReport" action="http://127.0.0.1:8090/reportDownload">
                 <input type="text" id='InputReportNumber' name='InputReportNumber' required>
                 <input type = "submit" class = "btn" id = "onlythesebuttons" style="margin-top:10%; background-color: rgb(53,93,123); color: white;">
             </form>-->
-            <table id="table";>
-                <tr>
-                    <td>Report Name</td>
-                    <td>Times Flagged</td>
-                    <td>Flag Report</td>
-                </tr>
-            </table>
+            
+            <table class="table" id="tab">
+                <thead>
+                  <tr>
+                    <th scope="col">Report Name</th>
+                    <th scope="col">Times Flagged</th>
+                    <th scope="col">Flag Report</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Report 1</th>
+                    <td>Mark</td>
+                    <!-- Each REPORT button will need to be attached to that specific report and not just the general "report" form below, but it -->
+                    <td><button type="button" class="btn" id="reportbutton" onclick= "">  REPORT</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Report 2</th>
+                    <td>Jacob</td>
+                    <td><button type="button" class="btn" id="reportbutton" onclick= "">  REPORT</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Report 3</th>
+                    <td>Larry the Bird</td>
+                    <td><button type="button" class="btn" id="reportbutton" onclick= "">  REPORT</button></td>
+                  </tr>
+                </tbody>
+              </table>
             <form id="flagReportForm" method="POST" action="/flagReport" style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px; box-shadow: 2px 2px 5px #333;">
                 <!-- Need Report Number, Date of Submission, Reason for form submission, button to confirm that you're being truthful -->
                 <div class="mb-3">
