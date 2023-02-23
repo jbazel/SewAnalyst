@@ -1,12 +1,12 @@
 [
   {
-    "reportNum": "1",
-    "reportDate": "01-02-2023",
-    "reportReason": "Not good"
-  },
-  {
-    "reportNum": "20",
-    "reportDate": "2002-02-02",
-    "reportReason": "Suspicious data"
+    "reportName": "STW 1",
+    "dateOfReport": "2018-01-01",
+    "reviews": [
+        {
+            "reviewDate": "2018-02-02",
+            "reviewText": "badddd"
+        }
+    ]
   }
 ]
