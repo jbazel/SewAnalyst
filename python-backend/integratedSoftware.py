@@ -1,24 +1,27 @@
 from processData import *
 from dataAnalysis import *
 from reportGeneration import *
-
+from figureGeneration import *
 
 
 def main(file_name):
-    try:
-        data = processData(file_name)
+    data = processData(file_name)
+    dates = data['DATE']
+    PEActual = data["PE (unrounded 2020)"]
+    PEForecast = data["PE (forecasted 2021)"]
+    DWFActual = data["I_DWF (l/s)"]
+    data['DWF_RECALCULATED'] = calculateDWF(data)
+    DWFForecast = data['DWF_RECALCULATED']
+    
+    sigDifPE, difSevPE = calculateDifference(PEForecast, PEActual)
+    sigDifDWF, difSevDWF = calculateDifference(DWFForecast, DWFActual)
+    q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
 
-        sigDifPE, difSevPE = calculateDifference(data["PE (forecasted 2021)"], data["PE (unrounded 2020)"])
+    print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
 
-        DWFCalc = calculateDWF(data)
-        sigDifDWF, difSevDWF = calculateDifference(DWFCalc, data["I_DWF (l/s)"])
+    generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
 
-        q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
-
-        print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
-
-        generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity)
-    except Exception as e:
-        print(e)
+    generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity)
 
 
+main("python-backend/dummydata.csv")

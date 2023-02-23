@@ -55,7 +55,7 @@ def calculateDWF(data):
         #DWF += (data['I_DWF (l/s)'][idx])
         #DWF += (data['E'][idx])
         DWFRecalc.append(DWF)
-    return DWFRecalc
+    return pd.Series(DWFRecalc)
 
 '''
 QUESTION 3 - Summary

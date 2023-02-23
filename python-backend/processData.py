@@ -2,15 +2,16 @@ import pandas as pd
 import numpy as np
 
 def processData(pathToData):
-    headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "E", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)"]
+    headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "E", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)", "PE (forecasted 2020)"]
     data = pd.DataFrame = pd.read_csv(pathToData, names=headers)
     data = data.drop(data.index[0])
     data = data.reset_index()
+    ## convert date to correct format
+    data['DATE'] = data['DATE'].apply(pd.to_datetime)
     data["I_DWF (l/s)"] = data["I_DWF (l/s)"].str.replace(",", "").str.strip().astype(float)
     data["G (2020)"] = data["G (2020)"].str.replace(",", "").str.strip().astype(float)
     data["PE (forecasted 2021)"] = data["PE (forecasted 2021)"].str.replace(",", "").str.strip().astype(float)
     data["PE (unrounded 2020)"] = data["PE (unrounded 2020)"].str.replace(",", "").str.strip().astype(float)
-    print(data)
     for i in headers:
         if i not in data.columns:
             print("ERROR missing column: " + i)
