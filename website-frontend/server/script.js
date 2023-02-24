@@ -5,12 +5,25 @@ const fs = require('fs');
 const { response } = require('express');
 
 app.use(express.static('client'));
-app.unsubscribe(bodyParser.urlencoded({ extended: false }));
+//app.unsubscribe(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.disable('etag');
+//app.disable('etag');
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const programFolderPath = 'files/program/program1.json'
-const flagReportFolderPath = 'data/flaggedReports.json'
+const reportFolderPath = "data/flaggedReports.json"
+const loadReports = JSON.parse(fs.readFileSync(reportFolderPath));
+
+const saveData = (file) => {
+    const finished = (error) => {
+        if (error) {
+            console.log(error);
+        }
+    };
+    const jsonData = JSON.stringify(loadReports, null, 2);
+    fs.writeFile(file, jsonData, finished);
+}
 
 app.get('/reportDownload', (req,res) => {
     try{
@@ -64,20 +77,26 @@ app.post('/flagReport', (req, res) => {
         let reportNum = info.reportNum
         let reportDate = info.reportDate
         let reportReason = info.reportReason
-
-        
-        if (!fs.existsSync(flagReportFolderPath)){
-            fs.closeSync(fs.openSync(flagReportFolderPath, 'w'));
-        }
-
-        const file = fs.readFileSync(flagReportFolderPath)
+    
         const data = {
-            "reportNum": reportNum,
-            "reportDate": reportDate,
-            "reportReason": reportReason
+            reportDate: reportDate,
+            reportReason: reportReason
+        };
+        console.log("here")
+
+        console.log(data)
+
+        for (let i=0; i<loadReports.length; i++){
+            const obj = loadReports[i];
+            if (obj.reportNum == reportNum){
+                obj.reviews.push(data)
+                saveData(reportFolderPath)
+                res.send("success")
+                return;
+            }
         }
 
-        if (file.length == 0){
+        /*if (file.length == 0){
             fs.writeFileSync(flagReportFolderPath, JSON.stringify([data]))
         }
         else{
@@ -85,7 +104,7 @@ app.post('/flagReport', (req, res) => {
             json.push(data)
             fs.writeFileSync(flagReportFolderPath, JSON.stringify(json, null, 2))
             res.send("success")
-        }
+        }*/
 
     }
     catch(e){

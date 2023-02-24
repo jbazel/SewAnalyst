@@ -1,12 +1,17 @@
 [
   {
-    "reportName": "STW 1",
+    "reportNum": "1",
     "dateOfReport": "2018-01-01",
     "reviews": [
-        {
-            "reviewDate": "2018-02-02",
-            "reviewText": "badddd"
-        }
-    ]
+      {
+        "reportDate": "2018-02-02",
+        "reportText": "badddd"
+      },
+      {
+        "reportDate": "2002-09-09",
+        "reportReason": "Suspicious data"
+      }
+    ],
+    "reportCounter": 1
   }
 ]
