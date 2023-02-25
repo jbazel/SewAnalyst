@@ -116,48 +116,74 @@
                   <tr>
                     <th scope="col">Report Name</th>
                     <th scope="col">Times Flagged</th>
+                    <th scope="col"> Flagging log (??)</th>
                     <th scope="col">Flag Report</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">Report 1</th>
-                    <td>Mark</td>
+                    <td><img id="alerts" src="Green alert.jpg" ></td>
                     <!-- Each REPORT button will need to be attached to that specific report and not just the general "report" form below, but it -->
-                    <td><button type="button" class="btn" id="reportbutton" onclick= "">  REPORT</button></td>
-                  </tr>
+                    <td><button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button> </td>
+                    <td><button type="button" class="btn" id="reportbutton" onclick="openForm()">  REPORT</button></td>
+                </tr>
                   <tr>
                     <th scope="row">Report 2</th>
-                    <td>Jacob</td>
-                    <td><button type="button" class="btn" id="reportbutton" onclick= "">  REPORT</button></td>
+                    <td><img id="alerts" src="Yellow alert.jpg"></td>
+                    <td><button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button> </td>
+                    <td><button type="button" class="btn" id="reportbutton" onclick= "openForm()">  REPORT</button></td>
                   </tr>
                   <tr>
                     <th scope="row">Report 3</th>
-                    <td>Larry the Bird</td>
-                    <td><button type="button" class="btn" id="reportbutton" onclick= "">  REPORT</button></td>
+                    <td><img id="alerts" src="Red alert.jpg"></td>
+                    <td><button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button> </td>
+                    <td><button type="button" class="btn" id="reportbutton" onclick= "openForm()">  REPORT</button></td>
                   </tr>
                 </tbody>
-              </table>
-            <form id="flagReportForm" method="POST" action="/flagReport" style="background-color: rgb(15,28,37); color: white; padding-bottom: 10px; box-shadow: 2px 2px 5px #333;">
-                <!-- Need Report Number, Date of Submission, Reason for form submission, button to confirm that you're being truthful -->
+            </table>
+
+
+            <!-- Form for flagging reports!-->
+            <div class="flagReportFormBox" id="flagReportFormBox">
+            <form class="formContainer" method="POST" action="/flagReport">
                 <div class="mb-3">
-                    <label for="InputReportNumber" class="form-label"> Report Number </label>
-                    <input type="number" class="form-control" id="InputReportNumber" required>
-                </div>
-                <div class="mb-3">
-                    <label for="InputDateOfSubmission" class="form-label"> Date of Form Submission </label>
-                    <input type="date" class="form-control" id="InputDateOfSubmission" required>
-                </div>
-                <div class="mb-3">
-                    <label for="InputReason" class="form-label"> Reason for Form Submission </label>
-                    <input type="text" class="form-control" id="InputReason">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="Checkbox">
-                    <label class="form-check-label" for="Checkbox"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label>
-                </div>
-                <input id="flagReportBtn" type="submit" style = "margin-bottom:10px; padding: 10px 60px; background:white ; color:rgb(30,55,73); border: 0; outline: none; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 12px;">
+                    <label for="InputReason" class="form-label" style="color: white; font-weight:500;"><b>Reason for Reporting</b> </label>
+                    <!-- Have something here confirming that you are being truthful in your submission - maybe a popup when you click submit??-->
+                    <texarea name="Text1" rows="5"><input type="text" placeholder="Enter Reason" class="form-control" id="InputReason"></texarea>
+                </div> 
+                <input type="checkbox" class="form-check-input" id="Checkbox">
+                <label class="form-check-label" for="Checkbox" style="color:white; padding-bottom:2%;"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label> <br>
+                <button type="submit" class="btn" id="flagReportBtn"> SUBMIT</button>
+                <!-- Idk if changing this button is going to cause issues so I've just left the old button here just in case-->
+                <!--<input id="flagReportBtn" type="submit" style = "margin-bottom:10px; padding: 10px 60px; background:white ; color:rgb(30,55,73); border: 0; outline: none; cursor: pointer; font-size: 14px; font-weight: 500; border-radius: 12px;">-->
+                <button type="button" class="btn cancel" onclick="closeForm()"> CLOSE</button>
             </form>
+            </div>
+
+            <!-- Table of reasons-->
+            <div class="reportsGrouping" id="listOfForms">
+                <button type="button" class="btn cancel2" onclick="closeList()"> CLOSE</button>
+            <table class="table table2">
+                <thead>
+                  <tr>
+                    <th scope="col">Flagging date</th>
+                    <th scope="col">Reason for Flagging</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Date time idk</th>
+                    <td> I hate this river  </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Date time idk</th>
+                        <td> This river SUCKS </td>
+                        </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
 
     </div>

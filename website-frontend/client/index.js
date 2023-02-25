@@ -63,3 +63,17 @@ flagReport.addEventListener('submit', async function(event){
 });
 
 
+function openForm() {
+    document.getElementById("flagReportFormBox").style.display="block";
+}
+
+function closeForm() {
+    document.getElementById("flagReportFormBox").style.display="none";
+}
+
+function openList() {
+    document.getElementById("listOfForms").style.display="block";
+}
+function closeList() {
+    document.getElementById("listOfForms").style.display="none";
+}
