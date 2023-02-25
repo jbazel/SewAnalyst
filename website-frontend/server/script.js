@@ -5,9 +5,9 @@ const fs = require('fs');
 const { response } = require('express');
 
 app.use(express.static('client'));
-//app.unsubscribe(bodyParser.urlencoded({ extended: false }));
+app.unsubscribe(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-//app.disable('etag');
+app.disable('etag');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -90,27 +90,21 @@ app.post('/flagReport', (req, res) => {
             const obj = loadReports[i];
             if (obj.reportNum == reportNum){
                 obj.reviews.push(data)
+                x = parseInt(obj.reportCounter )
+                x += 1
+                obj.reportCounter = x.toString()
                 saveData(reportFolderPath)
                 res.send("success")
                 return;
             }
         }
-
-        /*if (file.length == 0){
-            fs.writeFileSync(flagReportFolderPath, JSON.stringify([data]))
-        }
-        else{
-            const json = JSON.parse(file.toString())
-            json.push(data)
-            fs.writeFileSync(flagReportFolderPath, JSON.stringify(json, null, 2))
-            res.send("success")
-        }*/
-
     }
     catch(e){
         res.send(e)
     }
 });
+
+
 
 app.listen(8090)
 console.log('Server started at http://127.0.0.1:8090');
