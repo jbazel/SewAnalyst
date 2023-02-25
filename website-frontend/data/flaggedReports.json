@@ -1,7 +1,6 @@
 [
   {
     "reportNum": "1",
-<<<<<<< HEAD
     "dateOfReport": "2018-01-01",
     "reviews": [
       {
@@ -15,19 +14,4 @@
     ],
     "reportCounter": "2"
   }
-=======
-    "reportDate": "01-02-2023",
-    "reportReason": "Not good"
-  },
-  {
-    "reportNum": "20",
-    "reportDate": "2002-02-02",
-    "reportReason": "Suspicious data"
-  },
-  {},
-  {},
-  {},
-  {},
-  {}
->>>>>>> louisa-dev
 ]
