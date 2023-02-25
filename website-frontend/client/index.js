@@ -45,7 +45,6 @@ flagReport.addEventListener('submit', async function(event){
             body: JSON.stringify(reportData),
         })
         if (response.status === 204){
-            console.log(response)
             window.alert("Error, could not flag report")
         }
         else{
