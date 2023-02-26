@@ -80,8 +80,8 @@ function closeList() {
     document.getElementById("listOfForms").style.display="none";
 }
 
-const loadReports = document.getElementById("loadTable")
-loadReports.addEventListener("click", async function(event){
+
+document.addEventListener('DOMContentLoaded', async function(event){
     try{
         console.log("clicked")
         //event.preventDefault();
@@ -106,9 +106,21 @@ function buildTable (data){
     data.forEach(function(object) {
         const tr = document.createElement('tr');
         tr.innerHTML = '<td>' + 'Report ' + object.Name + '</td>' +
-          '<td>' + object.TimesReported + '</td>' +
+          '<td>' + colourTriangle(object.TimesReported) + object.TimesReported + '</td>' +
           '<td>' + '<button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button>' + '</td>' +
           '<td>' + '<button type="button" class="btn" id="reportbutton" onclick="openForm()">  REPORT</button>' + '</td>';
         table.appendChild(tr);
     });
+}
+
+function colourTriangle(TimesReported){
+    if (+TimesReported == 0){
+        return '<img id="alerts" src="Green alert.jpg">';
+    }
+    else if (+TimesReported <= 5){
+        return '<img id="alerts" src="Yellow alert.jpg" >';
+    }
+    else{
+        return '<img id="alerts" src="Red alert.jpg" >';
+    }
 }
