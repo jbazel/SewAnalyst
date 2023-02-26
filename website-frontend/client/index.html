@@ -110,6 +110,8 @@
                 <input type="text" id='InputReportNumber' name='InputReportNumber' required>
                 <input type = "submit" class = "btn" id = "onlythesebuttons" style="margin-top:10%; background-color: rgb(53,93,123); color: white;">
             </form>-->
+
+            <button type = "button" class = "btn" id = "loadTable" style="margin-top:10%; background-color: rgb(53,93,123); color: white;"> View Reports</button>
             
             <table class="table" id="tab">
                 <thead>
@@ -120,11 +122,13 @@
                     <th scope="col">Flag Report</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"><button id = "getReport" class="link">Report 1</button></th>
+                <tbody id="reportTable">
+                  <!--<tr>
+                    <th scope="row"><form id = "getReport" action="/reportDownload" method = "GET">
+                        <button type="submit">Report 1</button>
+                    </form></th>
                     <td><img id="alerts" src="Green alert.jpg" ></td>
-                    <!-- Each REPORT button will need to be attached to that specific report and not just the general "report" form below, but it -->
+                    Each REPORT button will need to be attached to that specific report and not just the general "report" form below, but it
                     <td><button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button> </td>
                     <td><button type="button" class="btn" id="reportbutton" onclick="openForm()">  REPORT</button></td>
                 </tr>
@@ -139,7 +143,7 @@
                     <td><img id="alerts" src="Red alert.jpg"></td>
                     <td><button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button> </td>
                     <td><button type="button" class="btn" id="reportbutton" onclick= "openForm()">  REPORT</button></td>
-                  </tr>
+                  </tr>-->
                 </tbody>
             </table>
 

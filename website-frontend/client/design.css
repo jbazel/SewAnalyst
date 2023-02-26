@@ -39,7 +39,7 @@ body {
     justify-content: center;
 }
 
-button.link { background:none; border:none; }
+input.link { background:none; border:none; }
 
 /*put it in here - if i add a dot it changes things? wtf?*/
 table {

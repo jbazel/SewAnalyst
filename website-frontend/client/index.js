@@ -1,13 +1,14 @@
-const downloadReport = document.getElementById('getReport');
-downloadReport.addEventListener("click", async(event)=>{
+/*const downloadReport = document.getElementById('getReport');
+downloadReport.addEventListener("submit", async(event)=>{
     try{
-        event.preventDefault()
+        //event.preventDefault()
         console.log("working")
-        const reportNumber = downloadReport.elements.namedItem('InputReportNumber').value;
+        /*const reportNumber = downloadReport.elements.namedItem('InputReportNumber').value;
         console.log("Download button clicked")
         console.log({reportNum: reportNumber})
-        const response = await fetch('/reportDownload?' + new URLSearchParams({reportNum: reportNumber}))
+        const response = await fetch('/reportDownload?' + new URLSearchParams({reportNum: reportNumber}))*/
         
+        /*const response = await fetch('/reportDownload')
         console.log(response)
         if (response.status === 204){
             alert('No report with that number')
@@ -20,7 +21,7 @@ downloadReport.addEventListener("click", async(event)=>{
     catch(err){
         alert(err)
     }
-});
+});*/
 
 const downloadSoftware = document.getElementById("downloadSoftware")
 downloadSoftware.addEventListener("click", async function(event){
@@ -31,7 +32,7 @@ downloadSoftware.addEventListener("click", async function(event){
     }
   });
 
-const flagReport = document.getElementById('flagReportForm')
+/*const flagReport = document.getElementById('flagReportForm')
 flagReport.addEventListener('submit', async function(event){
     try{
         event.preventDefault()
@@ -61,7 +62,7 @@ flagReport.addEventListener('submit', async function(event){
     catch(e){
         alert(e)
     }
-});
+});*/
 
 
 function openForm() {
@@ -77,4 +78,37 @@ function openList() {
 }
 function closeList() {
     document.getElementById("listOfForms").style.display="none";
+}
+
+const loadReports = document.getElementById("loadTable")
+loadReports.addEventListener("click", async function(event){
+    try{
+        console.log("clicked")
+        //event.preventDefault();
+        const response = await fetch('/reportList')
+        if (response.status === 204){
+            alert('No reports to display')
+        }
+        else{
+            const data = await response.json()
+            buildTable(data);
+        }
+    }
+    catch(err){
+        alert(err)
+    }
+});
+
+function buildTable (data){
+    const table = document.getElementById('reportTable');
+    table.innerHTML = '';
+
+    data.forEach(function(object) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>' + 'Report ' + object.Name + '</td>' +
+          '<td>' + object.TimesReported + '</td>' +
+          '<td>' + '<button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button>' + '</td>' +
+          '<td>' + '<button type="button" class="btn" id="reportbutton" onclick="openForm()">  REPORT</button>' + '</td>';
+        table.appendChild(tr);
+    });
 }

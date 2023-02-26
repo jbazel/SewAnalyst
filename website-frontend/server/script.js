@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const programFolderPath = 'files/program/program1.json'
 const reportFolderPath = "data/flaggedReports.json"
 const loadReports = JSON.parse(fs.readFileSync(reportFolderPath));
+const FolderPath = 'files/reports/report1.pdf'
 
 const saveData = (file) => {
     const finished = (error) => {
@@ -27,12 +28,12 @@ const saveData = (file) => {
 
 app.get('/reportDownload', (req,res) => {
     try{
-        const reportNum = req.query.reportNum;
+        /*const reportNum = req.query.reportNum;
         console.log(reportNum)
         const reportFolderPath = `files/reports/report${reportNum}.pdf`;
-        console.log(reportFolderPath)
+        console.log(reportFolderPath)*/
         res.setHeader('Last-Modified', (new Date()).toUTCString());
-        res.download(reportFolderPath, `report${reportNum}.pdf`, (err) =>{
+        res.download(FolderPath, (err) =>{
             if(err) {
                 console.log(err);
                 console.log('Error downloading file');
@@ -102,6 +103,26 @@ app.post('/flagReport', (req, res) => {
     catch(e){
         res.send(e)
     }
+});
+
+app.get('/reportList', (req, res) => {
+    const reportList = [];
+    try {
+        for (const report of loadReports){
+            reportList.push({Name: report.reportNum, TimesReported: report.reportCounter})
+        }
+        console.log(reportList)
+        res.send(reportList)
+    }
+    catch(e){
+        res.send(e)
+    }
+    /*if (reportList.length != 0){
+        res.send(200).json(reportList);
+    }
+    else{
+        res.send(204).json({});
+    }*/
 });
 
 
