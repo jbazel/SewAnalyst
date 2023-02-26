@@ -1,7 +1,8 @@
 const downloadReport = document.getElementById('getReport');
-downloadReport.addEventListener("submit", async(event)=>{
+downloadReport.addEventListener("click", async(event)=>{
     try{
         event.preventDefault()
+        console.log("working")
         const reportNumber = downloadReport.elements.namedItem('InputReportNumber').value;
         console.log("Download button clicked")
         console.log({reportNum: reportNumber})

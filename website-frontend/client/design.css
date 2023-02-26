@@ -39,6 +39,8 @@ body {
     justify-content: center;
 }
 
+button.link { background:none; border:none; }
+
 /*put it in here - if i add a dot it changes things? wtf?*/
 table {
     border: 1px solid;
