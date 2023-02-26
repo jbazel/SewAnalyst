@@ -75,8 +75,6 @@ app.post('/flagReport', (req, res) => {
         info = req.body
         console.log("passed")
         console.log(info)
-        let reportNum = info.reportNum
-        let reportDate = info.reportDate
         let reportReason = info.reportReason
     
         const data = {
