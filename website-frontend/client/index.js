@@ -71,7 +71,6 @@ function colourTriangle(TimesReported){
     }
 }
 
-
 downloadReport.addEventListener("submit", async(event)=>{
     try{
         //event.preventDefault()
