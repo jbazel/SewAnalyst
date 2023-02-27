@@ -122,3 +122,24 @@ flagReport.addEventListener('submit', async function(event){
         alert(e)
     }
 });
+
+//this element doesnt actually exist rn but having the same issues as with downloading report / flagging report of it knowing which report we are relating to
+const viewReasons = document.getElementById('listOfForms')
+viewReasons.addEventListener('submit', async function(event){
+    try{
+        event.preventDefault()
+        //this won't work rn but the basis is there
+        const reportNumber = viewReasons.elements.namedItem('InputReportNumber').value
+        const response = await fetch('/viewReasons?' + new URLSearchParams({reportNum: reportNumber}))
+        if (response.status === 204){
+            window.alert("Error, could not view reasons")
+        }
+        else{
+            const data = await response.json()
+            window.alert(data);
+        }
+    }
+    catch(e){
+        alert(e)
+    }
+})
