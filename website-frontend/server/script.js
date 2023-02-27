@@ -125,7 +125,7 @@ app.get('/reportList', (req, res) => {
 
 app.get('/reportReasons', (req, res) => {
     const reportReasons = [];
-    reportNum = "1"
+    const reportNum = req.query.reportNum;
     try{
         for (const report of loadReports){
             if (report.reportNum == reportNum){
