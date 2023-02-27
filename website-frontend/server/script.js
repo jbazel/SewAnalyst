@@ -123,6 +123,23 @@ app.get('/reportList', (req, res) => {
     }*/
 });
 
+app.get('/reportReasons', (req, res) => {
+    const reportReasons = [];
+    reportNum = "1"
+    try{
+        for (const report of loadReports){
+            if (report.reportNum == reportNum){
+                reportReasons.push({Reasons: report.reviews})
+            }
+        }
+        console.log(reportReasons)
+        res.send(reportReasons)
+    }
+    catch(e){
+        res.send(e)
+    }
+});
+
 
 
 app.listen(8090)
