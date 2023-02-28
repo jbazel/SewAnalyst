@@ -36,10 +36,11 @@ function buildTable (data){
     const table = document.getElementById('reportTable');
     table.innerHTML = '';
     data.forEach(function(object) {
+        
         const tr = document.createElement('tr');
         let action = ' action = "/reportDownload"';
-        let input = '<input type = "hidden" name = "id" value = "report' + object.Name +'"'+ '></>'
-        let id = ' id = "report' + object.Name + '";'
+        let input = '<input type = "hidden" name = "id" value =' + object.Name + '></>'
+        let id = ' id =' + object.Name + ';'
         let method = 'method = "GET"'
 
         tr.innerHTML = '<td><form' + id + method + action + '>' + ' <button type="submit">' + 'Report ' + object.Name + '</button>'+input+'</form>' + '</td>' +

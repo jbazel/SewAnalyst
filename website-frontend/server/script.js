@@ -30,7 +30,7 @@ app.get('/reportDownload', (req,res) => {
     try{
         console.log(req.query.id)
         res.setHeader('Last-Modified', (new Date()).toUTCString());
-        let path = folderPath + req.query.id + '.pdf';
+        let path = folderPath + req.query.id;
         res.download(path, (err) =>{
             if(err) {
                 console.log(err);
