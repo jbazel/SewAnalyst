@@ -60,10 +60,6 @@ def genFigPE(dates, PEActual, PEForecast):
     plt.close()
 
 def genFigDWF(dates, DWFActual, DWFForecast):
-    print(DWFActual)
-    print(DWFForecast)
-    print(dates)
-
     ## plot onto one graph
     plt.plot(DWFForecast, color='red', label='Predicted')
     plt.plot(DWFActual, color='black', label='Recorded')

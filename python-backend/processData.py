@@ -10,6 +10,8 @@ def processData(pathToData):
     data['DATE'] = data['DATE'].apply(pd.to_datetime)
     data["I_DWF (l/s)"] = data["I_DWF (l/s)"].str.replace(",", "").str.strip().astype(float)
     data["G (2020)"] = data["G (2020)"].str.replace(",", "").str.strip().astype(float)
+    data["E"] = data["G (2020)"].astype(float)
+
     data["PE (forecasted 2021)"] = data["PE (forecasted 2021)"].str.replace(",", "").str.strip().astype(float)
     data["PE (unrounded 2020)"] = data["PE (unrounded 2020)"].str.replace(",", "").str.strip().astype(float)
     for i in headers:
