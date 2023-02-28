@@ -28,9 +28,9 @@ const saveData = (file) => {
 
 app.get('/reportDownload', (req,res) => {
     try{
-        /*const reportNum = req.query.reportNum;
-        console.log(reportNum)
-        const reportFolderPath = `files/reports/report${reportNum}.pdf`;
+        /*const reportName = req.query.reportName;
+        console.log(reportName)
+        const reportFolderPath = `files/reports/${reportName}`;
         console.log(reportFolderPath)*/
         res.setHeader('Last-Modified', (new Date()).toUTCString());
         res.download(FolderPath, (err) =>{
