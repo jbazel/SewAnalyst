@@ -1,6 +1,6 @@
 [
   {
-    "reportNum": "1",
+    "reportName": "report1.pdf",
     "dateOfReport": "2018-01-01",
     "reviews": [
       {
@@ -15,7 +15,7 @@
     "reportCounter": "2"
   },
   {
-    "reportNum": "2",
+    "reportName": "report2.pdf",
     "dateOfReport": "2020-02-02",
     "reviews": [],
     "reportCounter": "0"

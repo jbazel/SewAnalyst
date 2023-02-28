@@ -67,8 +67,8 @@ downloadReport.addEventListener("submit", async(event)=>{
         console.log("working")
         /*const reportNumber = downloadReport.elements.namedItem('InputReportNumber').value;
         console.log("Download button clicked")
-        console.log({reportNum: reportNumber})
-        const response = await fetch('/reportDownload?' + new URLSearchParams({reportNum: reportNumber}))*/
+        console.log({reportName: reportName})
+        const response = await fetch('/reportDownload?' + new URLSearchParams({reportName: reportName}))*/
         
         const response = await fetch('/reportDownload')
         console.log(response)
