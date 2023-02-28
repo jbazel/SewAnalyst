@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const programFolderPath = 'files/program/program1.json'
 const reportFolderPath = "data/flaggedReports.json"
 const loadReports = JSON.parse(fs.readFileSync(reportFolderPath));
-const FolderPath = 'files/reports/report1.pdf'
+const folderPath = 'files/reports/'
 
 const saveData = (file) => {
     const finished = (error) => {
@@ -28,12 +28,10 @@ const saveData = (file) => {
 
 app.get('/reportDownload', (req,res) => {
     try{
-        /*const reportNum = req.query.reportNum;
-        console.log(reportNum)
-        const reportFolderPath = `files/reports/report${reportNum}.pdf`;
-        console.log(reportFolderPath)*/
+        console.log(req.query.id)
         res.setHeader('Last-Modified', (new Date()).toUTCString());
-        res.download(FolderPath, (err) =>{
+        let path = folderPath + req.query.id + '.pdf';
+        res.download(path, (err) =>{
             if(err) {
                 console.log(err);
                 console.log('Error downloading file');
@@ -42,7 +40,7 @@ app.get('/reportDownload', (req,res) => {
         });
     }
     catch(e){
-        console.log(e)
+        // console.log(e)
         res.status(500).send("error")
     }
 })
