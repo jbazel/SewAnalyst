@@ -1,22 +1,11 @@
 # main.py
-
-import csv
-
-import pandas
-import pandas as pd
-import numpy as np
-import matplotlib as plt
 from flask import Blueprint, render_template, redirect, session, request, flash, Flask, send_from_directory, url_for
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from integratedSoftware import main
 from flaskwebgui import FlaskUI
 import os
 from os.path import join, dirname, realpath
 
-
 app = Flask(__name__)
-
-
 
 
 @app.route("/")
@@ -27,14 +16,22 @@ def home():
     except Exception:
         print("render template error")
 
-@app.route("/upload")
+
+@app.route("/upload", methods=['POST', 'GET'])
 def upload():
     try:
-        print("routing to upload, attempting to render template")
-        return render_template('upload.html')
+        if request.method == 'POST':
+            f = request.files['csv file']
+            f.save("test.csv")
 
-    except Exception:
-        print("render template error")
+            main("test.csv")
+
+
+            return render_template('index.html')
+
+    except Exception as e:
+        print(e)
+
 
 @app.route("/download")
 def download():
@@ -46,14 +43,9 @@ def download():
 
 
 if __name__ == "__main__":
-    #processData("sampleData.csv")
+    # processData("sampleData.csv")
     try:
         FlaskUI(app=app, server="flask").run()
     except Exception as e:
         print("Flask UI failed to start")
         print(e)
-
-
-
-
-   

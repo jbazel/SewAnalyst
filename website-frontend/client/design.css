@@ -1,11 +1,13 @@
 *{
-    margin:0;
-    padding:0;
+    margin:0px;
+    padding:0px;
     box-sizing: border-box;
     font-family:'Poppins', sans-serif;
 }
 
-
+body {
+  margin: 0;
+}
 .central{
     display: flex;
     width: 100%;
@@ -18,15 +20,80 @@
 #title_word {
     text-align: center;
     color: rgb(15,28,37);
+    font-weight: 700;
 }
 
 #homepage {
-    background: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none);
-    background-repeat: no-repeat;
+    background: url(green\ grass\ and\ flowers\ near\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
     background-size: cover;
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0;
+    display:block;
+    /*This deals with what's inside the image on the page*/
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
+input.link { background:none; border:none; }
 
+/*put it in here - if i add a dot it changes things? wtf?*/
+table {
+    border: 1px solid;
+    background-color:white;
+    width:auto;
+    color: rgb(15,28,37)
+  }
+
+#reportsPage {
+  background: url(Green\ grass\ near\ body\ of\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  margin: 0;
+  display:block;
+  /*This deals with what's inside the image on the page*/
+  display:flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.blocking {
+  background-color:rgb(15,28,37);
+  padding: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  margin: 50px;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blocking div:last-of-type{
+  background-color: transparent;
+}
+
+/* Maybe don't need this one?*/
+#background-downloads {
+  background: url(sewanalyst\ logo.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+}
+
+/*LOUISA LOOK AT THIS WHEN YOU'RE GOING THROUGH CSS: WANT ALL BUTTONS TO HAVE A LITTLE HOVER EFFECT!!! */
 
 #onlythesebuttons {
     padding: 10px 60px;
@@ -36,10 +103,113 @@
     outline: none;
     cursor: pointer;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 250;
     border-radius: 30px;
+    box-shadow: 2px 2px 5px #333;
 
 }
+
+#reportbutton {
+  padding: 2.5px 30px;
+    background: rgb(30,55,73);
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #333;
+}
+
+#alerts {
+  width: 7.5%;
+  position:relative;
+}
+
+.flagReportFormBox {
+  display: none;
+  position:fixed;
+  top:20%;
+  max-width: 60%;
+  /*border: 3px solid #f1f1f1;*/
+  z-index: 9;
+}
+
+.reportsGrouping {
+  display: none;
+  position:fixed;
+  top:20%;
+  max-width: 75%;
+  /*border: 3px solid #f1f1f1;*/
+  z-index: 9;
+}
+
+.table2 {
+  border: 1px solid;
+  background-color:  rgb(195,204,222);
+  /*width: 50%;*/
+  color: black;
+}
+
+
+.formContainer {
+  padding:10px;
+  background-color:rgb(15,28,37);
+}
+
+.formContainer input[type="text"], .formContainer input[type="submit"]{
+  width:100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+
+.formContainer .btn {
+  background-color: #04AA6D;
+  color: white;
+  /*padding: 16px 20px;*/
+  outline:none;
+  cursor: pointer;
+  max-width: 45%;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom:10px;
+  opacity: 0.95;
+  border-radius:30px ;
+  
+  box-shadow:2px 2px 5px #333 ;
+}
+
+.formContainer .cancel {
+  background-color: red;
+}
+
+.cancel2 {
+  background-color: rgb(15,28,37);
+  color: white;
+  /*padding: 16px 20px;*/
+  outline:none;
+  cursor: pointer;
+  max-width: 45%;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom:10px;
+  opacity: 0.95;
+  border-radius:30px ;
+  
+  box-shadow:2px 2px 5px #333 ;
+}
+
+
+.formContainer .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+/*this is all for the download's button I think - won't touch this when fixing the CSS*/
 .btn-cool
 {
     position: relative;
@@ -205,3 +375,4 @@
       transform: translate(-50%,100px) scale(1.3);
     }
   }
+

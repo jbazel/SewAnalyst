@@ -4,7 +4,27 @@
     <meta charset="UTF-8">
     <title>UPLOAD</title>
 </head>
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" src="http://localhost:8090/upload"></iframe>
 <body>
     UPLOAD PAGE
+    <form action = "http://localhost:8090/upload" method = "POST" enctype = "multipart/form-data">
+        <input type="file" name="pdf report"  placeholder="pdf report" value="{{ request.form['pdf report'] }}">
+    </form>
 </body>
+<script>
+    const { response } = require("express");
+    var bodyParser = require('body-parser');  
+    var urlencodedParser = bodyParser.urlencoded({ extended: false })  
+    const uploadReport = document.getElementById("uploadReport")
+    uploadReport.addEventListener("click", async(event) => {
+    try{
+        console.log("Upload button clicked")
+        const response = await fetch('http://127.0.0.1:8090/upload')
+        console.log(response)
+    }
+    catch(err){
+        console.log(err)
+    }
+});
+</script>
 </html>
