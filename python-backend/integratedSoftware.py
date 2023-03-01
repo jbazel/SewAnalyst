@@ -21,7 +21,8 @@ def main(file_name):
 
     generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
 
-    generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity)
+    generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity, "PE_plot.png", "DWF_plot.png")
 
 
-main("python-backend/dummydata.csv")
+if __name__ == "__main__":
+    main("python-backend/dummyData.csv")

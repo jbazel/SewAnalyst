@@ -37,15 +37,21 @@ function buildTable (data){
     table.innerHTML = '';
     data.forEach(function(object) {
         
+        //report download button
         const tr = document.createElement('tr');
         let action = ' action = "/reportDownload"';
         let input = '<input type = "hidden" name = "id" value =' + object.Name + '></>'
         let id = ' id =' + object.Name + ';'
         let method = 'method = "GET"'
 
-        tr.innerHTML = '<td><form' + id + method + action + '>' + ' <button type="submit">' + 'Report ' + object.Name + '</button>'+input+'</form>' + '</td>' +
+        //view report reasons button
+        let action2 = ' action = "/reportReasons";';
+
+        //formpopup = '<form class="formContainer" method="POST" action="/flagReport"><div class="mb-3"><label for="InputReason" class="form-label" style="color: white; font-weight:500;"><b>Reason for Reporting</b> </label><texarea name="Text1" rows="5"><input type="text" placeholder="Enter Reason" class="form-control" id="InputReason"></texarea></div> <input type="checkbox" class="form-check-input" id="Checkbox"><label class="form-check-label" for="Checkbox" style="color:white; padding-bottom:2%;"> I confirm that I am being truthful in my report <!-- Can change wording later --> </label> <br><button type="submit" class="btn" id="flagReportBtn"> SUBMIT</button><button type="button" class="btn cancel" onclick="closeForm()"> CLOSE</button></form>'
+
+        tr.innerHTML = '<td><form' + id + method + action + '>' + ' <button type="submit">' + object.Name + '</button>'+input+'</form>' + '</td>' +
           '<td>' + colourTriangle(object.TimesReported) + object.TimesReported + '</td>' +
-          '<td>' + '<button onclick="openList()"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button>' + '</td>' +
+          '<td>' + '<form' + id + method + action2 + '>' + '<button type="submit"><img src="http://clipart-library.com/data_images/81597.png" style="width:50px; height:50px"></button>' + input + '</form>'+ '</td>' +
           '<td>' + '<button type="button" class="btn" id="reportbutton" onclick="openForm()">  REPORT</button>' + '</td>';
         table.appendChild(tr);
     });

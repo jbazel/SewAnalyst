@@ -50,10 +50,7 @@ E = trade effluent flow (l/d)
 def calculateDWF(data):
     DWFRecalc = []
     for idx in data.index:
-        DWF = (data['PE (unrounded 2020)'][idx])*(data['G (2020)'][idx])
-        #doesn't work rn, will fix later lol
-        #DWF += (data['I_DWF (l/s)'][idx])
-        #DWF += (data['E'][idx])
+        DWF = (data['PE (unrounded 2020)'][idx])*(data['G (2020)'][idx]) + (data['I_DWF (l/s)'][idx]) + (data['E'][idx])
         DWFRecalc.append(DWF)
     return pd.Series(DWFRecalc)
 

@@ -105,7 +105,7 @@ app.get('/reportList', (req, res) => {
     const reportList = [];
     try {
         for (const report of loadReports){
-            reportList.push({Name: report.reportNum, TimesReported: report.reportCounter})
+            reportList.push({Name: report.reportName, TimesReported: report.reportCounter})
         }
         console.log(reportList)
         res.send(reportList)
@@ -123,10 +123,10 @@ app.get('/reportList', (req, res) => {
 
 app.get('/reportReasons', (req, res) => {
     const reportReasons = [];
-    const reportNum = req.query.reportNum;
+    const reportNum = req.query.id;
     try{
         for (const report of loadReports){
-            if (report.reportNum == reportNum){
+            if (report.reportName == reportNum){
                 reportReasons.push({Reasons: report.reviews})
             }
         }
