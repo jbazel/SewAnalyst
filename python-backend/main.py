@@ -1,5 +1,6 @@
 # main.py
 from flask import Blueprint, render_template, redirect, session, request, flash, Flask, send_from_directory, url_for
+from flask import send_file, current_app as app
 from integratedSoftware import main
 from flaskwebgui import FlaskUI
 import os
@@ -25,8 +26,8 @@ def upload():
             f.save("test.csv")
 
             main("test.csv")
-            os.open('Data_Report.pdf')
-
+            # with open('./Data_Report.pdf', 'rb') as static_file:
+            #     return send_file(static_file, attachment_filename='Data_Report.pdf')
             return render_template('index.html')
 
     except Exception as e:
