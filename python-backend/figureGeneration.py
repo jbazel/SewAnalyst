@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.matplotlib.use('Agg')
 
 def cleanString(data):
     ## replaces the commas and spaces in each item in the dataframe

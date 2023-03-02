@@ -18,11 +18,12 @@ def main(file_name):
     q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
 
     print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
+    try:
+        generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
+        print("FIGURES GENERATED")
+        generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity, "PE_plot.png", "DWF_plot.png")
+    except Exception as e:
+        print (e)
 
-    # generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
-
-    generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity, "PE_plot.png", "DWF_plot.png")
-
-
-if __name__ == "__main__":
-    main("python-backend/dummyData.csv")
+# if __name__ == "__main__":
+#     main("python-backend/dummyData.csv")

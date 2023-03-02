@@ -145,6 +145,6 @@ def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGrap
     pdf.output('./Data_Report.pdf', 'F')
 
 
-if __name__ == "__main__":
-    generateReport("mild", "none", "severe", "mild", "PE_plot.png", "DWF_plot.png")
-    #It goes to which ever directory this was executed in so in this case C:\Users\margu>
+# if __name__ == "__main__":
+#     generateReport("mild", "none", "severe", "mild", "PE_plot.png", "DWF_plot.png")
+#     #It goes to which ever directory this was executed in so in this case C:\Users\margu>
