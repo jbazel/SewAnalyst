@@ -142,7 +142,7 @@ def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGrap
     pdf.print_section(4, 'Company Analysis', CompAna, '0')
     pdf.print_section(5, 'Conclusion', conc, '0')
         
-    pdf.output('./Data Report.pdf', 'F')
+    pdf.output('./Data_Report.pdf', 'F')
 
 
 if __name__ == "__main__":

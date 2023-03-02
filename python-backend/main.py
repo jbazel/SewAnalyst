@@ -25,7 +25,7 @@ def upload():
             f.save("test.csv")
 
             main("test.csv")
-
+            os.open('Data_Report.pdf')
 
             return render_template('index.html')
 

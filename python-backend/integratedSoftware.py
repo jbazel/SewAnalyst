@@ -19,7 +19,7 @@ def main(file_name):
 
     print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
 
-    generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
+    # generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
 
     generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity, "PE_plot.png", "DWF_plot.png")
 
