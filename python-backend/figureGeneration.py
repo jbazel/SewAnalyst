@@ -1,20 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+# ensures matplotlib does not generate a GUI, necessary for integration with flask
 plt.matplotlib.use('Agg')
 
-def cleanString(data):
-    ## replaces the commas and spaces in each item in the dataframe
-    data = data.replace(',', '')
-    data = data.replace(' ', '')
-    ## converts each value into an integer
-    data = int(data)
-    return data
-
+# function called in integratedSoftware, used to generate both figures
 def generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast):
     genFigPE(dates, PEActual, PEForecast)
     genFigDWF(dates, DWFActual, DWFForecast)
 
-
+# function used to generate line graph comparing SOLAR PE forecast with reported
+# PE figures
 def genFigPE(dates, PEActual, PEForecast):
     ## plot onto one graph
     plt.plot(dates, PEForecast, color='red', label='Predicted')
@@ -32,6 +27,8 @@ def genFigPE(dates, PEActual, PEForecast):
     ##close
     plt.close()
 
+# determines the significance and severity of difference between the recalculated DWF
+# and reported DWF figures
 def genFigDWF(dates, DWFActual, DWFForecast):
     ## plot onto one graph
     plt.plot(DWFForecast, color='red', label='Predicted')
@@ -47,8 +44,3 @@ def genFigDWF(dates, DWFActual, DWFForecast):
 
     ##close
     plt.close()
-
-
-def genFigSummary(data):
-    pass
-
