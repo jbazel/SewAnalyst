@@ -1,24 +1,23 @@
 [
   {
-    "reportName": "report1.pdf",
+    "reportName": "report1",
     "dateOfReport": "2018-01-01",
     "reviews": [
       {
-        "reportDate": "2018-02-02",
-        "reportText": "badddd"
+        "reportDate": "06/03/2023",
+        "reportReason": "Just is innit"
       },
       {
-        "reportDate": "2010-10-10",
-        "reportReason": "Just is innit"
+        "reportDate": "07/03/2023",
+        "reportReason": "it doesnt look so good"
       }
     ],
     "reportCounter": "2"
   },
   {
-    "reportName": "report2.pdf",
+    "reportName": "report2",
     "dateOfReport": "2020-02-02",
     "reviews": [],
     "reportCounter": "0"
   }
-
 ]
