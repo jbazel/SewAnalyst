@@ -47,11 +47,22 @@ input.link { background:none; border:none; }
 
 /*put it in here - if i add a dot it changes things? wtf?*/
 table {
-    border: 1px solid;
+    width: auto;
+    border: 10px solid;
     background-color:white;
-    width:auto;
-    color: rgb(15,28,37)
+    color: rgb(15,28,37);
+    table-layout: fixed;
   }
+
+td{
+    text-align: center;
+    width: 25% ;
+}
+
+th{
+    text-align: center;
+    width: 25% ;
+}
 
 #reportsPage {
   background: url(Green\ grass\ near\ body\ of\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
