@@ -140,10 +140,10 @@ async function reportReasonsPopup(reportName){
 
 function allReports (data){
     let showReports = '';
-    tableHeaders = `<table class="table" id="tab">
+    tableHeaders = `<table class="table">
         <th scope="col">Report Name</th>
         <th scope="col">Times Flagged</th>
-        <th scope="col"> Flagging log (??)</th>
+        <th scope="col"> Flagging log</th>
         <th scope="col">Flag Report</th>`
     endTable = `</table>`
     
@@ -157,9 +157,9 @@ function allReports (data){
 
 function report (data){
     const report = `<tr>
-    <td><form id = "getReport" action="/reportDownload/${data.Name}" method = "GET"><button type="submit">${data.Name}</button></form></td>
+    <td><form id = "getReport" action="/reportDownload/${data.Name}" method = "GET"><button id="togetform" type="submit">${data.Name}</button></form></td>
     <td>${colourTriangle(data.TimesReported)}${data.TimesReported}</td>
-    <td><a href="/reportReasons/${data.Name}" onclick="route()">${data.Name}</a></td>
+    <td><button id="flaggedreportbutton" type="button"><a style="color: white" href="/reportReasons/${data.Name}" onclick="route()">${data.Name}</a></button></td>
     <td><button type="button" class="btn" id="reportbutton" onclick="generateForm('${data.Name}')">REPORT</button></td>`
     return report;    
 }
@@ -213,7 +213,7 @@ function closeList() {
 function generateForm(data) {
     console.log("generate form")
     let flagReporthtml=``;
-    flagReporthtml += `<form class="formContainer" method="POST" action="/flagReport/${data}">
+    flagReporthtml += `<form style="text-align: center" class="formContainer" method="POST" action="/flagReport/${data}">
                 <div class="mb-3">
                     <label for="InputReason" class="form-label" style="color: white; font-weight:500;"><b>Reason for Reporting</b> </label>
                     <texarea name="Text1" rows="5"><input type="text" placeholder="Enter Reason" class="form-control" id="InputReason" name="reason" required></texarea>

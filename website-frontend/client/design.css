@@ -22,7 +22,8 @@ a{
 }
 
 #title_word {
-    text-align: center;
+    /*text-align:justify;*/
+    max-width: 50%;
     color: rgb(15,28,37);
     font-weight: 700;
 }
@@ -47,11 +48,18 @@ input.link { background:none; border:none; }
 
 /*put it in here - if i add a dot it changes things? wtf?*/
 table {
-    width: auto;
     border: 10px solid;
     background-color:white;
     color: rgb(15,28,37);
     table-layout: fixed;
+    position:fixed;
+    top:20%;
+    left: 25%;
+    right: 25%;
+    max-width: 50%;
+    /*border: 3px solid #f1f1f1;*/
+    z-index: 9;
+    text-align: center;
   }
 
 td{
@@ -128,6 +136,33 @@ th{
   padding: 2.5px 30px;
     background: rgb(30,55,73);
     color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #333;
+}
+
+#flaggedreportbutton {
+  padding: 2.5px 30px;
+    background:rgb(15,28,37);
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #333;
+}
+
+
+#togetform {
+  padding: 2.5px 30px;
+    background:rgb(195,204,222);
+    color: rgb(15,28,37);
     border: 0;
     outline: none;
     cursor: pointer;
