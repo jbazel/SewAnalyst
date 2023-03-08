@@ -200,8 +200,9 @@ function reportReason(data){
 }
 
 function noReasons(){
-    const noReasons = `<p>No reasons to show</p>`
+    const noReasons = `<div id="noreason"><p> No reasons to show</p></div>`
     return noReasons;
+    // needs to have a close button??
 }
 
 function closeList() {
