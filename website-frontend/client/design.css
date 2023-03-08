@@ -144,6 +144,18 @@ th{
 
 }
 
+#greenWarning {
+    fill: green;
+}
+
+#yellowWarning {
+    fill: rgb(254, 157, 11);
+}
+
+#redWarning {
+    fill: red;
+}
+
 #reportbutton {
   padding: 2.5px 30px;
     background: rgb(30,55,73);
