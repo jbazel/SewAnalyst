@@ -209,12 +209,29 @@ th{
 
 #noreason {
   max-width:30%;
-  position: fixed;
+  background-color: rgb(195,204,222);
   top: 50%;
+  left: 45%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /*
+  border: 10px solid;
+  border-color:rgb(15,28,37) ;
+  position: fixed;
+  padding: 1%;
+  top: 50%;
+  left: 45%;
   text-align:center;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 1px 1px 1px #333;
   border: none;
-  background-color: white;
-  color:rgb(15,28,37);
+  background-color: rgb(195,204,222);
+  color:rgb(15,28,37);*/
 }
 .table2 {
   border: 1px solid;
@@ -227,6 +244,8 @@ th{
 .formContainer {
   padding:10px;
   background-color:rgb(15,28,37);
+
+
 }
 
 .formContainer input[type="text"], .formContainer input[type="submit"]{
