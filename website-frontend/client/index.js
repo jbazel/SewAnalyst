@@ -143,7 +143,8 @@ function allReports (data){
     tableHeaders = `<table class="table">
         <th scope="col">Report Name</th>
         <th scope="col">Times Flagged</th>
-        <th scope="col">Flag Report</th>`
+        <th scope="col">Flag</th>
+        <th scope="col">Download</th>`
     endTable = `</table>`
     
 
@@ -158,7 +159,12 @@ function report (data){
     const report = `<tr>
     <td><form id = "getReport" action="/reportDownload/${data.Name}" method = "GET"><button id="togetform" type="submit">${data.Name}</button></form></td>
     <td><a href="/reportReasons/${data.Name}" onclick="route()"> ${colourTriangle(data.TimesReported)}${data.TimesReported}</a></td>
-    <td><button type="button" class="btn" id="reportbutton" onclick="generateForm('${data.Name}')">REPORT</button></td>`
+    <td><button type="button" class="btn" id="downloadButton" onclick="generateForm('${data.Name}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
+    <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001"/>
+  </svg></button></td>
+    <td><form id = "getReport" action="/reportDownload/${data.Name}" method = "GET"><button id="downloadButton" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
+    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
+  </svg></button><form></td>`
     return report;    
 }
 

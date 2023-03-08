@@ -10,9 +10,13 @@
       {
         "reportDate": "07/03/2023",
         "reportReason": "This possibly looks like a made up water company. Not sure if I can trust this."
+      },
+      {
+        "reportDate": "08/03/2023",
+        "reportReason": "i dont like it"
       }
     ],
-    "reportCounter": "2"
+    "reportCounter": "3"
   },
   {
     "reportName": "report2",
