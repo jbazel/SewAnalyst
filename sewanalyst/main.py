@@ -3,8 +3,6 @@ from flask import render_template, request, flash, Flask
 from flask import current_app as app
 from library import main
 from flaskwebgui import FlaskUI
-import os
-from os.path import join, dirname, realpath
 
 app = Flask(__name__)
 

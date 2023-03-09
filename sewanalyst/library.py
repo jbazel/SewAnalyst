@@ -5,8 +5,6 @@
 
 
 import warnings
-import pandas as pd
-import numpy as np
 from scipy import stats
 from sklearn.metrics import mean_squared_error
 import pandas as pd
