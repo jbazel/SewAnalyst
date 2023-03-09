@@ -275,7 +275,7 @@ th{
 
 #centering {
   text-align: center;
-  display: flex;
+  display: fixed;
   left: 50%;
 }
 
