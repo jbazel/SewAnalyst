@@ -122,6 +122,7 @@ async function reportReasonsPopup(reportName){
             //window.alert(data);
             if (data.length === 0){
                 const htmlPopup = noReasons();
+                document.getElementById("listOfForms").style.display="block";
                 return htmlPopup;
             }
             else {
@@ -207,6 +208,7 @@ function reportReason(data){
 
 function noReasons(){
     // need to yassify this!
+    console.log("no reasons")
     const noReasons = `<div id="noreason"><p> No reasons to show</p> <br> <button type="button" class="btn cancel2" onclick="closenoReasons()"> CLOSE</button></div>`
     return noReasons;
 
