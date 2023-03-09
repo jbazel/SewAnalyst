@@ -24,10 +24,13 @@ def upload():
         if request.method == 'POST':
             try:
                 f = request.files['csv file']
-                f.save("test.csv")
-
+                file_name = f.filename
+                print("uploading file", file_name)
+                
+                f.save("sewanalyst/resources/"+file_name)
+                
                 try:
-                    main("test.csv")
+                    main(file_name)
                     flash("your report has been successfully created")
                     return render_template('index.html')
                 
@@ -60,7 +63,7 @@ def download():
 if __name__ == "__main__":
     # processData("sampleData.csv")
     try:
-        app.secret_key = 'super secret key'
+        app.secret_key = 'session_key'
         app.config['SESSION_TYPE'] = 'filesystem'
         app.debug = True
         FlaskUI(app=app, server="flask").run()

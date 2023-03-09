@@ -1,5 +1,184 @@
+# from processData import *
+# from dataAnalysis import *
+# from reportGeneration import *
+# from figureGeneration import *
 
-def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGraph, DwfGraph):
+
+import warnings
+import pandas as pd
+import numpy as np
+from scipy import stats
+from sklearn.metrics import mean_squared_error
+import pandas as pd
+import matplotlib.pyplot as plt
+# ensures matplotlib does not generate a GUI, necessary for integration with flask
+plt.matplotlib.use('Agg')
+warnings.filterwarnings('ignore')
+
+
+
+"""-------------------------------------------------------------------------------------------------------------------
+    data processing functions
+    -------------------------------------------------------------------------------------------------------------------"""
+
+def processData(pathToData):
+    headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "E", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)", "PE (forecasted 2020)"]
+    data = pd.DataFrame = pd.read_csv(pathToData, names=headers)
+    data = data.drop(data.index[0])
+    data = data.reset_index()
+    ## convert date to correct format
+    data['DATE'] = data['DATE'].apply(pd.to_datetime)
+    data["I_DWF (l/s)"] = data["I_DWF (l/s)"].str.replace(",", "").str.strip().astype(float)
+    data["G (2020)"] = data["G (2020)"].str.replace(",", "").str.strip().astype(float)
+    data["E"] = data["G (2020)"].astype(float)
+
+    data["PE (forecasted 2021)"] = data["PE (forecasted 2021)"].str.replace(",", "").str.strip().astype(float)
+    data["PE (unrounded 2020)"] = data["PE (unrounded 2020)"].str.replace(",", "").str.strip().astype(float)
+    for i in headers:
+        if i not in data.columns:
+            print("ERROR missing column: " + i)
+
+    dropped_indexes = []
+    for i in data.index:
+        for j in data.iloc[i]:
+            if j == "" or j == " ":
+                dropped_indexes.append(i)
+                break
+            elif j is str:
+                try:
+                    j = float(j)
+                except:
+                    print("ERROR: missing data for row: " + str(i))
+                    print("dropping..."+ str(j))
+                    dropped_indexes.append(i)
+                    break 
+                
+    for i in dropped_indexes:
+        data.drop(i, inplace=True)
+        data = data.reset_index()
+        print(data)
+
+    return data
+
+
+"""-------------------------------------------------------------------------------------------------------------------
+    data analysis functions
+    -------------------------------------------------------------------------------------------------------------------"""
+
+
+# function for determining if differences between data are significant and how severe they are
+def calculateDifference(forecastData, reportedData):
+    # if there a significant difference between datasets and how severe is that difference
+    significantDifference = False
+    differenceSeverity = "none"
+    # determine if data is normally distributed
+    forecastNormal = stats.shapiro(forecastData).pvalue
+    reportedNormal = stats.shapiro(reportedData).pvalue
+
+    if (forecastNormal >= 0.05) and (reportedNormal >= 0.05):
+        # if data is normally distributed, perform paired sample t-test
+        sigDifTest = stats.ttest_rel(forecastData, reportedData).pvalue
+    else:
+        # if data is not normally distributed, perform wilcoxon sign-ranked test
+        sigDifTest = stats.wilcoxon(forecastData, reportedData).pvalue
+
+    if sigDifTest < 0.05:
+        significantDifference = True
+        # if there is a significant difference, calculate root mean squared error
+        RMSE = mean_squared_error(reportedData, forecastData, squared=False)
+        # use RMSE divided by standard deviation of reported data to determine the severity
+        # of the difference
+        threshold = RMSE / (reportedData.std() if reportedData.std() != 0 else 1)
+        if threshold < 1:
+            differenceSeverity = "mild"
+        else:
+            differenceSeverity = "severe"
+    return significantDifference, differenceSeverity
+
+# function for calculated DWF
+def calculateDWF(data):
+    DWFRecalc = []
+    # calculate DWF using provided values for each row of the data and store in a list
+    for idx in data.index:
+        DWF = (data['PE (unrounded 2020)'][idx])*(data['G (2020)'][idx]) + (data['I_DWF (l/s)'][idx]) + (data['E'][idx])
+        DWFRecalc.append(DWF)
+    # convert list into a panda Series
+    return pd.Series(DWFRecalc)
+
+# function for determining an answer to question 3
+def questionThree(significantDifferencePE, significantDifferenceDWF, differenceSeverityPE, differenceSeverityDWF):
+    # if differences between both PE and DWF data is significant, provide the answer True
+    if significantDifferencePE and significantDifferenceDWF:
+        significantDifferenceSum = True
+        # if both differences are severe, the answer is also severe
+        if differenceSeverityDWF == "severe" and differenceSeverityPE == "severe":
+            differenceSeveritySum = "severe"
+        # if at least one difference is mild, return the answer mild
+        else:
+            differenceSeveritySum = "mild"
+    # if both comparisons do not determine a significant difference, provide the answer False
+    else:
+        significantDifferenceSum = False
+        differenceSeveritySum = "none"
+    return significantDifferenceSum, differenceSeveritySum
+
+
+
+"""-------------------------------------------------------------------------------------------------------------------
+    figure generation functions
+    -------------------------------------------------------------------------------------------------------------------"""
+
+
+# function called in integratedSoftware, used to generate both figures
+def generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast):
+    genFigPE(dates, PEActual, PEForecast)
+    genFigDWF(dates, DWFActual, DWFForecast)
+
+# function used to generate line graph comparing SOLAR PE forecast with reported
+# PE figures
+def genFigPE(dates, PEActual, PEForecast):
+    ## plot onto one graph
+    plt.plot(dates, PEForecast, color='red', label='Predicted')
+    plt.plot(dates, PEActual, color='black', label='Recorded')
+
+    ##graph aesthetics
+    plt.title("Recorded Population Equivalence versus Predicted Over Time", loc = 'left')
+    plt.xlabel("Date Recorded")
+    plt.ylabel("Population Equivalent (PE)")
+    plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
+
+    ##save as an image in the working directory
+    plt.savefig('sewanalyst/resources/PE_plot.png')
+
+    ##close
+    plt.close()
+
+# determines the significance and severity of difference between the recalculated DWF
+# and reported DWF figures
+def genFigDWF(dates, DWFActual, DWFForecast):
+    ## plot onto one graph
+    plt.plot(DWFForecast, color='red', label='Predicted')
+    plt.plot(DWFActual, color='black', label='Recorded')
+    ##graph aesthetics
+    plt.title("Recorded Dry Weather Flow versus Predicted Over Time", loc = 'left')
+    plt.xlabel("Date Recorded")
+    plt.ylabel("Dry Weather Flow (DWF)")
+    plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
+
+    ##save as an image in the working directory
+    plt.savefig('sewanalyst/resources/DWF_plot.png')
+
+    ##close
+    plt.close()
+
+
+
+"""-------------------------------------------------------------------------------------------------------------------
+    report generating functions
+    -------------------------------------------------------------------------------------------------------------------"""
+
+
+def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGraph, DwfGraph, FILENAME):
 
 
     #Idea to do this:
@@ -141,10 +320,60 @@ def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGrap
     pdf.print_section(3, 'Flow to Full Treatment', FFTPara, '0')
     pdf.print_section(4, 'Company Analysis', CompAna, '0')
     pdf.print_section(5, 'Conclusion', conc, '0')
-        
-    pdf.output('./Data_Report.pdf', 'F')
 
+    name = './reports/'+FILENAME+'.pdf'    
+    pdf.output(name, 'F')
+
+
+
+"""-------------------------------------------------------------------------------------------------------------------
+    main function
+    -------------------------------------------------------------------------------------------------------------------"""
+
+# function which is called by flask backend to analyse the data and produce a report
+# file_name is path to csv file provided by user during runtime
+def main(file_name):
+
+    FILENAME = file_name[0:-4]
+    print(FILENAME)
+    # reads the csv file in a panda dataframe, checks all required attributes are present
+    # and cleans/formats the data
+    data = processData("sewanalyst/recources/"+file_name)
+
+    # assign required data fields to variables to be used for analysis
+    dates = data['DATE']
+    PEActual = data["PE (unrounded 2020)"]
+    PEForecast = data["PE (forecasted 2021)"]
+    DWFActual = data["I_DWF (l/s)"]
+
+    # calculate DWF using provided data and assign to the dataframe
+    data['DWF_RECALCULATED'] = calculateDWF(data)
+    DWFForecast = data['DWF_RECALCULATED']
+
+    # determines the significance and severity of difference between the SOLAR PE forecast
+    # and reported PE figures
+    sigDifPE, difSevPE = calculateDifference(PEForecast, PEActual)
+
+    # determines the significance and severity of difference between the recalculated DWF
+    # figures and the reported DWF figures
+    sigDifDWF, difSevDWF = calculateDifference(DWFForecast, DWFActual)
+
+    # Uses the statistics generated from the calculateDifference functions to determine an 
+    # answer for question 3
+    q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
+
+    # used by the developer to check if all functions have produced an appropriate output
+    print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
+
+    try:
+        # use the provided data to plot PE and DWF graphs
+        generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
+        print("FIGURES GENERATED")
+        # use the generated statistics and graphs to create a pdf report
+        generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity, "sewanalyst/resources/PE_plot.png", "sewanalyst/resources/DWF_plot.png", FILENAME)
+    except Exception as e:
+        # output any error if one occurs in the figure generation or report creation phase
+        print (e)
 
 # if __name__ == "__main__":
-#     generateReport("mild", "none", "severe", "mild", "PE_plot.png", "DWF_plot.png")
-#     #It goes to which ever directory this was executed in so in this case C:\Users\margu>
+#     main("python-backend/dummyData.csv")
