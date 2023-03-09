@@ -1,9 +1,9 @@
 /* CSS and design to-do:
 1) Fix the centering issue when you click the home button //
 2) Scrollable backgrounds need to go - THIS IS PISSING ME OFF
-3) Pop up flag report needs to be in the center // (not really in the center but its above the reports part so i think it's good enough
+3) Pop up flag report needs to be in the center & close button// (not really in the center but its above the reports part so i think it's good enough
 4) Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT) 
-5) Clean up different CSS stuff - it's a mess - in progress
+5) Clean up different CSS stuff - it's a mess --> in progress
 6) Add a button to close the message saying there's no issues with the report //*/
 
 /*possible issues with the Javascript:
@@ -200,10 +200,8 @@ th{
   background-color: rgb(195,204,222);
   top: 50%;
   left: 45%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  display: flex;
+  border-radius: 25px;
+  display: fixed;
   align-items: center;
   text-align: center;
   font-size:15px;
@@ -275,6 +273,7 @@ th{
 
 #centering {
   text-align: center;
+  top: 20%;
   display: fixed;
   left: 50%;
 }
