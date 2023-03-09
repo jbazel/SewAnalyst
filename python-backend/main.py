@@ -1,7 +1,7 @@
 # main.py
-from flask import Blueprint, render_template, redirect, session, request, flash, Flask, send_from_directory, url_for
-from flask import send_file, current_app as app
-from integratedSoftware import main
+from flask import render_template, request, flash, Flask
+from flask import current_app as app
+from library import main
 from flaskwebgui import FlaskUI
 import os
 from os.path import join, dirname, realpath
@@ -22,16 +22,30 @@ def home():
 def upload():
     try:
         if request.method == 'POST':
-            f = request.files['csv file']
-            f.save("test.csv")
+            try:
+                f = request.files['csv file']
+                f.save("test.csv")
 
-            main("test.csv")
-            # with open('./Data_Report.pdf', 'rb') as static_file:
-            #     return send_file(static_file, attachment_filename='Data_Report.pdf')
-            return render_template('index.html')
+                try:
+                    main("test.csv")
+                    flash("your report has been successfully created")
+                    return render_template('index.html')
+                
+                # exception here means that analysis failed
+                except Exception as e:
+                    print(e)
+                    flash('there was an error in the analysis of your file, please refer to the log for more information') 
+                    return render_template('index.html')
+            
+            # exception here means the file was not uploaded
+            except Exception as e:
+                print(e)
+                flash('there was an error in the upload of your file, please refer to the log for more information')
+                return render_template('index.html')
 
     except Exception as e:
         print(e)
+        return render_template('index.html')
 
 
 @app.route("/download")
@@ -46,6 +60,9 @@ def download():
 if __name__ == "__main__":
     # processData("sampleData.csv")
     try:
+        app.secret_key = 'super secret key'
+        app.config['SESSION_TYPE'] = 'filesystem'
+        app.debug = True
         FlaskUI(app=app, server="flask").run()
     except Exception as e:
         print("Flask UI failed to start")

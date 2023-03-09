@@ -23,6 +23,20 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
+        
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block body %}{% endblock %}
+
+        
         <button id = "helpButton" class = "help">Help</button>
             <div id = "helper">
                 <div class = "helpContent">
