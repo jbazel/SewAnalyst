@@ -1,20 +1,20 @@
 /* CSS and design to-do:
-1) Fix the centering issue when you click the home button //
-2) Scrollable backgrounds need to go - THIS IS PISSING ME OFF, need to look through everything
-3) Pop up flag report needs to be in the center & close button// (not really in the center but its above the reports part so i think it's good enough
-4) Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT BUT DEFINITELY POSSIBLE) 
-5) Clean up different CSS stuff cos it's a mess --> in progress
-6) Add a button to close the message saying there's no issues with the report //
-7) Yassify the flagged report reasons table - something about it looks off //
-8) Make dates smaller than other side //
-9) Hover over button shouldn't be black
-10) For the flag report thing, need to have it so if you don't click "I confrim I am being truthful" it doesn't let you submit it
-*/
+-  Scrollable backgrounds need to go
+  - Figure out how to seperate the backgrounds from the main divs - the background should be not scrollable but the table needs to be for example
+- Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT BUT DEFINITELY POSSIBLE) 
+- Clean up different CSS stuff cos it's a mess --> in progress
+- Center no reasons report somehow
+- Hover over button shouldn't be black
+- For the flag report thing, need to have it so if you don't click "I confrim I am being truthful" it doesn't let you submit it
+
+Later stuff: 
+- More lines in the flag report*/
 
 /*possible issues with the Javascript:
-1) When you try and get off reports e.g. report 1 it stays in the title of the webpage // FIXED!!
-2) Button takes ages to load... hmmmmmmmmmm. Might just have to be lucky in the presentation.
+- Button takes ages to load... hmmmmmmmmmm. Might just have to be lucky in the presentation.
 */
+
+/*overflow: hidden is how we don't get the background image to scroll!*/
 
 *{
     margin:0px;
