@@ -46,10 +46,10 @@
                 To give you the best analysis of what Sewage Treatment Works are really doing with their waste water!
                 </p>
             </div>
-            <div class="uploadReportFormBox" id="uploadReportFormBox">
-                <input id="fileupload" type="file" name="fileupload" />
-                <button id="upload-button" onclick="uploadFile()"> Upload </button>
-            </div>
+            <form ref='uploadForm' id='uploadForm' action='http://127.0.0.1:8090/upload' method='post' encType="multipart/form-data">
+              <input type="file" name="sampleFile" />
+              <input type='submit' value='Upload!' />
+            </form> 
             <div class="col">
                 <!-- Eventually want to make these two side by side columns, not a clue yet-->
                 <ul>
