@@ -1,13 +1,19 @@
 /* CSS and design to-do:
 1) Fix the centering issue when you click the home button //
-2) Scrollable backgrounds need to go - THIS IS PISSING ME OFF
+2) Scrollable backgrounds need to go - THIS IS PISSING ME OFF, need to look through everything
 3) Pop up flag report needs to be in the center & close button// (not really in the center but its above the reports part so i think it's good enough
-4) Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT) 
-5) Clean up different CSS stuff - it's a mess --> in progress
-6) Add a button to close the message saying there's no issues with the report //*/
+4) Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT BUT DEFINITELY POSSIBLE) 
+5) Clean up different CSS stuff cos it's a mess --> in progress
+6) Add a button to close the message saying there's no issues with the report //
+7) Yassify the flagged report reasons table - something about it looks off //
+8) Make dates smaller than other side //
+9) Hover over button shouldn't be black
+*/
 
 /*possible issues with the Javascript:
-1) When you try and get off reports e.g. report 1 it stays in the title of the webpage*/
+1) When you try and get off reports e.g. report 1 it stays in the title of the webpage // FIXED!!
+2) Button takes ages to load... hmmmmmmmmmm. Might just have to be lucky in the presentation.
+*/
 
 *{
     margin:0px;
@@ -38,10 +44,6 @@ a{
   color: rgb(15,28,37);
   font-weight: 700;
   }
-    /*text-align:justify;
-    max-width: 50%;
-    */
-
 
 #homepage {
     background: url(green\ grass\ and\ flowers\ near\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
@@ -196,23 +198,35 @@ th{
 }
 
 #noreason {
-  max-width:30%;
-  background-color: rgb(195,204,222);
-  top: 50%;
-  left: 45%;
-  border-radius: 25px;
+  padding-top: 1%;
+  min-width:20%;
+  max-width: 20%;
   display: fixed;
-  align-items: center;
   text-align: center;
+  background-color: rgb(195,204,222);
+  border-radius: 25px;
   font-size:15px;
   font-weight: 600;
 }
 
 .table2 {
+  border: 10px solid rgb(195,204,222);
+    background-color:rgb(15,28,37);
+    color: white;
+    table-layout: flex;
+    position:fixed;
+    top:20%;
+    left: 25%;
+    right: 25%;
+    max-width: 50%;
+    /*border: 3px solid #f1f1f1;*/
+    z-index: 9;
+    text-align: center;
+
+  /*
   border: 10px white;
   background-color:  rgb(195,204,222);
   /*width: 50%;*/
-  color: black;
 }
 
 
@@ -257,7 +271,6 @@ th{
 .cancel2 {
   background-color:rgb(15,28,37);
   color: white;
-  /*padding: 16px 20px;*/
   display:fixed;
   text-align: center;
   outline:none;
@@ -273,7 +286,7 @@ th{
 
 #centering {
   text-align: center;
-  top: 20%;
+  padding-top: 1%;
   display: fixed;
   left: 50%;
 }
@@ -284,7 +297,7 @@ th{
 }
 
 
-/*this is all for the download's button I think - won't touch this when fixing the CSS*/
+/*Download button effects*/
 .btn-cool
 {
     position: relative;

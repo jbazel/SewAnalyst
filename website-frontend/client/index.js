@@ -184,8 +184,8 @@ function colourTriangle(TimesReported){
 function reportReasonsTable(data){
     let showReportReasons = '';
     tableHeaders2 = `<table class="table table2">
-    <th scope="col">Flagging date</th>
-    <th scope="col">Reason for Flagging</th>`
+    <th class="col-2" scope="col">Flagging date</th>
+    <th class="col-6"scope="col">Reason for Flagging</th>`
     endTable2 = `</table>`
 
     showReportReasons = tableHeaders2;
@@ -209,7 +209,7 @@ function reportReason(data){
 function noReasons(){
     // need to yassify this!
     console.log("no reasons")
-    const noReasons = `<div id="noreason"><p> No reasons to show</p> <br> <button type="button" class="btn cancel2" onclick="closenoReasons()"> CLOSE</button></div>`
+    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" class="btn cancel2" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
     return noReasons;
 
 }
