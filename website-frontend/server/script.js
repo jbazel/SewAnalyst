@@ -27,7 +27,6 @@ const saveData = (file) => {
     const jsonData = JSON.stringify(loadReports, null, 2);
     fs.writeFile(file, jsonData, finished);
 }
-
 app.get('/reportDownload/:reportName', (req,res) => {
     try{
         /*const reportNum = req.query.reportNum;
@@ -35,7 +34,7 @@ app.get('/reportDownload/:reportName', (req,res) => {
         const reportFolderPath = `files/reports/report${reportNum}.pdf`;
         console.log(reportFolderPath)*/
         console.log(req.params.reportName)
-        FolderPath = `files/reports/${req.params.reportName}.pdf`
+        FolderPath = `files/reports/${req.params.reportName}`
         console.log(FolderPath)
         
         res.setHeader('Last-Modified', (new Date()).toUTCString());
@@ -64,22 +63,12 @@ app.get('/program_download', function(req, res){
     })
 })
 
-app.post('/report_upload', function(req, res){
-    console.log(req.body);
-    fs.writeFile(reportFolderPath, req.body, function(err){
-        if(err) {
-            console.log(err);
-        }
-        else{
-            console.log('File uploaded');
-        }
-    })
-});
+
 
 app.post('/flagReport/:reportName', (req, res) => {
     try{
         info = req.body
-        const reportName = req.params.reportName;
+        const reportName = req.params.reportName + ".pdf";
         const reportReason = info.reason;
     
         let reportDate = new Date().toLocaleString()
@@ -132,7 +121,7 @@ app.get('/reportList', (req, res) => {
 app.get('/reportReasons/:reportName', (req, res) => {
     console.log("yay")
     //const reportReasons = [];
-    const reportNum = req.params.reportName;
+    const reportNum = req.params.reportName + ".pdf";
     console.log(reportNum)
     try{
         for (const report of loadReports){
@@ -159,6 +148,8 @@ app.post('/upload', function(req, res) {
     // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
     sampleFile = req.files.sampleFile;
     uploadPath = 'files/reports/' + sampleFile.name;
+
+    updateJsonfile(sampleFile.name)
   
     // Use the mv() method to place the file somewhere on your server
     sampleFile.mv(uploadPath, function(err) {
@@ -169,6 +160,19 @@ app.post('/upload', function(req, res) {
       res.status(200).redirect('http://127.0.0.1:8090');
     });
   });
+
+function updateJsonfile(reportName){
+    let reportDate = new Date().toLocaleString()
+    reportDate = reportDate.split(",")[0]
+    const data = {
+        reportName: reportName,
+        dateOfReport: reportDate,
+        reviews: [],
+        reportCounter: "0"
+    };
+    loadReports.push(data);
+    saveData(reportFolderPath);
+}
 
 
 
