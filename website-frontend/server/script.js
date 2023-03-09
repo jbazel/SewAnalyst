@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const programFolderPath = 'files/program/program1.json'
 const reportFolderPath = "data/flaggedReports.json"
 const loadReports = JSON.parse(fs.readFileSync(reportFolderPath));
-const folderPath = 'files/reports/'
+//const FolderPath = 'files/reports/report1.pdf'
 
 const saveData = (file) => {
     const finished = (error) => {
@@ -26,12 +26,18 @@ const saveData = (file) => {
     fs.writeFile(file, jsonData, finished);
 }
 
-app.get('/reportDownload', (req,res) => {
+app.get('/reportDownload/:reportName', (req,res) => {
     try{
-        console.log(req.query.id)
+        /*const reportNum = req.query.reportNum;
+        console.log(reportNum)
+        const reportFolderPath = `files/reports/report${reportNum}.pdf`;
+        console.log(reportFolderPath)*/
+        console.log(req.params.reportName)
+        FolderPath = `files/reports/${req.params.reportName}.pdf`
+        console.log(FolderPath)
+        
         res.setHeader('Last-Modified', (new Date()).toUTCString());
-        let path = folderPath + req.query.id;
-        res.download(path, (err) =>{
+        res.download(FolderPath, (err) =>{
             if(err) {
                 console.log(err);
                 console.log('Error downloading file');
@@ -40,7 +46,7 @@ app.get('/reportDownload', (req,res) => {
         });
     }
     catch(e){
-        // console.log(e)
+        console.log(e)
         res.status(500).send("error")
     }
 })
@@ -68,30 +74,30 @@ app.post('/report_upload', function(req, res){
     })
 });
 
-app.post('/flagReport', (req, res) => {
+app.post('/flagReport/:ReportName', (req, res) => {
     try{
         info = req.body
-        console.log("passed")
-        console.log(info)
-        let reportReason = info.reportReason
+        const reportName = req.params.ReportName;
+        const reportReason = info.reason;
     
+        let reportDate = new Date().toLocaleString()
+        reportDate = reportDate.split(",")[0]
         const data = {
             reportDate: reportDate,
             reportReason: reportReason
         };
-        console.log("here")
 
         console.log(data)
 
         for (let i=0; i<loadReports.length; i++){
             const obj = loadReports[i];
-            if (obj.reportNum == reportNum){
+            if (obj.reportName == reportName){
                 obj.reviews.push(data)
                 x = parseInt(obj.reportCounter )
                 x += 1
                 obj.reportCounter = x.toString()
                 saveData(reportFolderPath)
-                res.send("success")
+                res.redirect("http://127.0.0.1:8090")
                 return;
             }
         }
@@ -121,13 +127,15 @@ app.get('/reportList', (req, res) => {
     }*/
 });
 
-app.get('/reportReasons', (req, res) => {
-    const reportReasons = [];
-    const reportNum = req.query.id;
+app.get('/reportReasons/:ReportName', (req, res) => {
+    console.log("yay")
+    //const reportReasons = [];
+    const reportNum = req.params.ReportName;
+    console.log(reportNum)
     try{
         for (const report of loadReports){
             if (report.reportName == reportNum){
-                reportReasons.push({Reasons: report.reviews})
+                reportReasons = report.reviews
             }
         }
         console.log(reportReasons)

@@ -1,3 +1,14 @@
+/* CSS and design to-do:
+1) Fix the centering issue when you click the home button //
+2) Scrollable backgrounds need to go - THIS IS PISSING ME OFF
+3) Pop up flag report needs to be in the center & close button// (not really in the center but its above the reports part so i think it's good enough
+4) Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT) 
+5) Clean up different CSS stuff - it's a mess --> in progress
+6) Add a button to close the message saying there's no issues with the report //*/
+
+/*possible issues with the Javascript:
+1) When you try and get off reports e.g. report 1 it stays in the title of the webpage*/
+
 *{
     margin:0px;
     padding:0px;
@@ -7,6 +18,11 @@
 
 body {
   margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
 .central{
     display: flex;
@@ -18,10 +34,14 @@ body {
 }
 
 #title_word {
-    text-align: center;
-    color: rgb(15,28,37);
-    font-weight: 700;
-}
+  text-align: center; 
+  color: rgb(15,28,37);
+  font-weight: 700;
+  }
+    /*text-align:justify;
+    max-width: 50%;
+    */
+
 
 #homepage {
     background: url(green\ grass\ and\ flowers\ near\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
@@ -41,22 +61,52 @@ body {
 
 input.link { background:none; border:none; }
 
-/*put it in here - if i add a dot it changes things? wtf?*/
 table {
-    border: 1px solid;
+    border: 10px solid;
     background-color:white;
-    width:auto;
-    color: rgb(15,28,37)
+    color: rgb(15,28,37);
+    table-layout: flex;
+    position:fixed;
+    top:20%;
+    left: 25%;
+    right: 25%;
+    max-width: 50%;
+    /*border: 3px solid #f1f1f1;*/
+    z-index: 9;
+    text-align: center;
   }
 
+td{
+    text-align: center;
+    width: 25% ;
+}
+
+th{
+    text-align: center;
+    width: 25% ;
+}
+
+#downloadButton{
+    padding: 2.5px 10px;
+    background:rgb(255, 255, 255);
+    color: rgb(15,28,37);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 15px;
+}
+
 #reportsPage {
+  overflow: hidden;
   background: url(Green\ grass\ near\ body\ of\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   height: 100vh;
   min-width: 100%;
   min-height: 100%;
-  overflow: hidden;
   margin: 0;
   display:block;
   /*This deals with what's inside the image on the page*/
@@ -93,7 +143,6 @@ table {
 
 }
 
-/*LOUISA LOOK AT THIS WHEN YOU'RE GOING THROUGH CSS: WANT ALL BUTTONS TO HAVE A LITTLE HOVER EFFECT!!! */
 
 #onlythesebuttons {
     padding: 10px 60px;
@@ -109,18 +158,18 @@ table {
 
 }
 
-#reportbutton {
-  padding: 2.5px 30px;
-    background: rgb(30,55,73);
-    color: white;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 15px;
-    box-shadow: 1px 1px 1px #333;
+#greenWarning {
+    fill: green;
 }
+
+#yellowWarning {
+    fill: rgb(254, 157, 11);
+}
+
+#redWarning {
+    fill: red;
+}
+
 
 #alerts {
   width: 7.5%;
@@ -128,25 +177,39 @@ table {
 }
 
 .flagReportFormBox {
+  border-radius: 15px;
   display: none;
   position:fixed;
   top:20%;
+  left: 45%;
   max-width: 60%;
-  /*border: 3px solid #f1f1f1;*/
   z-index: 9;
 }
 
 .reportsGrouping {
   display: none;
-  position:fixed;
+  position: fixed;
   top:20%;
-  max-width: 75%;
-  /*border: 3px solid #f1f1f1;*/
+  left: 45%;
+  max-width: 60%;
   z-index: 9;
 }
 
+#noreason {
+  max-width:30%;
+  background-color: rgb(195,204,222);
+  top: 50%;
+  left: 45%;
+  border-radius: 25px;
+  display: fixed;
+  align-items: center;
+  text-align: center;
+  font-size:15px;
+  font-weight: 600;
+}
+
 .table2 {
-  border: 1px solid;
+  border: 10px white;
   background-color:  rgb(195,204,222);
   /*width: 50%;*/
   color: black;
@@ -154,8 +217,12 @@ table {
 
 
 .formContainer {
+  border-radius: 15px;
+  border:10px rgb(255, 255, 255);
   padding:10px;
   background-color:rgb(15,28,37);
+
+
 }
 
 .formContainer input[type="text"], .formContainer input[type="submit"]{
@@ -188,9 +255,11 @@ table {
 }
 
 .cancel2 {
-  background-color: rgb(15,28,37);
+  background-color:rgb(15,28,37);
   color: white;
   /*padding: 16px 20px;*/
+  display:fixed;
+  text-align: center;
   outline:none;
   cursor: pointer;
   max-width: 45%;
@@ -199,8 +268,14 @@ table {
   margin-bottom:10px;
   opacity: 0.95;
   border-radius:30px ;
-  
   box-shadow:2px 2px 5px #333 ;
+}
+
+#centering {
+  text-align: center;
+  top: 20%;
+  display: fixed;
+  left: 50%;
 }
 
 
