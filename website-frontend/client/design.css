@@ -8,6 +8,7 @@
 7) Yassify the flagged report reasons table - something about it looks off //
 8) Make dates smaller than other side //
 9) Hover over button shouldn't be black
+10) For the flag report thing, need to have it so if you don't click "I confrim I am being truthful" it doesn't let you submit it
 */
 
 /*possible issues with the Javascript:
@@ -73,7 +74,6 @@ table {
     left: 25%;
     right: 25%;
     max-width: 50%;
-    /*border: 3px solid #f1f1f1;*/
     z-index: 9;
     text-align: center;
   }
