@@ -70,6 +70,7 @@ a{
     justify-content: center;
 }
 
+
 #informationBox {
   background-color: rgb(15,28,37); 
   padding-top: 1%; 
@@ -134,12 +135,13 @@ th{
 }
 
 .blocking {
+  overflow:hidden;
   background-color:rgb(15,28,37);
   padding: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   width: 90%;
-  margin: 50px;
-  margin-bottom: 50px;
+  margin: 20px;
+  margin: bottom 0;
   display: block;
   margin-left: auto;
   margin-right: auto;
