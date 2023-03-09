@@ -21,7 +21,7 @@
     <nav class="navbar sticky-top navbar-light" style="background-color: rgb(195,204,222); box-shadow: 2px 2px 5px #333">
         <div class="container-fluid">
             <!-- this should be our logo but for now I'll just put the WASP one here (maybe we have both??) https://static.wixstatic.com/media/cda311_f2f55607eaa04530ba68783d80db13aa~mv2.png/v1/fill/w_246,h_255,al_c,lg_1,q_85,enc_auto/cda311_f2f55607eaa04530ba68783d80db13aa~mv2.png -->
-            <a class="btn" onclick= "document.getElementById('homepage').style.display='block'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='none';"> 
+            <a class="btn" onclick= "document.getElementById('homepage').style.display='flex'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='none';"> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                     <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
                     <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
@@ -35,7 +35,7 @@
     
 
     <!-- Homepage-->
-    <div class = "container" id="homepage">
+    <div class = "container" style="align-items: center; justify-content: center" id="homepage">
         <div class="row align-items-start central" style = "margin: 10%">
             <!-- should this background colour be the same as the first button colour? No-->
             <div class="col" style="background-color: rgb(15,28,37); color: white; margin:10px; flex: auto; margin-top: 5%; box-shadow: 2px 2px 5px #333;">

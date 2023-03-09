@@ -189,7 +189,7 @@ function reportReasonsTable(data){
 
     showReportReasons = tableHeaders2;
 
-    buttonToClose = `<button type="button" class="btn cancel2" onclick="closeList()"> CLOSE</button>`
+    buttonToClose = `<div id="centering"><button type="button" class="btn cancel2" onclick="closeList()"> CLOSE</button></div>`
 
     for(let i=0; i<data.length; i++){
         showReportReasons += reportReason(data[i]);
@@ -206,9 +206,13 @@ function reportReason(data){
 }
 
 function noReasons(){
-    const noReasons = `<div id="noreason"><p> No reasons to show</p></div>`
+    // need to yassify this!
+    const noReasons = `<div id="noreason"><p> No reasons to show</p> <br> <button type="button" class="btn cancel2" onclick="closenoReasons()"> CLOSE</button></div>`
     return noReasons;
-    // needs to have a close button??
+
+}
+function closenoReasons() {
+    document.getElementById("noreason").style.display="none";
 }
 
 function closeList() {
