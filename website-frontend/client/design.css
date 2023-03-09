@@ -1,4 +1,5 @@
 /* CSS and design to-do:
+- yassify the upload report file
 -  Scrollable backgrounds need to go
   - Figure out how to seperate the backgrounds from the main divs - the background should be not scrollable but the table needs to be for example
 - Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT BUT DEFINITELY POSSIBLE) 
@@ -7,6 +8,9 @@
 - Hover over button shouldn't be black
 - For the flag report thing, need to have it so if you don't click "I confrim I am being truthful" it doesn't let you submit it
 
+
+More
+- Buttons aren't all in the same place
 Later stuff: 
 - More lines in the flag report*/
 
@@ -27,14 +31,17 @@ body {
   margin: 0;
 }
 
+/* a is for anything that is a hyperlink*/
 a{
     text-decoration: none;
     color: black;
 }
+
+/* Whooooo are youuuuuu*/
 .central{
-    display: flex;
+    display: fixed;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     text-align: center;
     vertical-align: middle;
@@ -46,7 +53,7 @@ a{
   font-weight: 700;
   }
 
-#homepage {
+.homepage {
     background: url(green\ grass\ and\ flowers\ near\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
     background-size: cover;
     width: 100%;
@@ -62,6 +69,14 @@ a{
     justify-content: center;
 }
 
+#informationBox {
+  background-color: rgb(15,28,37); 
+  padding-top: 1%; 
+  border: 3px solid rgb(51, 74, 90);
+  color: white; 
+  margin:5px; 
+  box-shadow: 2px 2px 5px #333;
+}
 input.link { background:none; border:none; }
 
 table {
