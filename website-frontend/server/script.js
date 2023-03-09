@@ -74,10 +74,10 @@ app.post('/report_upload', function(req, res){
     })
 });
 
-app.post('/flagReport/:ReportName', (req, res) => {
+app.post('/flagReport/:reportName', (req, res) => {
     try{
         info = req.body
-        const reportName = req.params.ReportName;
+        const reportName = req.params.reportName;
         const reportReason = info.reason;
     
         let reportDate = new Date().toLocaleString()
@@ -127,10 +127,10 @@ app.get('/reportList', (req, res) => {
     }*/
 });
 
-app.get('/reportReasons/:ReportName', (req, res) => {
+app.get('/reportReasons/:reportName', (req, res) => {
     console.log("yay")
     //const reportReasons = [];
-    const reportNum = req.params.ReportName;
+    const reportNum = req.params.reportName;
     console.log(reportNum)
     try{
         for (const report of loadReports){

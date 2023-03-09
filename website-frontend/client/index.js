@@ -243,3 +243,7 @@ function generateForm(data) {
 function closeForm() {
     document.getElementById("flagReportFormBox").style.display="none";
 }
+
+function uploadReportForm() {
+    document.getElementById("reportUploadForm").style.display="block";
+}
