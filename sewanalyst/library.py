@@ -338,7 +338,7 @@ def main(file_name):
     print(FILENAME)
     # reads the csv file in a panda dataframe, checks all required attributes are present
     # and cleans/formats the data
-    data = processData("sewanalyst/recources/"+file_name)
+    data = processData("sewanalyst/resources/"+file_name)
 
     # assign required data fields to variables to be used for analysis
     dates = data['DATE']
