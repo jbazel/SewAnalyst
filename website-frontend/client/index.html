@@ -47,6 +47,10 @@
                 To give you the best analysis of what Sewage Treatment Works are really doing with their waste water!
                 </p>
             </div>
+            <div class="uploadReportFormBox" id="uploadReportFormBox">
+                <input id="fileupload" type="file" name="fileupload" />
+                <button id="upload-button" onclick="uploadFile()"> Upload </button>
+            </div>
             <div class="col">
                 <ul>
 
@@ -151,21 +155,7 @@
     </div>
     <!--Upload Report Form-->
 
-    <div class="flagReportFormBox" id="flagReportFormBox"></div>
-            <form class="formContainer" method="POST" action="/upload">
-                <div class="mb-3">
-                    <label for="InputReason" class="form-label" style="color: white; font-weight:500;"><b>Name</b> </label>
-                    <!-- Have something here confirming that you are being truthful in your submission - maybe a popup when you click submit??-->
-                    <!--<texarea name="Text1" rows="5"><input type="text" placeholder="Enter Reason" class="form-control" id="InputReason"></texarea>
-                </div> -->
-                <!--<input type="checkbox" class="form-check-input" id="Checkbox">
-                <label class="form-check-label" for="Checkbox" style="color:white; padding-bottom:2%;"> I confirm that I am being truthful in my report</label> <br>
-                <button type="submit" class="btn" id="flagReportBtn"> SUBMIT</button>-->
-                <!-- Idk if changing this button is going to cause issues so I've just left the old button here just in case-->
-               
-                <!--<button type="button" class="btn cancel" onclick="closeForm()"> CLOSE</button>
-            </form>
-            </div>
+
 
 
 

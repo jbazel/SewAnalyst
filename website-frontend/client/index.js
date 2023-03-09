@@ -244,6 +244,6 @@ function closeForm() {
     document.getElementById("flagReportFormBox").style.display="none";
 }
 
-function uploadReportForm() {
-    document.getElementById("reportUploadForm").style.display="block";
-}
+/*function openReportForm() {
+    document.getElementById("uploadReportFormBox").style.display="block";
+}*/
