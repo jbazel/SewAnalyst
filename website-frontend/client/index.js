@@ -101,6 +101,7 @@ async function viewReportsPage(){
         document.getElementById('homepage').style.display='none'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='block';
 
         const html = allReports(data);
+        //console.log(html)
         return html;
 
     }
@@ -151,8 +152,11 @@ function allReports (data){
 
     showReports = tableHeaders;
     for(let i=0; i<data.length; i++){
-        showReports += report(data[i]);
+        reportData = report(data[i]);
+        //console.log(reportData)
+        showReports += reportData;
     }
+    //console.log(showReports)
     return showReports
 }
 
@@ -170,6 +174,8 @@ function report (data){
   </svg></button><form></td>`
     return report;    
 }
+
+
 
 function colourTriangle(TimesReported){
     if (+TimesReported == 0){

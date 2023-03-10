@@ -27,6 +27,7 @@ const saveData = (file) => {
     const jsonData = JSON.stringify(loadReports, null, 2);
     fs.writeFile(file, jsonData, finished);
 }
+
 app.get('/reportDownload/:reportName', (req,res) => {
     try{
         /*const reportNum = req.query.reportNum;
@@ -68,7 +69,7 @@ app.get('/program_download', function(req, res){
 app.post('/flagReport/:reportName', (req, res) => {
     try{
         info = req.body
-        const reportName = req.params.reportName + ".pdf";
+        const reportName = req.params.reportName;
         const reportReason = info.reason;
     
         let reportDate = new Date().toLocaleString()
@@ -121,7 +122,7 @@ app.get('/reportList', (req, res) => {
 app.get('/reportReasons/:reportName', (req, res) => {
     console.log("yay")
     //const reportReasons = [];
-    const reportNum = req.params.reportName + ".pdf";
+    const reportNum = req.params.reportName;
     console.log(reportNum)
     try{
         for (const report of loadReports){

@@ -21,7 +21,12 @@
   {
     "reportName": "report2.pdf",
     "dateOfReport": "02/02/2022",
-    "reviews": [],
-    "reportCounter": "0"
+    "reviews": [
+      {
+        "reportDate": "10/03/2023",
+        "reportReason": "not good"
+      }
+    ],
+    "reportCounter": "1"
   }
 ]
