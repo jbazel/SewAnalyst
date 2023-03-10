@@ -20,7 +20,7 @@
     <!-- Navbar (will stay in all of the "pages" )-->
     <nav class="navbar sticky-top navbar-light" style="background-color: rgb(195,204,222); box-shadow: 2px 2px 5px #333">
         <div class="container-fluid">
-            <a class="btn" onclick= "document.getElementById('homepage').style.display='flex'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='none';"> 
+            <a class="btn" onclick= "document.getElementById('homepage').style.display='flex'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='none'; document.getElementById('uploadForm').style.display= 'none';"> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                     <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
                     <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
@@ -35,8 +35,9 @@
 
     <!-- Homepage-->
     <!-- Previous homepage styling: style="align-items: center; justify-content: center"-->
+    
     <div class = "container homepage"  id="homepage">
-        <div class="row align-items-start central" style = "margin: 10%">
+        <div class="row align-items-start central" style = "margin: 15%; padding-top: 7.5%;">
             <div class="col" id="informationBox">
                 <p> Built upon data from <a href="https://www.windrushwasp.org/" style="color: rgb(127,201,202)">WASP</a>, a registered charity built upon improving river quality and safety by
                 monitoring and denouncing illegal sewage dumping, SewAnalyst can be used to generate reports on the validity of these three things: <br>
@@ -46,16 +47,14 @@
                 To give you the best analysis of what Sewage Treatment Works are really doing with their waste water!
                 </p>
             </div>
-            <form ref='uploadForm' id='uploadForm' action='http://127.0.0.1:8090/upload' method='post' encType="multipart/form-data">
-              <input type="file" name="sampleFile" />
-              <input type='submit' value='Upload!' />
-            </form> 
+            
             <div class="col">
                 <!-- Eventually want to make these two side by side columns, not a clue yet-->
-                <ul>
 
-                    <li><button type="button" class="btn" id="onlythesebuttons" style = "margin:10px; background-color: rgb(30,55,73); color: white" onclick= "document.getElementById('homepage').style.display='none'; document.getElementById('softwarePage').style.display='block'; document.getElementById('reportsPage').style.display='none';"> Download Software</button></li><br>
-                    <li><button type="button" class="btn" id="onlythesebuttons" style = "margin:10px; background-color: rgb(47, 87, 115); color: white" onclick= uploadReportForm()>Upload Report</button></ldocument.getElemi> </li><br>
+                  <ul>
+
+                    <li><button type="button" class="btn" id="onlythesebuttons" style = "margin:10px; background-color: rgb(30,55,73); color: white" onclick= "document.getElementById('homepage').style.display='none'; document.getElementById('softwarePage').style.display='block'; document.getElementById('reportsPage').style.display='none';document.getElementById('uploadForm').style.display= 'none';"> Download Software</button></li><br>
+                    <li><button type="button" class="btn" id="onlythesebuttons" style = "margin:10px; background-color: rgb(47, 87, 115); color: white" onclick= openUploadReportPopup()>Upload Report</button></ldocument.getElemi> </li><br>
                     <li><nav id="main-nav">
                             <!--<li><div class="btn"><a href = "/downloadSoftware" onclick="route()">Download Software</a></div></li>-->
         
@@ -63,17 +62,39 @@
                     </nav>
                     </li>
                 </ul>
-
-        </div>
-        </div>
+            </div>
+               
         </div>
     
     </div>
 
+    <div class ="container" id="uploadForm" style="overflow: hidden;
+    background: url(Green\ grass\ near\ body\ of\ water.jpg)/* Link to the new image on Pexels: https://www.pexels.com/photo/green-grass-and-flowers-near-water-5908897/ This is the old one: url(https://i.guim.co.uk/img/media/4ab338ccf0591167154de14c474cbe3e110e4d20/476_376_2524_1514/master/2524.jpg?width=1900&quality=45&dpr=2&s=none)*/;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    display:block;
+    /*This deals with what's inside the image on the page*/
+    display:flex;
+    align-items: center;
+    justify-content: center;"  >
+        <div id="formbox">
+            <center><p>UPLOAD YOUR REPORT HERE:</p></center><br>
+        <center><form ref='uploadForm'action='http://127.0.0.1:8090/upload' method='post' encType="multipart/form-data">
+            <input type="file" name="sampleFile" />
+            <input id="uploadsbuttons" type='submit' value='Upload' />
+          </form><br></center>
+          <!-- Maybe don't even need this close button? Could be a view reports button?-->
+        <center><button type="button" id="closingbutton" class="btn" onclick="closeUploads()"> CLOSE</button></center>
+        </div>
+    </div>
+
 
     <!-- Downloading software page-->
-
-    
     <div class ="container" id="softwarePage" style="background: url(../green\ grass\ and\ flowers\ near\ water.jpg); 
     background-size: cover;
     width: 100%;

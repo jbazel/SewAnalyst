@@ -52,6 +52,7 @@ const routes = [
 //const baseRoutes = ["reportReasons, viewReports"];
 
 const changeLocation = async () => {
+    document.getElementById('uploadForm').style.display= 'none'; 
     const path = window.location.pathname;
     
     const routePathSegments = path.split('/').slice(1);
@@ -198,7 +199,7 @@ function reportReasonsTable(data){
 
     showReportReasons = tableHeaders2;
 
-    buttonToClose = `<div id="centering"><button type="button" class="btn cancel2" onclick="closeList()"> CLOSE</button></div>`
+    buttonToClose = `<div id="centering"><button type="button" id="buttonclosingflagpage" onclick="closeList()"> CLOSE</button></div>`
 
     for(let i=0; i<data.length; i++){
         showReportReasons += reportReason(data[i]);
@@ -217,7 +218,7 @@ function reportReason(data){
 function noReasons(){
     // need to yassify this!
     console.log("no reasons")
-    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" class="btn cancel2" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
+    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" id="buttonclosingflagpage" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
     return noReasons;
 
 }
@@ -228,6 +229,8 @@ function closenoReasons() {
 function closeList() {
     document.getElementById("listOfForms").style.display="none";
 }
+
+
 
 function generateForm(data) {
     console.log("generate form")
@@ -252,6 +255,22 @@ function closeForm() {
     document.getElementById("flagReportFormBox").style.display="none";
 }
 
+
+function openUploadReportPopup() {
+    document.getElementById('uploadForm').style.display='flex';
+    document.getElementById('homepage').style.display='none'; 
+    document.getElementById('softwarePage').style.display='none';
+    document.getElementById('reportsPage').style.display='none';
+    
+}
+
+
+function closeUploads() {
+    document.getElementById('uploadForm').style.display='none';
+     document.getElementById('homepage').style.display='flex'; 
+    document.getElementById('softwarePage').style.display='none';
+    document.getElementById('reportsPage').style.display='none';
+}
 /*function openReportForm() {
     document.getElementById("uploadReportFormBox").style.display="block";
 }*/

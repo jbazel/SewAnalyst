@@ -1,8 +1,7 @@
 /* CSS and design to-do:
 - yassify the upload report file
--  Scrollable backgrounds need to go
+-  Scrollable backgrounds need to go --> Temporarily fixed :)
   - Figure out how to seperate the backgrounds from the main divs - the background should be not scrollable but the table needs to be for example
-- Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT BUT DEFINITELY POSSIBLE) 
 - Clean up different CSS stuff cos it's a mess --> in progress
 - Center no reasons report somehow
 - Hover over button shouldn't be black
@@ -12,11 +11,14 @@
 More
 - Buttons aren't all in the same place
 Later stuff: 
-- More lines in the flag report*/
+- More lines in the flag report
+Dim the background when viewing  flagged reports/ pop up (WILL BE QUITE DIFFICULT BUT DEFINITELY POSSIBLE --> not right now)*/
 
 /*possible issues with the Javascript:
 - Button takes ages to load... hmmmmmmmmmm. Might just have to be lucky in the presentation.
 */
+
+
 
 /*overflow: hidden is how we don't get the background image to scroll!*/
 
@@ -29,6 +31,8 @@ Later stuff:
 
 body {
   margin: 0;
+  /* WARNING WARNING WARNING!!! THIS IS A TEMPORARY WAY TO REMOVE THE SCROLLING THING FOR THE PRESENTATION -- NOT A VIABLE SOLUTION FOR THE TABLE OVERFLOW!!!*/
+  overflow: hidden;
 }
 
 /* a is for anything that is a hyperlink*/
@@ -70,13 +74,42 @@ a{
     justify-content: center;
 }
 
+#uploadForm {
+  display:none;
+}
+#formbox {
+  background-color: rgb(15,28,37); 
+  padding: 5%; 
+  border: 20px solid rgb(51, 74, 90);
+  color: white; 
+  margin:20px; 
+  box-shadow: 2px 2px 5px #333;
+  font-weight:700;
+}
 
+#closingbutton {
+  padding: 5px 30px;
+  background: rgb(195,204,222);
+  color:rgb(15,28,37) ;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight:600;
+  box-shadow: 2px 2px 5px #333;
+
+}
+
+#uploadsbuttons {
+
+  padding: 2.5px 15px;
+
+}
 #informationBox {
   background-color: rgb(15,28,37); 
-  padding-top: 1%; 
+  padding:3%;
   /*border: 3px solid rgb(51, 74, 90);*/
   color: white; 
-  margin:5px; 
   box-shadow: 2px 2px 5px #333;
 }
 input.link { background:none; border:none; }
@@ -222,9 +255,10 @@ th{
   display: fixed;
   text-align: center;
   background-color: rgb(195,204,222);
-  border-radius: 25px;
+  border-radius: 20px;
   font-size:15px;
   font-weight: 600;
+  box-shadow: 2px 2px 5px #333;
 }
 
 .table2 {
@@ -286,6 +320,23 @@ th{
   background-color: red;
 }
 
+/*Phasing out cancel2*/
+#buttonclosingflagpage {
+  background-color:rgb(15,28,37);
+  padding: 5px 20px;
+  color: white;
+  display:fixed;
+  text-align: center;
+  outline:none;
+  cursor: pointer;
+  max-width: 45%;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom:10px;
+  border-radius:30px ;
+  box-shadow:2px 2px 5px #333 ;
+}
+
 .cancel2 {
   background-color:rgb(15,28,37);
   color: white;
@@ -297,16 +348,16 @@ th{
   font-size: 15px;
   font-weight: 600;
   margin-bottom:10px;
-  opacity: 0.95;
+  /*opacity: 0.95;*/
   border-radius:30px ;
   box-shadow:2px 2px 5px #333 ;
 }
 
 #centering {
   text-align: center;
-  padding-top: 1%;
+  padding-top: 3%;
   display: fixed;
-  left: 50%;
+  padding-left: 5%;
 }
 
 
