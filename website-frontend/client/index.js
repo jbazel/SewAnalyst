@@ -199,7 +199,7 @@ function reportReasonsTable(data){
 
     showReportReasons = tableHeaders2;
 
-    buttonToClose = `<div id="centering"><button type="button" id="buttonclosingflagpage" onclick="closeList()"> CLOSE</button></div>`
+    buttonToClose = `<div id="centering"><button type="button" id="buttonClosingFlagPage" onclick="closeList()"> CLOSE</button></div>`
 
     for(let i=0; i<data.length; i++){
         showReportReasons += reportReason(data[i]);
@@ -218,7 +218,7 @@ function reportReason(data){
 function noReasons(){
     // need to yassify this!
     console.log("no reasons")
-    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" id="buttonclosingflagpage" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
+    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" id="buttonClosingFlagPage" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
     return noReasons;
 
 }
@@ -238,11 +238,11 @@ function generateForm(data) {
     flagReporthtml += `<form style="text-align: center" class="formContainer" method="POST" action="/flagReport/${data}">
                 <div class="mb-3">
                     <label for="InputReason" class="form-label" style="color: white; font-weight:500;"><b>Reason for Reporting</b> </label>
-                    <texarea name="Text1" rows="5"><input type="text" placeholder="Enter Reason" class="form-control" id="InputReason" name="reason" required></texarea>
+                    <texarea name="Text1"><input type="text" placeholder="Enter Reason" class="form-control" id="InputReason" name="reason" required></texarea>
                 </div>
-                <input type="checkbox" class="form-check-input" id="Checkbox">
-                <label class="form-check-label" for="Checkbox" style="color:white; padding-bottom:2%;"> I confirm that I am being truthful in my report</label> <br>
-                <button type="submit" class="btn" id="flagReportBtn"> SUBMIT</button>
+                <input type="checkbox" class="form-check-input" id="checkbox">
+                <label class="form-check-label" for="agree" style="color:white; padding-bottom:2%;"> I confirm that I am being truthful</label> <br>
+                <button type="submit" class="btn" id="flagReportBtn" onclick="if(!this.form.checkbox.checked){alert('Please confirm that you are being truthful before submission.');return false}"> SUBMIT</button>
                 <button type="button" class="btn cancel" onclick="closeForm()"> CLOSE</button>`
 
     let reasonsDiv2 = document.getElementById('flagReportFormBox');

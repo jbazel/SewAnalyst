@@ -14,9 +14,13 @@
       {
         "reportDate": "08/03/2023",
         "reportReason": "i dont like it"
+      },
+      {
+        "reportDate": "10/03/2023",
+        "reportReason": "This seems dodgy"
       }
     ],
-    "reportCounter": "3"
+    "reportCounter": "4"
   },
   {
     "reportName": "report2.pdf",
@@ -25,15 +29,18 @@
       {
         "reportDate": "10/03/2023",
         "reportReason": "not good"
+      },
+      {
+        "reportDate": "10/03/2023",
+        "reportReason": "I don't trust this report - sounds super off"
       }
     ],
-    "reportCounter": "1"
+    "reportCounter": "2"
   },
   {
     "reportName": "report3.pdf",
     "dateOfReport": "07/10/2022",
-    "reviews": [
-    ],
+    "reviews": [],
     "reportCounter": "0"
   }
 ]

@@ -1,12 +1,7 @@
 /* CSS and design to-do:
-- yassify the upload report file
 -  Scrollable backgrounds need to go --> Temporarily fixed :)
   - Figure out how to seperate the backgrounds from the main divs - the background should be not scrollable but the table needs to be for example
 - Clean up different CSS stuff cos it's a mess --> in progress
-- Center no reasons report somehow
-- Hover over button shouldn't be black
-- For the flag report thing, need to have it so if you don't click "I confrim I am being truthful" it doesn't let you submit it
-
 
 More
 - Buttons aren't all in the same place
@@ -321,7 +316,7 @@ th{
 }
 
 /*Phasing out cancel2*/
-#buttonclosingflagpage {
+#buttonClosingFlagPage {
   background-color:rgb(15,28,37);
   padding: 5px 20px;
   color: white;
@@ -355,7 +350,7 @@ th{
 
 #centering {
   text-align: center;
-  padding-top: 3%;
+  padding-top: 1%;
   display: fixed;
   padding-left: 5%;
 }
@@ -364,7 +359,6 @@ th{
 .formContainer .btn:hover, .open-button:hover {
   opacity: 1;
 }
-
 
 /*Download button effects*/
 .btn-cool
