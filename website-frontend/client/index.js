@@ -1,13 +1,23 @@
 
 
-const downloadSoftware = document.getElementById("downloadSoftware")
-downloadSoftware.addEventListener("click", async function(event){
+const downloadSoftwareWin = document.getElementById("downloadSoftware-win")
+downloadSoftwareWin.addEventListener("click", async function(event){
     try{
-      const response = await fetch('/program_download');
+      const response = await fetch('/program_download-win');
     } catch(e) {
       alert(e);
     }
   });
+
+const downloadSoftwareMac = document.getElementById("downloadSoftware-mac")
+downloadSoftwareMac.addEventListener("click", async function(event){
+    try{
+      const response = await fetch('/program_download-mac');
+    } catch(e) {
+      alert(e);
+    }
+  });
+
 
 
 
