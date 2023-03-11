@@ -13,7 +13,7 @@ app.disable('etag');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
-const programFolderPath = 'files/program/program1.json'
+const programFolderPath_win = 'files/program/SewAnalyst-win.zip'
 const reportFolderPath = "data/flaggedReports.json"
 const loadReports = JSON.parse(fs.readFileSync(reportFolderPath));
 //const FolderPath = 'files/reports/report1.pdf'
@@ -56,7 +56,7 @@ app.get('/reportDownload/:reportName', (req,res) => {
 app.get('/program_download', function(req, res){
     console.log('downloading program');
     res.setHeader('Last-Modified', (new Date()).toUTCString());
-    res.download(programFolderPath,function(err) {
+    res.download(programFolderPath_win,function(err) {
         if(err) {
             console.log(err);
             console.log('Error downloading file');
