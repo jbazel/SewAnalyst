@@ -57,8 +57,8 @@ body{
 
 .help{
     z-index: 3;
-    position: absolute;
-    left: 35%;
+    position: relative;
+    left: 2%;
     top: 51%;
 }
 
