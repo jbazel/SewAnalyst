@@ -113,12 +113,12 @@ def calculateDWF(data):
     return pd.Series(DWFRecalc)
 
 # function for determining an answer to question 3
-def questionThree(significantDifferencePE, significantDifferenceDWF, differenceSeverityPE, differenceSeverityDWF):
+def questionThree(stats):
     # if differences between both PE and DWF data is significant, provide the answer True
-    if significantDifferencePE and significantDifferenceDWF:
+    if stats['sigDifPE'] and stats['sigDifDWF']:
         significantDifferenceSum = True
         # if both differences are severe, the answer is also severe
-        if differenceSeverityDWF == "severe" and differenceSeverityPE == "severe":
+        if stats['difSevDWF'] == "severe" and stats['difSevPE'] == "severe":
             differenceSeveritySum = "severe"
         # if at least one difference is mild, return the answer mild
         else:
@@ -185,8 +185,11 @@ def genFigDWF(dates, DWFActual, DWFForecast):
     -------------------------------------------------------------------------------------------------------------------"""
 
 
-def generateReport(PeSeverity, DwfSeverity, FftSeverity, OverallSeverity, PeGraph, DwfGraph, FILENAME):
-
+def generateReport(stats, PeGraph, DwfGraph, FILENAME):
+    PeSeverity = stats['difSevPE']
+    DwfSeverity = stats['difSevDWF']
+    FftSeverity = stats['difSevFFT']
+    OverallSeverity = stats['q3Severity']
 
     #Idea to do this:
     ## Data generation (will probs come from adam)
@@ -356,31 +359,33 @@ def main(file_name):
     data['DWF_RECALCULATED'] = calculateDWF(data)
     DWFForecast = data['DWF_RECALCULATED']
 
+    stats = {}
+
     # determines the significance and severity of difference between the SOLAR PE forecast
     # and reported PE figures
-    sigDifPE, difSevPE = calculateDifference(PEForecast, PEActual)
+    stats['sigDifPE'], stats['difSevPE'] = calculateDifference(PEForecast, PEActual)
 
     # determines the significance and severity of difference between the recalculated DWF
     # figures and the reported DWF figures
-    sigDifDWF, difSevDWF = calculateDifference(DWFForecast, DWFActual)
+    stats['sigDifDWF'], stats['difSevDWF'] = calculateDifference(DWFForecast, DWFActual)
 
     # Uses the statistics generated from the calculateDifference functions to determine an 
     # answer for question 3
-    q3Discrepancy, q3Severity = questionThree(sigDifPE, sigDifDWF, difSevPE, difSevDWF)
+    stats['q3Discrepancy'], stats['q3Severity'] = questionThree(stats)
 
     # used by the developer to check if all functions have produced an appropriate output
-    print(sigDifPE, sigDifDWF, difSevPE, difSevDWF, q3Discrepancy, q3Severity)
-
+    for statistic in stats.keys():
+        print(stats[statistic])
     try:
         # use the provided data to plot PE and DWF graphs
         generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast)
         print("FIGURES GENERATED")
         # use the generated statistics and graphs to create a pdf report
-        generateReport(difSevPE, difSevDWF, difSevDWF, q3Severity, resource_path("resources/PE_plot.png"), resource_path(
+        generateReport(stats, resource_path("resources/PE_plot.png"), resource_path(
             "resources/DWF_plot.png"), FILENAME)
     except Exception as e:
         # output any error if one occurs in the figure generation or report creation phase
         print (e)
 
-# if __name__ == "__main__":
-#     main("python-backend/dummyData.csv")
+if __name__ == "__main__":
+    main("dummyData.csv")
