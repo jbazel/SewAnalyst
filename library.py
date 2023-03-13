@@ -42,6 +42,7 @@ def processData(pathToData):
     data["I_DWF"] = data["I_DWF"].str.replace(",", "").str.strip().astype(float)
     data["E"] = data["E"].str.replace(",", "").str.strip().astype(float)
     data["DWF_REPORTED"] = data["DWF_REPORTED"].str.replace(",", "").str.strip().astype(float)
+    data["FFT"] = data["FFT"].str.replace(",", "").str.strip().astype(float)
     data["POPULATION"] = data["POPULATION"].astype(float)
 
 
@@ -117,19 +118,19 @@ def calculateDWF(data):
     # convert list into a panda Series
     return pd.Series(DWFRecalc)
 
-def fftThreshold(DWFForecast, FFT):
-    ReportedFFT = mean(FFT)
+def fftThreshold(DWFForecast, FFTActual):
+    ReportedFFT = mean(FFTActual)
     ForecastedFFT = mean(DWFForecast) * 3
     if ForecastedFFT <= ReportedFFT:
-        adequateFFT = True
+        inadequateFFT = False
     else:
-        adequateFFT = False
-    return adequateFFT
+        inadequateFFT = True
+    return inadequateFFT
 
 # function for determining an answer to question 3
 def questionThree(stats):
     # if differences between both PE and DWF data is significant, provide the answer True
-    if stats['sigDifPE'] and stats['sigDifDWF']:
+    if stats['sigDifPE'] and stats['sigDifDWF'] and stats['FFTDiscrepancy']:
         significantDifferenceSum = True
         # if both differences are severe, the answer is also severe
         if stats['difSevDWF'] == "severe" and stats['difSevPE'] == "severe":
@@ -202,7 +203,7 @@ def genFigDWF(dates, DWFActual, DWFForecast):
 def generateReport(stats, PeGraph, DwfGraph, FILENAME):
     PeSeverity = stats['difSevPE']
     DwfSeverity = stats['difSevDWF']
-    FftSeverity = stats['difSevFFT']
+    FftSeverity = stats['FFTDiscrepancy']
     OverallSeverity = stats['q3Severity']
 
     #Idea to do this:
@@ -235,11 +236,9 @@ def generateReport(stats, PeGraph, DwfGraph, FILENAME):
         return paragraph
 
     def FFTParagraph(FftSeverity):
-        if FftSeverity == "none":
+        if FftSeverity == False:
             paragraph = 'FFT value reported and the one calculated were deemed to be the same and thus of severity "none". Meaning the company is calculating FFT accurately and with the proper figures.'
-        elif FftSeverity == "mild":
-            paragraph = 'FFT value reported and the one calculated were not the same and the severity of this difference was determined as "mild". Numbers and values used in its calculations may have been rounded up and therefore vary the final value slightly. As well there are two different ways to calculate this and therefore the other equation may have been used in which values vary and it is dependent on PE which if flagged earlier may be the issue. Alternatively, it was that a company was slightly over a threshold and wish to stay under, so they do not have to increase expenses on their STWs.'
-        elif FftSeverity == "severe":
+        elif FftSeverity == True:
             paragraph = 'FFT value reported and the one calculated were not the same and the severity of this difference was determined as "severe". Numbers and values used in its calculations may have been rounded up and therefore vary the final value slightly. As well there are two different ways to calculate this and therefore the other equation may have been used in which values vary and it is dependent on PE which if flagged earlier may be the issue. Alternatively, this raises an important warning about the company changing values in order to avoid certain requirements that comes with higher FFT which would mean an increase in cost for STW maintenance. There is a possibility the wrong data or something was forgotten during the calculations, but this is highly unlikely. As well, the common agreement is that FFT is around 3 times DWF however many companies disagree and say it is around 2 times only and this is where a lot of the differences come from.'
         else: 
             paragraph = 'There was an error with the FFT data analysis please retry it and make sure your pe data is proper'
@@ -372,6 +371,7 @@ def main(file_name):
     # calculate DWF using provided data and assign to the dataframe
     data['DWF_RECALCULATED'] = calculateDWF(data)
     DWFForecast = data['DWF_RECALCULATED']
+    FFTActual = data['FFT']
 
     stats = {}
 
@@ -383,6 +383,7 @@ def main(file_name):
     # figures and the reported DWF figures
     stats['sigDifDWF'], stats['difSevDWF'] = calculateDifference(DWFForecast, DWFActual)
 
+    stats['FFTDiscrepancy'] = fftThreshold(DWFForecast, FFTActual)
     # Uses the statistics generated from the calculateDifference functions to determine an 
     # answer for question 3
     stats['q3Discrepancy'], stats['q3Severity'] = questionThree(stats)
@@ -402,4 +403,4 @@ def main(file_name):
         print (e)
 
 if __name__ == "__main__":
-    main("good_example.csv")
+    main("bad_example.csv")
