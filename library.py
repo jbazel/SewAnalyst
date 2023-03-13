@@ -12,6 +12,8 @@ from PIL import Image
 from fpdf import FPDF
 import os
 import sys
+from statistics import mean, stdev
+from math import sqrt
 
 # ensures matplotlib does not generate a GUI, necessary for integration with flask
 plt.matplotlib.use('Agg')
@@ -29,18 +31,22 @@ def resource_path(path):
     -------------------------------------------------------------------------------------------------------------------"""
 
 def processData(pathToData):
-    headers = ["DATE", "MAX_IR (l/s)", "I_DWF (l/s)", "I_DWF_MAX (l/s)", "G (2020)", "E", "TDV (l)", "PE (forecasted 2021)", "PE (unrounded 2020)", "PE (forecasted 2020)"]
+    headers = ["DATE", "POPULATION", "G", "I_DWF", "E", "DWF_REPORTED", "FFT", "PE_REPORTED", "PE_FORECAST"]
+
     data = pd.DataFrame = pd.read_csv(resource_path(pathToData), names=headers)
     data = data.drop(data.index[0])
     data = data.reset_index()
     ## convert date to correct format
     data['DATE'] = data['DATE'].apply(pd.to_datetime)
-    data["I_DWF (l/s)"] = data["I_DWF (l/s)"].str.replace(",", "").str.strip().astype(float)
-    data["G (2020)"] = data["G (2020)"].str.replace(",", "").str.strip().astype(float)
-    data["E"] = data["G (2020)"].astype(float)
+    data["G"] = data["G"].str.replace(",", "").str.strip().astype(float)
+    data["I_DWF"] = data["I_DWF"].str.replace(",", "").str.strip().astype(float)
+    data["E"] = data["E"].str.replace(",", "").str.strip().astype(float)
+    data["DWF_REPORTED"] = data["DWF_REPORTED"].str.replace(",", "").str.strip().astype(float)
+    data["POPULATION"] = data["POPULATION"].astype(float)
 
-    data["PE (forecasted 2021)"] = data["PE (forecasted 2021)"].str.replace(",", "").str.strip().astype(float)
-    data["PE (unrounded 2020)"] = data["PE (unrounded 2020)"].str.replace(",", "").str.strip().astype(float)
+
+    data["PE_REPORTED"] = data["PE_REPORTED"].str.replace(",", "").str.strip().astype(float)
+    data["PE_FORECAST"] = data["PE_FORECAST"].str.replace(",", "").str.strip().astype(float)
     for i in headers:
         if i not in data.columns:
             print("ERROR missing column: " + i)
@@ -91,12 +97,11 @@ def calculateDifference(forecastData, reportedData):
 
     if sigDifTest < 0.05:
         significantDifference = True
-        # if there is a significant difference, calculate root mean squared error
-        RMSE = mean_squared_error(reportedData, forecastData, squared=False)
-        # use RMSE divided by standard deviation of reported data to determine the severity
-        # of the difference
-        threshold = RMSE / (reportedData.std() if reportedData.std() != 0 else 1)
-        if threshold < 1:
+        # if there is a significant difference, calculate cohens d
+        cohensD = (mean(forecastData) - mean(reportedData)) / (sqrt((stdev(forecastData) ** 2 + stdev(reportedData) ** 2) / 2))
+        print(cohensD)
+        # use value of cohens d determine the severity of the difference
+        if cohensD < 0.8:
             differenceSeverity = "mild"
         else:
             differenceSeverity = "severe"
@@ -107,10 +112,19 @@ def calculateDWF(data):
     DWFRecalc = []
     # calculate DWF using provided values for each row of the data and store in a list
     for idx in data.index:
-        DWF = (data['PE (unrounded 2020)'][idx])*(data['G (2020)'][idx]) + (data['I_DWF (l/s)'][idx]) + (data['E'][idx])
+        DWF = (data['POPULATION'][idx])*(data['G'][idx]) + (data['I_DWF'][idx]) + (data['E'][idx])
         DWFRecalc.append(DWF)
     # convert list into a panda Series
     return pd.Series(DWFRecalc)
+
+def fftThreshold(DWFForecast, FFT):
+    ReportedFFT = mean(FFT)
+    ForecastedFFT = mean(DWFForecast) * 3
+    if ForecastedFFT <= ReportedFFT:
+        adequateFFT = True
+    else:
+        adequateFFT = False
+    return adequateFFT
 
 # function for determining an answer to question 3
 def questionThree(stats):
@@ -145,8 +159,8 @@ def generateFigures(dates, PEActual, PEForecast, DWFActual, DWFForecast):
 # PE figures
 def genFigPE(dates, PEActual, PEForecast):
     ## plot onto one graph
-    plt.plot(dates, PEForecast, color='red', label='Predicted')
-    plt.plot(dates, PEActual, color='black', label='Recorded')
+    plt.plot(PEForecast, color='red', label='Predicted')
+    plt.plot(PEActual, color='black', label='Recorded')
 
     ##graph aesthetics
     plt.title("Recorded Population Equivalence versus Predicted Over Time", loc = 'left')
@@ -351,9 +365,9 @@ def main(file_name):
 
     # assign required data fields to variables to be used for analysis
     dates = data['DATE']
-    PEActual = data["PE (unrounded 2020)"]
-    PEForecast = data["PE (forecasted 2021)"]
-    DWFActual = data["I_DWF (l/s)"]
+    PEActual = data["PE_REPORTED"]
+    PEForecast = data["PE_FORECAST"]
+    DWFActual = data["DWF_REPORTED"]
 
     # calculate DWF using provided data and assign to the dataframe
     data['DWF_RECALCULATED'] = calculateDWF(data)
@@ -388,4 +402,4 @@ def main(file_name):
         print (e)
 
 if __name__ == "__main__":
-    main("dummyData.csv")
+    main("good_example.csv")
