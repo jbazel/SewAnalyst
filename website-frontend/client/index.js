@@ -1,13 +1,15 @@
-//downloadSoftwareWin
+//downloadSoftwareWin function
 const downloadSoftwareWin = document.getElementById("downloadSoftware-win")
 downloadSoftwareWin.addEventListener("click", async function(event){
     try{
+        //fetch request to download the program
       const response = await fetch('/program_download-win');
     } catch(e) {
       alert(e);
     }
   });
 
+//downloadSoftwareMac function
 const downloadSoftwareMac = document.getElementById("downloadSoftware-mac")
 downloadSoftwareMac.addEventListener("click", async function(event){
     try{
@@ -17,6 +19,7 @@ downloadSoftwareMac.addEventListener("click", async function(event){
     }
   });
 
+//route function
 const route = (event) => {
     event = event || window.event;
     event.preventDefault();
@@ -24,6 +27,7 @@ const route = (event) => {
     changeLocation();
 };
 
+//array of routes
 const routes = [
     {
         path: '/reportReasons/:reportName',
@@ -35,10 +39,12 @@ const routes = [
     }
 ];
 
+//changeLocation function
 const changeLocation = async () => {
     document.getElementById('uploadForm').style.display= 'none'; 
     const path = window.location.pathname;
     
+    //splits URL by /'s
     const routePathSegments = path.split('/').slice(1);
 
     if (routePathSegments.length > 1) {
@@ -52,6 +58,7 @@ const changeLocation = async () => {
             if ((pathSegments[0] === routePathSegments[0]) && (pathSegments.length === routePathSegments.length)) {
                 if (pathSegments[0] === 'reportReasons') {
                     const reasonsDiv = document.getElementById('listOfForms');
+                    //calls function to create html for flagged reasons table
                     const reportReasons = reportReasonsPopup(params);
                     reportReasons.then(data => (reasonsDiv.innerHTML = data));
                 } 
@@ -78,6 +85,7 @@ changeLocation();
 
 async function viewReportsPage(){
     try{
+        // fetch request to get all reports
         const response = await fetch('/reportList')
         const data = await response.json();
         document.getElementById('homepage').style.display='none'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='block';
@@ -93,6 +101,7 @@ async function viewReportsPage(){
 
 async function reportReasonsPopup(reportName){
     try{
+        // fetch request to get all reasons for a report being flagged
         const response = await fetch('/reportReasons/' + reportName);
         if (response.status === 204){
             window.alert("Error, could not view reasons")
@@ -118,6 +127,7 @@ async function reportReasonsPopup(reportName){
 
 // Functions to define how to load the data
 
+// function to create html for all reports table
 function allReports (data){
     let showReports = '';
     tableHeaders = `<table class="table">
@@ -136,6 +146,7 @@ function allReports (data){
     return showReports
 }
 
+// function to create html for each report in the table (each row)
 function report (data){
     let name = data.Name;
     let nameSub = name.substring(0, name.length-4);
@@ -152,7 +163,7 @@ function report (data){
 }
 
 
-
+//function to choose the correct colur of triangle for the number of times a report has been flagged
 function colourTriangle(TimesReported){
     if (+TimesReported == 0){
         return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill" id="greenWarning" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>';
@@ -165,6 +176,7 @@ function colourTriangle(TimesReported){
     }
 }
 
+// function to show the reasons for flagging a report in a table
 function reportReasonsTable(data){
     let showReportReasons = '';
     tableHeaders2 = `<table class="table table2">
@@ -183,6 +195,7 @@ function reportReasonsTable(data){
     return showReportReasons
 }
 
+//function for each row of the report reasons table
 function reportReason(data){
     const reportReason = `<tr>
     <td>${data.reportDate}</td>
@@ -190,22 +203,7 @@ function reportReason(data){
     return reportReason;
 }
 
-function noReasons(){
-    console.log("no reasons")
-    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" id="buttonClosingFlagPage" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
-    return noReasons;
-
-}
-function closenoReasons() {
-    document.getElementById("noreason").style.display="none";
-}
-
-function closeList() {
-    document.getElementById("listOfForms").style.display="none";
-}
-
-
-
+// function to generate popup for submitting a form of flagging a report
 function generateForm(data) {
     console.log("generate form")
     let flagReporthtml=``;
@@ -225,10 +223,25 @@ function generateForm(data) {
     
 }
 
+function noReasons(){
+    console.log("no reasons")
+    const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" id="buttonClosingFlagPage" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
+    return noReasons;
+
+}
+
+// closing certain popups
+function closenoReasons() {
+    document.getElementById("noreason").style.display="none";
+}
+
+function closeList() {
+    document.getElementById("listOfForms").style.display="none";
+}
+
 function closeForm() {
     document.getElementById("flagReportFormBox").style.display="none";
 }
-
 
 function openUploadReportPopup() {
     document.getElementById('uploadForm').style.display='flex';
@@ -238,10 +251,10 @@ function openUploadReportPopup() {
     
 }
 
-
 function closeUploads() {
     document.getElementById('uploadForm').style.display='none';
      document.getElementById('homepage').style.display='flex'; 
     document.getElementById('softwarePage').style.display='none';
     document.getElementById('reportsPage').style.display='none';
 }
+

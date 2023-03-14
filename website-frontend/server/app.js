@@ -1,3 +1,4 @@
+//declaring everything that is needed for the server
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const app = express();
@@ -13,11 +14,13 @@ app.disable('etag');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
+//declaring the paths for the files
 const programFolderPath_win = 'files/program/SewAnalyst-win.zip'
 const programFolderPath_mac = 'files/program/SewAnalyst-mac.zip'
 const reportFolderPath = "data/flaggedReports.json"
 const loadReports = JSON.parse(fs.readFileSync(reportFolderPath));
 
+//function that saves the data to the json file
 const saveData = (file) => {
     const finished = (error) => {
         if (error) {
@@ -28,6 +31,7 @@ const saveData = (file) => {
     fs.writeFile(file, jsonData, finished);
 }
 
+//get request for downloading a report
 app.get('/reportDownload/:reportName', (req,res) => {
     try{
         FolderPath = `files/reports/${req.params.reportName}`
@@ -47,6 +51,7 @@ app.get('/reportDownload/:reportName', (req,res) => {
     }
 })
 
+//get request for downloading the program for windows
 app.get('/program_download-win', function(req, res){
     console.log('downloading program');
     res.setHeader('Last-Modified', (new Date()).toUTCString());
@@ -58,6 +63,7 @@ app.get('/program_download-win', function(req, res){
     })
 })
 
+//get request for donwloading the program for mac
 app.get('/program_download-mac', function(req, res){
     res.setHeader('Last-Modified', (new Date()).toUTCString());
     res.download(programFolderPath_mac,function(err) {
@@ -68,8 +74,7 @@ app.get('/program_download-mac', function(req, res){
     })
 })
 
-
-
+//post request for flagging a report
 app.post('/flagReport/:reportName', (req, res) => {
     try{
         info = req.body
@@ -101,6 +106,7 @@ app.post('/flagReport/:reportName', (req, res) => {
     }
 });
 
+//get request for getting the list of reports
 app.get('/reportList', (req, res) => {
     const reportList = [];
     try {
@@ -114,6 +120,7 @@ app.get('/reportList', (req, res) => {
     }
 });
 
+//get request for getting the reasons for a report being flagged
 app.get('/reportReasons/:reportName', (req, res) => {
     const reportNum = req.params.reportName;
     try{
@@ -129,6 +136,7 @@ app.get('/reportReasons/:reportName', (req, res) => {
     }
 });
 
+//post request for uploading a report from clients computer to server
 app.post('/upload', function(req, res) {
     let sampleFile;
     let uploadPath;
@@ -151,6 +159,7 @@ app.post('/upload', function(req, res) {
     });
   });
 
+//function that updates the json file with the new report
 function updateJsonfile(reportName){
     let reportDate = new Date().toLocaleString()
     reportDate = reportDate.split(",")[0]
