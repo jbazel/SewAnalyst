@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="merge web -&gt; main" />
+    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="merge web -&gt; main">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/SewAnalyst.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/SewAnalyst.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/main/warn-main.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/warn-main.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dist/SewAnalyst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dist/SewAnalyst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/reports/bad_example.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/reports/good_example.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/backend/reports/good_example.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/reports/test.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/DWF_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/DWF_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/PE_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/PE_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/bad_example.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/dummyData.csv" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +147,7 @@
       <workItem from="1678795437955" duration="4385000" />
       <workItem from="1678804216253" duration="1375000" />
       <workItem from="1678806306823" duration="2858000" />
-      <workItem from="1678809824714" duration="363000" />
+      <workItem from="1678809824714" duration="2789000" />
     </task>
     <task id="LOCAL-00001" summary="working thing">
       <created>1675962493731</created>
