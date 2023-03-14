@@ -5,7 +5,6 @@
 
 import warnings
 from scipy import stats
-from sklearn.metrics import mean_squared_error
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
