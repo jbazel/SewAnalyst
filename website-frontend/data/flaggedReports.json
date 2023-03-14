@@ -1,0 +1,40 @@
+[
+  {
+    "reportName": "report1.pdf",
+    "dateOfReport": "2018-01-01",
+    "reviews": [
+      {
+        "reportDate": "06/03/2023",
+        "reportReason": "There is something not correct about the graphs produced here. They don't seem accurate."
+      },
+      {
+        "reportDate": "07/03/2023",
+        "reportReason": "This possibly looks like a made up water company. Not sure if I can trust this."
+      },
+      {
+        "reportDate": "08/03/2023",
+        "reportReason": "i dont like it"
+      },
+      {
+        "reportDate": "10/03/2023",
+        "reportReason": "This seems dodgy"
+      }
+    ],
+    "reportCounter": "13"
+  },
+  {
+    "reportName": "report2.pdf",
+    "dateOfReport": "02/02/2022",
+    "reviews": [
+      {
+        "reportDate": "10/03/2023",
+        "reportReason": "not good"
+      },
+      {
+        "reportDate": "10/03/2023",
+        "reportReason": "I don't trust this report - sounds super off"
+      }
+    ],
+    "reportCounter": "2"
+  }
+]
