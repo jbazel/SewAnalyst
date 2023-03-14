@@ -13,6 +13,12 @@ describe('Test all requests', () => {
 	    .expect(200);
     });
 
+    test('GET /reportDownload/:reportName returns file', () => {
+        return request(app)
+	    .get('/reportDownload/report1.pdf')
+	    .expect('content-type', 'application/pdf');
+    });
+
     //PROGRAM DOWNLOADS
 
     test('GET /program_download-win succeeds', () => {
@@ -21,13 +27,38 @@ describe('Test all requests', () => {
 	    .expect(200);
     });
 
+    test('GET /program_download-win downloads a zip', () => {
+        return request(app)
+	    .get('/program_download-win')
+	    .expect('content-type', 'application/zip');
+    });
+
     test('GET /program_download-mac succeeds', () => {
         return request(app)
 	    .get('/program_download-mac')
 	    .expect(200);
     });
 
+    test('GET /program_download-mac downloads a zip', () => {
+        return request(app)
+	    .get('/program_download-mac')
+	    .expect('content-type', 'application/zip');
+    });
+
     // LIST OF REPORTS
+
+    
+    test('GET /reportList succeeds', () => {
+        return request(app)
+	    .get('/reportList')
+	    .expect(200);
+    });
+
+    test('GET /reportList contains JSON', () => {
+        return request(app)
+	    .get('/reportList')
+	    .expect('Content-type', /json/);
+    });
 
     test('GET /reportList includes array', () => {
         return request(app)
@@ -36,6 +67,18 @@ describe('Test all requests', () => {
     });
 
     // LIST OF REASONS
+
+    test('GET /reportReasons/:reportName succeeds', () => {
+        return request(app)
+	    .get('/reportReasons/report1.pdf')
+	    .expect(200);
+    });
+
+    test('GET /reportReasons/:reportName contains JSON', () => {
+        return request(app)
+	    .get('/reportReasons/report1.pdf')
+	    .expect('Content-type', /json/);
+    });
 
     test('GET /reportReasons/:reportName includes array', () => {
         return request(app)
