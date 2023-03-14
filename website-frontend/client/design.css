@@ -360,7 +360,31 @@ th{
   opacity: 1;
 }
 
-/*Download button effects*/
+#downloadSoftware-win {
+    padding: 10px 60px;
+    background: rgb(30,55,73);
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 250;
+    border-radius: 30px;
+}
+
+#downloadSoftware-mac {
+  padding: 10px 60px;
+  background: rgb(30,55,73);
+  color: white;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 250;
+  border-radius: 30px;
+}
+
+/*Download button effects
 .btn-cool
 {
     position: relative;
@@ -526,4 +550,4 @@ th{
       transform: translate(-50%,100px) scale(1.3);
     }
   }
-
+*/
