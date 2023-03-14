@@ -18,9 +18,21 @@
       {
         "reportDate": "10/03/2023",
         "reportReason": "This seems dodgy"
+      },
+      {
+        "reportDate": "14/03/2023",
+        "reportReason": "badness"
+      },
+      {
+        "reportDate": "14/03/2023",
+        "reportReason": "badness"
+      },
+      {
+        "reportDate": "14/03/2023",
+        "reportReason": "badness"
       }
     ],
-    "reportCounter": "4"
+    "reportCounter": "7"
   },
   {
     "reportName": "report2.pdf",

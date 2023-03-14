@@ -47,7 +47,6 @@ app.get('/reportDownload/:reportName', (req,res) => {
                 res.status(500).send('Error downloading file');
             }
         });
-        //res.status(200);
     }
     catch(e){
         console.log(e)
