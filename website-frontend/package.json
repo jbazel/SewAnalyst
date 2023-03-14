@@ -4,7 +4,8 @@
     "description": "",
     "main": "server/script.js",
     "scripts": {
-        "start": "node server/script.js"
+        "start": "node server/app.js",
+        "test": "jest"
     },
     "author": "",
     "license": "ISC",
@@ -13,5 +14,8 @@
         "express": "^4.18.2",
         "express-fileupload": "^1.4.0",
         "nodemon": "^2.0.20"
+    },
+    "devDependencies": {
+        "jest": "^29.5.0"
     }
 }
