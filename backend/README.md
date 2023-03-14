@@ -9,9 +9,11 @@ library.py contains the functions for the program.
 
 Creating a build environment:
 
-pip freeze > requirements.txt \
-python -m venv venv \
-source venv/bin/activate \
-pip install -r requirements.txt \
+python -m venv venv 
+
+source venv/bin/activate 
+
+pip install -r requirements.txt 
+
 
 then build 
