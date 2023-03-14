@@ -1,0 +1,100 @@
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 3104da9c74ff9fa08b0b75274fd7463d872e845e)
++++ /dev/null	(revision 3104da9c74ff9fa08b0b75274fd7463d872e845e)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"a08264d9-633c-458d-987e-208d17bda39a\" name=\"Changes\" comment=\"added venv\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\n    <envs>\n      <env key=\"FLASK_APP\" value=\"app\" />\n    </envs>\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\n    <option name=\"myEnvs\">\n      <map>\n        <entry key=\"FLASK_APP\" value=\"app\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2LVd7O85eIJsQf1Hy2yAkBNIAvN\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SONARLINT_PRECOMMIT_ANALYSIS\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_opened_file_path\": \"/Users/joshburns/Documents/GitHub/STW-analysis\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/backend\" />\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/dist\" />\n      <recent name=\"$PROJECT_DIR$/sewanalyst\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Python.main\">\n    <configuration name=\"index.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:63342/STW-analysis/website-frontend/client/index.html\" useBuiltInWebServerPort=\"true\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"STW-analysis\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"$USER_HOME$/opt/anaconda3/envs/AI-condaEnv/bin/python\" />\n      <option name=\"SDK_NAME\" value=\"AI-condaEnv\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/python-backend\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/python-backend/main.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"STW-analysis\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/sewanalyst\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JavaScript Debug.index.html\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"a08264d9-633c-458d-987e-208d17bda39a\" name=\"Changes\" comment=\"\" />\n      <created>1675960016036</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1675960016036</updated>\n      <workItem from=\"1675960017107\" duration=\"3810000\" />\n      <workItem from=\"1675981809598\" duration=\"46000\" />\n      <workItem from=\"1676038955244\" duration=\"173000\" />\n      <workItem from=\"1676039132978\" duration=\"142000\" />\n      <workItem from=\"1676737777268\" duration=\"114000\" />\n      <workItem from=\"1678381199422\" duration=\"2627000\" />\n      <workItem from=\"1678455273342\" duration=\"6872000\" />\n      <workItem from=\"1678462433675\" duration=\"4891000\" />\n      <workItem from=\"1678552649207\" duration=\"613000\" />\n      <workItem from=\"1678795437955\" duration=\"4385000\" />\n      <workItem from=\"1678804216253\" duration=\"1375000\" />\n      <workItem from=\"1678806306823\" duration=\"2858000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"working thing\">\n      <created>1675962493731</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675962493731</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"front-back integration\">\n      <created>1675963204423</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675963204423</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"working packaging\">\n      <created>1678464025743</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678464025743</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"working packaging\">\n      <created>1678464042889</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678464042889</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"bug fixes\">\n      <created>1678545602331</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678545602331</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"bug fixes\">\n      <created>1678803337669</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678803337669</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"added venv\">\n      <created>1678804533301</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678804533301</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"added venv\">\n      <created>1678809073434</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678809073434</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"9\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"working thing\" />\n    <MESSAGE value=\"front-back integration\" />\n    <MESSAGE value=\"working packaging\" />\n    <MESSAGE value=\"bug fixes\" />\n    <MESSAGE value=\"added venv\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added venv\" />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/STW_analysis$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1676737870345\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/python-backend\" />\n    <SUITE FILE_PATH=\"coverage/STW_analysis$main__1_.coverage\" NAME=\"main (1) Coverage Results\" MODIFIED=\"1678461653981\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/sewanalyst\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3104da9c74ff9fa08b0b75274fd7463d872e845e)
++++ b/.idea/workspace.xml	(date 1678809725020)
+@@ -31,22 +31,22 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "/Users/joshburns/Documents/GitHub/STW-analysis",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/Users/joshburns/Documents/GitHub/STW-analysis&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/backend" />
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n?\n\u000Fbackend/LICENSE\u0012,5/0/506a77e68d690e5571314c5ae483a71b1fa2d914\nB\n\u0012backend/library.py\u0012,a/2/a2424b40391109989f173d93342a1b1802ed8b55\nP\n backend/build/main/warn-main.txt\u0012,9/b/9b33197a99c2d9b390170de2b34c6a77fbc76501\nQ\n!backend/build/main/xref-main.html\u0012,8/f/8f3826b7794c9e094c2832f95727445e94d17de1\nM\n\u001Dbackend/build/main/PKG-00.toc\u0012,a/2/a203edcced1cba8e970bc54b7ec55237721646fd\nM\n\u001Dbackend/build/main/PYZ-00.toc\u0012,0/6/061351b7e865a6118936dd99a0e085bfa5525af0\nA\n\u0011backend/main.spec\u0012,a/1/a16aa1310bd49dee58901767e5e0c74b677b3b0f\nM\n\u001Dbackend/build/main/EXE-00.toc\u0012,6/8/68c03f54b5caab0b85a32a4640cdabc79f18880c\nR\n\"backend/build/main/Analysis-00.toc\u0012,1/e/1e6219780650b8862e020412a980ee8ae4cd84c6\nA\n\u0011backend/README.md\u0012,6/6/6610930c2092e0f10b89932e6e99b7645897ce85\nH\n\u0018backend/requirements.txt\u0012,7/4/7467689207bc56c9ef017581c0c04191bc16e11e\n?\n\u000Fbackend/main.py\u0012,c/b/cb368897cc5bf4934e15bc7a3c0b7d3b69446875
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision 3104da9c74ff9fa08b0b75274fd7463d872e845e)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1678809712620)
+@@ -1,8 +1,4 @@
+ 
+-?
+-backend/LICENSE,5/0/506a77e68d690e5571314c5ae483a71b1fa2d914
+-B
+-backend/library.py,a/2/a2424b40391109989f173d93342a1b1802ed8b55
+ P
+  backend/build/main/warn-main.txt,9/b/9b33197a99c2d9b390170de2b34c6a77fbc76501
+ Q
+@@ -11,15 +7,7 @@
+ backend/build/main/PKG-00.toc,a/2/a203edcced1cba8e970bc54b7ec55237721646fd
+ M
+ backend/build/main/PYZ-00.toc,0/6/061351b7e865a6118936dd99a0e085bfa5525af0
+-A
+-backend/main.spec,a/1/a16aa1310bd49dee58901767e5e0c74b677b3b0f
+ M
+ backend/build/main/EXE-00.toc,6/8/68c03f54b5caab0b85a32a4640cdabc79f18880c
+ R
+-"backend/build/main/Analysis-00.toc,1/e/1e6219780650b8862e020412a980ee8ae4cd84c6
+-A
+-backend/README.md,6/6/6610930c2092e0f10b89932e6e99b7645897ce85
+-H
+-backend/requirements.txt,7/4/7467689207bc56c9ef017581c0c04191bc16e11e
+-?
+-backend/main.py,c/b/cb368897cc5bf4934e15bc7a3c0b7d3b69446875
+\ No newline at end of file
++"backend/build/main/Analysis-00.toc,1/e/1e6219780650b8862e020412a980ee8ae4cd84c6
+\ No newline at end of file
