@@ -82,7 +82,7 @@ def processData(pathToData):
 
 # function for determining if differences between data are significant and how severe they are
 def calculateDifference(forecastData, reportedData):
-    # if there a significant difference between datasets and how severe is that difference
+    # if there's a significant difference between datasets and how severe is that difference
     significantDifference = False
     differenceSeverity = "none"
     # determine if data is normally distributed

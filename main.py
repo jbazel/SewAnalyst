@@ -60,26 +60,8 @@ def upload():
         return render_template('index.html')
 
 
-@app.route("/download")
-def download():
-    try:
-        print("routing to download, attempting to render template")
-        return render_template('download.html')
-    except Exception:
-        print("render template error")
-
-
 if __name__ == "__main__":
-    # processData("sampleData.csv")
     try:
-
-        # if getattr(sys, 'frozen', False):
-        #     # If the application is run as a bundle, the PyInstaller bootloader
-        #     # extends the sys module by a flag frozen=True and sets the app
-        #     # path into variable _MEIPASS'.
-        #     application_path = sys._MEIPASS
-        # else:
-        #     application_path = os.path.dirname(os.path.abspath(__file__))
         app.secret_key = 'session_key'
         app.config['SESSION_TYPE'] = 'filesystem'
         app.debug = False
