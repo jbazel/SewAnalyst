@@ -6,7 +6,7 @@ block_cipher = None
 
 a = Analysis(
     ['main.py'],
-    pathex=[],
+    pathex=['venv/lib/python3.9/site-packages'],
     binaries=[],
     datas=[('templates', 'templates'), ('static', 'static'), ('resources', 'resources'), ('reports', 'reports')],
     hiddenimports=["sklearn.metrics._pairwise_distances_reduction._base",
@@ -30,7 +30,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='main',
+    name='SewAnalyst',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

@@ -6,3 +6,12 @@ To build the software for your operating system, within this file directory, use
 main.py contains the main function for the program including flask routing.
 
 library.py contains the functions for the program.
+
+Creating a build environment:
+
+pip freeze > requirements.txt \
+python -m venv venv \
+source venv/bin/activate \
+pip install -r requirements.txt \
+
+then build 

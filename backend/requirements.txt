@@ -1,0 +1,9 @@
+flaskwebgui
+flask
+pillow
+scipy
+fpdf
+statistics
+matplotlib
+pandas
+pyinstaller
