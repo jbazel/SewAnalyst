@@ -22,7 +22,7 @@ def resource_path(path):
     try:
         base_path = sys._MEIPASS
     except Exception:
-        base_path = os.path.abspath(".")
+        base_path = os.path.abspath("")
     return os.path.join(base_path, path)
 
 """-------------------------------------------------------------------------------------------------------------------
@@ -400,6 +400,3 @@ def main(file_name):
     except Exception as e:
         # output any error if one occurs in the figure generation or report creation phase
         print (e)
-
-if __name__ == "__main__":
-    main("bad_example.csv")
