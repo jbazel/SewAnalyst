@@ -1,5 +1,4 @@
-
-
+//downloadSoftwareWin
 const downloadSoftwareWin = document.getElementById("downloadSoftware-win")
 downloadSoftwareWin.addEventListener("click", async function(event){
     try{
@@ -17,29 +16,6 @@ downloadSoftwareMac.addEventListener("click", async function(event){
       alert(e);
     }
   });
-
-
-
-
-/*function openForm() {
-    document.getElementById("flagReportFormBox").style.display="block";
-}
-
-function closeForm() {
-    document.getElementById("flagReportFormBox").style.display="none";
-}
-
-function openList() {
-    document.getElementById("listOfForms").style.display="block";
-}
-function closeList() {
-    document.getElementById("listOfForms").style.display="none";
-}*/
-
-///////////////////
-/////////////////////
-/////////////////////////////
-/////////////////////////////////
 
 const route = (event) => {
     event = event || window.event;
@@ -59,8 +35,6 @@ const routes = [
     }
 ];
 
-//const baseRoutes = ["reportReasons, viewReports"];
-
 const changeLocation = async () => {
     document.getElementById('uploadForm').style.display= 'none'; 
     const path = window.location.pathname;
@@ -69,7 +43,6 @@ const changeLocation = async () => {
 
     if (routePathSegments.length > 1) {
         const params = routePathSegments[1]
-        //console.log("params in handle loc: "+params)
         for (let i = 0; i < routes.length; i++) {
             
             const routePath = routes[i].path;
@@ -105,14 +78,11 @@ changeLocation();
 
 async function viewReportsPage(){
     try{
-        //console.log("here page")
         const response = await fetch('/reportList')
         const data = await response.json();
-        // console.log(data)
         document.getElementById('homepage').style.display='none'; document.getElementById('softwarePage').style.display='none'; document.getElementById('reportsPage').style.display='block';
 
         const html = allReports(data);
-        //console.log(html)
         return html;
 
     }
@@ -123,15 +93,12 @@ async function viewReportsPage(){
 
 async function reportReasonsPopup(reportName){
     try{
-        //this won't work rn but the basis is there
-        //console.log("here reasons")
         const response = await fetch('/reportReasons/' + reportName);
         if (response.status === 204){
             window.alert("Error, could not view reasons")
         }
         else{
             const data = await response.json()
-            //window.alert(data);
             if (data.length === 0){
                 const htmlPopup = noReasons();
                 document.getElementById("listOfForms").style.display="block";
@@ -164,10 +131,8 @@ function allReports (data){
     showReports = tableHeaders;
     for(let i=0; i<data.length; i++){
         reportData = report(data[i]);
-        //console.log(reportData)
         showReports += reportData;
     }
-    //console.log(showReports)
     return showReports
 }
 
@@ -226,7 +191,6 @@ function reportReason(data){
 }
 
 function noReasons(){
-    // need to yassify this!
     console.log("no reasons")
     const noReasons = `<div id="centering"><div id="noreason"><col><p> No reasons to show</p><button type="button" id="buttonClosingFlagPage" onclick="closenoReasons()"> CLOSE</button></col></div></div>`
     return noReasons;
@@ -281,6 +245,3 @@ function closeUploads() {
     document.getElementById('softwarePage').style.display='none';
     document.getElementById('reportsPage').style.display='none';
 }
-/*function openReportForm() {
-    document.getElementById("uploadReportFormBox").style.display="block";
-}*/
