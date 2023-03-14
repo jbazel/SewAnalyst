@@ -1,5 +1,8 @@
-# STW-analysis
+# SewAnalyst Backend 
 
-build command: 
+To build the software for your operating system, within this file directory, use the command
+'pyinstaller main.spec'. This will create a folder called 'dist' which contains the executable
 
-pyinstaller -F --onefile --hidden-import="sklearn.metrics._pairwise_distances_reduction" sewanalyst/main.py
+main.py contains the main function for the program including flask routing.
+
+library.py contains the functions for the program.
