@@ -1,69 +1,0 @@
-
-Bpython:S125"Remove this commented out code.(ÚÌ—äûÿÿÿÿ8‡éÿ†î0
-tpython:S117 "VRename this parameter "pathToData" to match the regular expression ^[_a-z][a-z0-9_]*$.(éŽ¢ç8ˆéÿ†î0
-ppython:S1542 "QRename function "processData" to match the regular expression ^[a-z_][a-z0-9_]*$.(éŽ¢ç8ˆéÿ†î0
-spython:S3776 "TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(éŽ¢ç8ˆéÿ†î0
-[python:S5754?"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8ˆéÿ†î0
-upython:S117e"XRename this local variable "cohensD" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘¸Á\8ˆéÿ†î0
-†python:S117V"cRename this local variable "differenceSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŠŽŸûÿÿÿÿ8ˆéÿ†î0
-{python:S117S"XRename this parameter "forecastData" to match the regular expression ^[_a-z][a-z0-9_]*$.(øÍ‚·øÿÿÿÿ8ˆéÿ†î0
-}python:S117X"_Rename this local variable "forecastNormal" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÍˆÆ¼8ˆéÿ†î0
-{python:S117S"XRename this parameter "reportedData" to match the regular expression ^[_a-z][a-z0-9_]*$.(øÍ‚·øÿÿÿÿ8ˆéÿ†î0
-}python:S117Y"_Rename this local variable "reportedNormal" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø¦¥À8ˆéÿ†î0
-ypython:S117]"[Rename this local variable "sigDifTest" to match the regular expression ^[_a-z][a-z0-9_]*$.(ú˜áÎ8ˆéÿ†î0
-ƒpython:S117U"fRename this local variable "significantDifference" to match the regular expression ^[_a-z][a-z0-9_]*$.(…ºÔq8ˆéÿ†î0
-}python:S1542S"YRename function "calculateDifference" to match the regular expression ^[a-z_][a-z0-9_]*$.(øÍ‚·øÿÿÿÿ8ˆéÿ†î0
-}python:S117p"ZRename this local variable "DWFRecalc" to match the regular expression ^[_a-z][a-z0-9_]*$.(Þæàùÿÿÿÿÿ8ˆéÿ†î0
-vpython:S1542o"RRename function "calculateDWF" to match the regular expression ^[a-z_][a-z0-9_]*$.(âôÝ¤úÿÿÿÿ8ˆéÿ†î0
-upython:S117x"WRename this parameter "DWFForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(òßª©8ˆéÿ†î0
-spython:S117x"URename this parameter "FFTActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(òßª©8ˆéÿ†î0
-|python:S117z"^Rename this local variable "ForecastedFFT" to match the regular expression ^[_a-z][a-z0-9_]*$.(®šû™8ˆéÿ†î0
-python:S117y"\Rename this local variable "ReportedFFT" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùÌøÿÿÿÿ8ˆéÿ†î0
-|python:S117|"^Rename this local variable "inadequateFFT" to match the regular expression ^[_a-z][a-z0-9_]*$.(òºâä8‰éÿ†î0
-qpython:S1542x"RRename function "fftThreshold" to match the regular expression ^[a-z_][a-z0-9_]*$.(òßª©8‰éÿ†î0
-…python:S117ˆ"fRename this local variable "differenceSeveritySum" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶…ÁÑ8‰éÿ†î0
-‡python:S117…"iRename this local variable "significantDifferenceSum" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶˜Ž18‰éÿ†î0
-xpython:S1542‚"SRename function "questionThree" to match the regular expression ^[a-z_][a-z0-9_]*$.(ùÔ¾¶øÿÿÿÿ8‰éÿ†î0
-tpython:S117š"URename this parameter "DWFActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ÿ™ŸŸ8‰éÿ†î0
-vpython:S117š"WRename this parameter "DWFForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ÿ™ŸŸ8‰éÿ†î0
-spython:S117š"TRename this parameter "PEActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ÿ™ŸŸ8‰éÿ†î0
-upython:S117š"VRename this parameter "PEForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ÿ™ŸŸ8‰éÿ†î0
-upython:S1542š"URename function "generateFigures" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ÿ™ŸŸ8‰éÿ†î0
-Rpython:S1172 "-Remove the unused function parameter "dates".(Žãþ¯ùÿÿÿÿ8‰éÿ†î0
-xpython:S117 "TRename this parameter "PEActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(Žãþ¯ùÿÿÿÿ8‰éÿ†î0
-zpython:S117 "VRename this parameter "PEForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(Žãþ¯ùÿÿÿÿ8‰éÿ†î0
-spython:S1542 "NRename function "genFigPE" to match the regular expression ^[a-z_][a-z0-9_]*$.(Žãþ¯ùÿÿÿÿ8‰éÿ†î0
-Mpython:S1172³"-Remove the unused function parameter "dates".(¹æà¶8‰éÿ†î0
-tpython:S117³"URename this parameter "DWFActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹æà¶8‰éÿ†î0
-vpython:S117³"WRename this parameter "DWFForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹æà¶8‰éÿ†î0
-opython:S1542³"ORename function "genFigDWF" to match the regular expression ^[a-z_][a-z0-9_]*$.(¹æà¶8‰éÿ†î0
-|python:S117„"XRename this local variable "CompAna" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ö÷Íýÿÿÿÿ8‰éÿ†î0
-vpython:S117‚"XRename this local variable "DWFPara" to match the regular expression ^[_a-z][a-z0-9_]*$.(£÷ã8‰éÿ†î0
-xpython:S117Ê"TRename this parameter "DwfGraph" to match the regular expression ^[_a-z][a-z0-9_]*$.(ýîÒ‡ûÿÿÿÿ8‰éÿ†î0
-€python:S117Ì"\Rename this local variable "DwfSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(öÛ„Ãøÿÿÿÿ8‰éÿ†î0
-|python:S117ƒ"XRename this local variable "FFTPara" to match the regular expression ^[_a-z][a-z0-9_]*$.(Àîïþÿÿÿÿ8‰éÿ†î0
-xpython:S117Ê"TRename this parameter "FILENAME" to match the regular expression ^[_a-z][a-z0-9_]*$.(ýîÒ‡ûÿÿÿÿ8‰éÿ†î0
-€python:S117Í"\Rename this local variable "FftSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùÝß€þÿÿÿÿ8‰éÿ†î0
-python:S117Î"`Rename this local variable "OverallSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(øü¨ê8Šéÿ†î0
-{python:S117"WRename this local variable "PEPara" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŒÇÙþÿÿÿÿ8Šéÿ†î0
-wpython:S117Ê"SRename this parameter "PeGraph" to match the regular expression ^[_a-z][a-z0-9_]*$.(ýîÒ‡ûÿÿÿÿ8Šéÿ†î0
-python:S117Ë"[Rename this local variable "PeSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í¢‰úÿÿÿÿ8Šéÿ†î0
-ypython:S1542Ê"TRename function "generateReport" to match the regular expression ^[a-z_][a-z0-9_]*$.(ýîÒ‡ûÿÿÿÿ8Šéÿ†î0
-ypython:S3776Ê"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(ýîÒ‡ûÿÿÿÿ8Šéÿ†î0
-zpython:S117×"VRename this parameter "PeSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(Öú÷¹þÿÿÿÿ8Šéÿ†î0
-vpython:S1542×"QRename function "PEParagraph" to match the regular expression ^[a-z_][a-z0-9_]*$.(Öú÷¹þÿÿÿÿ8Šéÿ†î0
-{python:S117â"WRename this parameter "DwfSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(÷ˆÕÅøÿÿÿÿ8Šéÿ†î0
-wpython:S1542â"RRename function "DWFParagraph" to match the regular expression ^[a-z_][a-z0-9_]*$.(÷ˆÕÅøÿÿÿÿ8Šéÿ†î0
-{python:S117í"WRename this parameter "FftSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(è¾Ïûÿÿÿÿ8Šéÿ†î0
-wpython:S1542í"RRename function "FFTParagraph" to match the regular expression ^[a-z_][a-z0-9_]*$.(è¾Ïûÿÿÿÿ8Šéÿ†î0
-python:S117ö"[Rename this parameter "OverallSeverity" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹«¯úÿÿÿÿ8Šéÿ†î0
-zpython:S1542ö"URename function "CompAnParagraph" to match the regular expression ^[a-z_][a-z0-9_]*$.(‹«¯úÿÿÿÿ8Šéÿ†î0
-zpython:S117²"VRename this local variable "iMage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¤»íÌúÿÿÿÿ8Šéÿ†î0
-|python:S117¶"XRename this local variable "pdfSize" to match the regular expression ^[_a-z][a-z0-9_]*$.(­‚×–ûÿÿÿÿ8Šéÿ†î0
-Opython:S1656¾"/Remove or correct this useless self-assignment.(·ÉïÖ8Šéÿ†î0
-Tpython:S1656Â"/Remove or correct this useless self-assignment.(Ú’Œåøÿÿÿÿ8Šéÿ†î0
-~python:S117ð"ZRename this local variable "DWFActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÅÂéÐÿÿÿÿÿ8Šéÿ†î0
-zpython:S117ô"\Rename this local variable "DWFForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ë½ 8Šéÿ†î0
-~python:S117õ"ZRename this local variable "FFTActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(§ÉË½øÿÿÿÿ8Šéÿ†î0
-}python:S117î"YRename this local variable "PEActual" to match the regular expression ^[_a-z][a-z0-9_]*$.(€®Ù¯ùÿÿÿÿ8Šéÿ†î0
-zpython:S117ï"[Rename this local variable "PEForecast" to match the regular expression ^[_a-z][a-z0-9_]*$.(³Ÿì8‹éÿ†î0
