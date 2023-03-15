@@ -1,0 +1,9 @@
+
+NWeb:AvoidCommentedOutCodeCheck%"Remove this commented out code.(ÃÒ—áúÿÿÿÿ
+NWeb:AvoidCommentedOutCodeCheck;"Remove this commented out code.(¢şÜ®ÿÿÿÿÿ
+XWeb:UnsupportedTagsInHtml5CheckV"(Remove this deprecated "center" element.(¦İÉşÿÿÿÿ
+XWeb:UnsupportedTagsInHtml5CheckW"(Remove this deprecated "center" element.(ğ­ß›úÿÿÿÿ
+XWeb:UnsupportedTagsInHtml5Check\"(Remove this deprecated "center" element.(ÅêùÍüÿÿÿÿ
+LWeb:ImgWithoutAltCheckm"%Add an "alt" attribute to this image.(†Œ¡šúÿÿÿÿ
+^	Web:S5255"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(¨€îŞúÿÿÿÿ
+Y	Web:S5255:"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(¥ŞÀ”
