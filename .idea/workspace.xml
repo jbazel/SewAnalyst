@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="web is gone -&gt; copy directly from dev2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +132,7 @@
       <workItem from="1678806306823" duration="2858000" />
       <workItem from="1678809824714" duration="2789000" />
       <workItem from="1678818531438" duration="1573000" />
+      <workItem from="1678872094033" duration="273000" />
     </task>
     <task id="LOCAL-00001" summary="working thing">
       <created>1675962493731</created>
