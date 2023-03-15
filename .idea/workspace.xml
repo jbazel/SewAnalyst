@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="web is gone -&gt; copy directly from dev2">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6610930c2092e0f10b89932e6e99b7645897ce85" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b33197a99c2d9b390170de2b34c6a77fbc76501" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8b9114480f3dca2b1a3886c0cff6192c2c9efbf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build/main/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build/main/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build/main/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build/main/SewAnalyst.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/SewAnalyst.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build/main/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build/main/base_library.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dist/SewAnalyst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dist/SewAnalyst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/library.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/library.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/reports/good_example.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/DWF_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/PE_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/good_example.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-frontend/data/flaggedReports.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-frontend/data/flaggedReports.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-frontend/package.json" afterDir="false" />
+    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="working dist - mac">
+      <change beforePath="$PROJECT_DIR$/SewAnalyst-mac.zip" beforeDir="false" afterPath="$PROJECT_DIR$/SewAnalyst-mac.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-frontend/files/program/SewAnalyst-mac.zip" beforeDir="false" afterPath="$PROJECT_DIR$/website-frontend/files/program/SewAnalyst-mac.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +137,7 @@
       <workItem from="1678873146979" duration="1436000" />
       <workItem from="1678875811171" duration="171000" />
       <workItem from="1678877036815" duration="8045000" />
-      <workItem from="1678908786804" duration="6005000" />
+      <workItem from="1678908786804" duration="6605000" />
     </task>
     <task id="LOCAL-00001" summary="working thing">
       <created>1675962493731</created>
@@ -220,7 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678818883337</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="working dist - mac">
+      <created>1678914986879</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678914986879</updated>
+    </task>
+    <task id="LOCAL-00011" summary="working dist - mac">
+      <created>1678915025254</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678915025254</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +241,8 @@
     <MESSAGE value="added venv" />
     <MESSAGE value="merge web -&gt; main" />
     <MESSAGE value="web is gone -&gt; copy directly from dev2" />
-    <option name="LAST_COMMIT_MESSAGE" value="web is gone -&gt; copy directly from dev2" />
+    <MESSAGE value="working dist - mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="working dist - mac" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
