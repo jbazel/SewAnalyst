@@ -20,7 +20,7 @@ warnings.filterwarnings('ignore')
 
 def resource_path(path):
     try:
-        base_path = sys._MEIPASS
+        base_path = sys.executable.removesuffix("SewAnalyst")
     except Exception:
         base_path = os.path.abspath(".")
     return os.path.join(base_path, path)
@@ -342,7 +342,8 @@ def generateReport(stats, PeGraph, DwfGraph, FILENAME):
     pdf.print_section(4, 'Company Analysis', CompAna, '0')
     pdf.print_section(5, 'Conclusion', conc, '0')
 
-    name = 'reports/'+FILENAME+'.pdf'
+    name = "reports/"+FILENAME+'.pdf'
+
     pdf.output(resource_path(name), 'F')
 
 

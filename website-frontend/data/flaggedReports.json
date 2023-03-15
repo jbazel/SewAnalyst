@@ -18,9 +18,13 @@
       {
         "reportDate": "10/03/2023",
         "reportReason": "This seems dodgy"
+      },
+      {
+        "reportDate": "3/15/2023",
+        "reportReason": "badness"
       }
     ],
-    "reportCounter": "4"
+    "reportCounter": "5"
   },
   {
     "reportName": "report2.pdf",
@@ -36,5 +40,16 @@
       }
     ],
     "reportCounter": "2"
+  },
+  {
+    "reportName": "Data_Report.pdf",
+    "dateOfReport": "3/15/2023",
+    "reviews": [
+      {
+        "reportDate": "3/15/2023",
+        "reportReason": "data is erroneous"
+      }
+    ],
+    "reportCounter": "1"
   }
 ]

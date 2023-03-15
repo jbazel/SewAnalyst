@@ -35,7 +35,7 @@ def upload():
                 file_name = f.filename
                 print("uploading file", file_name)
 
-                f.save(resource_path("resources/" + file_name))
+                f.save(os.path.join(sys.executable.removesuffix("SewAnalyst"),("resources/" + file_name)))
 
                 try:
                     main(file_name)
