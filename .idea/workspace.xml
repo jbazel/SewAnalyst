@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="web is gone -&gt; copy directly from dev2" />
+    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="web is gone -&gt; copy directly from dev2">
+      <change beforePath="$PROJECT_DIR$/website-frontend/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/website-frontend/client/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +133,7 @@
       <workItem from="1678809824714" duration="2789000" />
       <workItem from="1678818531438" duration="1573000" />
       <workItem from="1678872094033" duration="273000" />
-      <workItem from="1678873146979" duration="716000" />
+      <workItem from="1678873146979" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="working thing">
       <created>1675962493731</created>
