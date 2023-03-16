@@ -20,7 +20,10 @@ warnings.filterwarnings('ignore')
 
 def resource_path(path):
     try:
-        base_path = sys.executable.removesuffix("SewAnalyst")
+        if getattr(sys, 'frozen', False):
+            base_path = sys.executable.removesuffix("SewAnalyst")
+        else:
+            base_path = "."
     except Exception:
         base_path = os.path.abspath(".")
     return os.path.join(base_path, path)

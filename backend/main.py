@@ -34,9 +34,10 @@ def upload():
                 f = request.files['csv file']
                 file_name = f.filename
                 print("uploading file", file_name)
-
-                f.save(os.path.join(sys.executable.removesuffix("SewAnalyst"),("resources/" + file_name)))
-
+                if getattr(sys, 'frozen', False):
+                    f.save(os.path.join(sys.executable.removesuffix("SewAnalyst"),("resources/" + file_name)))
+                else:
+                    f.save("resources/" + file_name)
                 try:
                     main(file_name)
                     flash("your report has been successfully created")
