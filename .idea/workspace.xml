@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="updated dist">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/library.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/library.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-frontend/data/flaggedReports.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-frontend/data/flaggedReports.json" afterDir="false" />
-    </list>
+    <list default="true" id="a08264d9-633c-458d-987e-208d17bda39a" name="Changes" comment="file pathing fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +135,7 @@
       <workItem from="1678875811171" duration="171000" />
       <workItem from="1678877036815" duration="8045000" />
       <workItem from="1678908786804" duration="8424000" />
-      <workItem from="1678962182007" duration="956000" />
+      <workItem from="1678962182007" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="working thing">
       <created>1675962493731</created>
@@ -227,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678915417881</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="file pathing fixed">
+      <created>1678965346856</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678965346856</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +255,8 @@
     <MESSAGE value="web is gone -&gt; copy directly from dev2" />
     <MESSAGE value="working dist - mac" />
     <MESSAGE value="updated dist" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated dist" />
+    <MESSAGE value="file pathing fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="file pathing fixed" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
